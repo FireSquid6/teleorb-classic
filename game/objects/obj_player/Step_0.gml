@@ -1,9 +1,19 @@
 //setup vars
-move = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+
+if keyboard_check_pressed(vk_lshift) 
+{
+	imposter="sus"
+}
+
+move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 jump = keyboard_check(vk_space)
-onFloor = tile_meeting(x, y-1, global.collisionMap)
+
+onFloor = (tilemap_get_at_pixel(global.collisionMap,bbox_right,bbox_bottom+1) == 1 
+		|| tilemap_get_at_pixel(global.collisionMap,bbox_left,bbox_bottom+1) == 1)
 thrown_orb = mouse_check_button_pressed(mb_left)
 dash = mouse_check_button_pressed(mb_right)
+
+if keyboard_check_pressed(ord("S")) y++
 
 //state
 switch state
@@ -24,6 +34,9 @@ switch state
 		state_fall()
 		break
 }
+
+//move self
+move_self()
 
 //lastmove
 lastMove=move

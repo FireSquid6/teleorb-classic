@@ -2,9 +2,9 @@ enum playerStates
 {
 	moving,
 	jumping,
+	falling,
 	wallriding,
-	dashing,
-	falling
+	dashing
 }
 
 hspd=0
@@ -18,9 +18,11 @@ maxAcceleration=6
 
 //jump
 jumpFrames=0
-maxJumpFrames=6
-jumpSpd=4
+maxJumpFrames=15
+jumpSpd=6
 airFriction=0.2
 
 //fall
 #macro GRAVITY_SPD 0.3
+cyoteFrames=0
+maxCyoteFrames=5

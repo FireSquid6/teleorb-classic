@@ -1,0 +1,1 @@
+room=rm_levelTemplate

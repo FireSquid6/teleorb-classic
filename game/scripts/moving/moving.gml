@@ -1,5 +1,8 @@
 function state_move()
 {
+	//set vspd to 0
+	vspd = 0
+	
 	//do the orb function
 	throw_orb()
 	
@@ -8,14 +11,14 @@ function state_move()
 	if move != 0
 	{
 		//make sure that hspd won't grow bigger than it should
-		if abs(hspd+accSpd)<=maxAcceleration
+		if abs(hspd)+accSpd<=maxAcceleration
 		{
 			//accelerate
 			hspd += (accSpd * move)
 		}
 	}
 	//if the player isn't holding down the move keys, deaccelerate
-	else
+	else if move==0
 	{
 		//check if floor to 0
 		if abs(hspd) <= accSpd 
@@ -25,15 +28,18 @@ function state_move()
 		//otherwise, subtract acceleration
 		else
 		{
-			hspd -= accSpd * move
+			hspd -= accSpd * sign(hspd)
 		}
 	}
 	
 	//JUMP
 	if jump moveto_jump()
 	
+	//FALL
+	if !onFloor moveto_fall()
+	
 	//DASH
-	if dash moveto_dash()
+	if check_dash() moveto_dash()
 }
 
 function moveto_move()

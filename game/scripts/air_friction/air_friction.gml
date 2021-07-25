@@ -9,4 +9,9 @@ function air_friction()
 			hspd += (airFriction * move)
 		}
 	}
+	//if not moving, decelerate
+	else
+	{
+		if abs(hspd) <= airFriction hspd = 0 else hspd -= airFriction * sign(hspd)
+	}
 }

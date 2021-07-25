@@ -3,7 +3,8 @@ function state_jump()
 	//orb function again
 	throw_orb()
 	
-	
+	//handle air friction
+	air_friction()
 	
 	//remove jump frames
 	jumpFrames--
@@ -13,6 +14,15 @@ function state_jump()
 	{
 		moveto_fall()
 	}
+	
+	//MOVE
+	if onFloor moveto_move()
+	
+	//WALLRIDE
+	if check_wallride() moveto_wallride()
+	
+	//DASH
+	if check_dash() moveto_dash()
 }
 
 function moveto_jump()
