@@ -10,6 +10,9 @@ function state_move()
 	//if the player is holding down the move keys, accelerate
 	if move != 0
 	{
+		//change direction
+		if move!=sign(hspd) hspd=0
+		
 		//make sure that hspd won't grow bigger than it should
 		if abs(hspd)+accSpd<=maxAcceleration
 		{
@@ -37,9 +40,6 @@ function state_move()
 	
 	//FALL
 	if !onFloor moveto_fall()
-	
-	//DASH
-	if check_dash() moveto_dash()
 }
 
 function moveto_move()

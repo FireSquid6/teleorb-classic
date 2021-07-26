@@ -3,8 +3,7 @@ enum playerStates
 	moving,
 	jumping,
 	falling,
-	wallriding,
-	dashing
+	wallriding
 }
 
 hspd=0
@@ -20,9 +19,20 @@ maxAcceleration=6
 jumpFrames=0
 maxJumpFrames=15
 jumpSpd=6
-airFriction=0.2
+airFriction=1
+airFrictionCancelFrames=0
+maxAirFrctionCancelFrames=10
 
 //fall
-#macro GRAVITY_SPD 0.3
+#macro GRAVITY_SPD 0.4
+global.gravityDir=1
 cyoteFrames=0
 maxCyoteFrames=5
+
+//wallride
+wallrideDir=1
+wallrideGrv=0.1
+wallrideJumpSpd=-6
+
+//orb
+canOrb=true

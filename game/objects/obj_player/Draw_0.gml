@@ -1,6 +1,7 @@
 draw_self()
-draw_text(x,y-32,string(move))
+draw_text(x,y-32,string(vspd))
 draw_text(x,y-42,string(hspd))
+draw_text(x,y-52,string(state))
 
 draw_set_color(c_aqua)
 draw_line(bbox_left,bbox_top,bbox_right,bbox_top)

@@ -20,8 +20,7 @@ function move_self()
 	}
 
 	//move x
-	x+=hspd
-	x=floor(x)
+	x+=floor(hspd)
 
 	//collision check y
 	if (vspd>0) bbox_side=bbox_bottom else bbox_side=bbox_top
@@ -40,6 +39,5 @@ function move_self()
 	}
 
 	//move y
-	y+=vspd
-	y=floor(y)
+	if global.gravityDir=1 y+=floor(vspd) else y+=ceil(vspd)
 }
