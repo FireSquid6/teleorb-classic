@@ -1,0 +1,1 @@
+thrown_orb=false

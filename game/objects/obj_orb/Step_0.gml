@@ -1,2 +1,2 @@
 x+=hspd
-y+=vspdd
+y+=vspd
