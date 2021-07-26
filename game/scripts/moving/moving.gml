@@ -44,5 +44,6 @@ function state_move()
 
 function moveto_move()
 {
+	canOrb=true
 	state=playerStates.moving
 }

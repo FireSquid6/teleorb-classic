@@ -2,6 +2,7 @@ function move_self()
 {
 	var bbox_side
 	var colmap=global.collisionMap
+	var ret=false
 	
 	//collision check x
 	if(hspd>0) bbox_side=bbox_right else bbox_side=bbox_left
@@ -17,6 +18,7 @@ function move_self()
 			x=x-(x mod 32) - (bbox_left-x)
 		}
 		hspd=0
+		ret=true
 	}
 
 	//move x
@@ -36,6 +38,7 @@ function move_self()
 			y=y-(y mod 32) - (bbox_top-y)
 		}
 		vspd=0
+		ret=true
 	}
 
 	//move y

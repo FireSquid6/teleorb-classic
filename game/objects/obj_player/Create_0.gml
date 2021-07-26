@@ -36,3 +36,4 @@ wallrideJumpSpd=-6
 
 //orb
 canOrb=true
+thrown_orb=false
