@@ -1,5 +1,7 @@
 function state_fall()
 {
+	throw_orb()
+	
 	//handle air friction
 	air_friction()
 	
@@ -7,7 +9,9 @@ function state_fall()
 	vspd+=GRAVITY_SPD
 	
 	//cyote frames
-	//if cyoteFrames>0 && jump moveto_jump() else cyoteFrames--
+	if cyoteFrames>0 && jump moveto_jump() 
+	cyoteFrames--
+	cyoteFrames=clamp(cyoteFrames,0,maxCyoteFrames)
 	
 	//MOVE
 	if onFloor moveto_move()
@@ -19,5 +23,4 @@ function state_fall()
 function moveto_fall()
 {
 	state=playerStates.falling
-	cyoteFrames=maxCyoteFrames
 }

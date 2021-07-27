@@ -1,1 +1,1 @@
-thrown_orb=false
+obj_player.thrown_orb=false

@@ -5,6 +5,7 @@ function state_jump()
 	
 	//handle air friction
 	if airFrictionCancelFrames<1 air_friction() else airFrictionCancelFrames--
+	cyoteFrames=0
 	
 	//remove jump frames
 	jumpFrames--
@@ -24,4 +25,5 @@ function moveto_jump()
 	state = playerStates.jumping
 	vspd -= jumpSpd
 	jumpFrames = maxJumpFrames
+	cyoteFrames=0
 }

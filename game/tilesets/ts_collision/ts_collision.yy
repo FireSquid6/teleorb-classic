@@ -35,7 +35,7 @@
   },
   "parent": {
     "name": "Collision",
-    "path": "folders/Game/Assets/Tilesets/Collision.yy",
+    "path": "folders/Teleorb/Assets/Tilesets/Collision.yy",
   },
   "resourceVersion": "1.0",
   "name": "ts_collision",

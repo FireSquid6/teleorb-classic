@@ -19,7 +19,7 @@ maxAcceleration=6
 jumpFrames=0
 maxJumpFrames=15
 jumpSpd=6
-airFriction=1
+airFriction=0.5
 airFrictionCancelFrames=0
 maxAirFrctionCancelFrames=10
 

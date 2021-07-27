@@ -25,7 +25,8 @@ function state_wallride()
 function moveto_wallride()
 {
 	state=playerStates.wallriding
-	vspd=0
+	if vspd>0 vspd=0
+	cyoteFrames=0
 }
 
 function check_wallride()
@@ -40,6 +41,5 @@ function check_wallride()
 		wallrideDir=1
 		return true
 	}
-	
 	return false
 }

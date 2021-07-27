@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Game/Data/Meta/Scripts.yy",
+    "path": "folders/Teleorb/Data/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "setup_camera",

@@ -1,5 +1,8 @@
 function state_move()
 {
+	//cyote frames
+	cyoteFrames=5
+	
 	//set vspd to 0
 	vspd = 0
 	

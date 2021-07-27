@@ -47,7 +47,7 @@
   },
   "parent": {
     "name": "Levels",
-    "path": "folders/Game/Levels.yy",
+    "path": "folders/Teleorb/Levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_init",

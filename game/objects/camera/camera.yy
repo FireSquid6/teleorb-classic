@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/Game/Data/Meta/Objects.yy",
+    "path": "folders/Teleorb/Data/Meta/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "camera",

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Meta",
-    "path": "folders/Game/Assets/Meta.yy",
+    "path": "folders/Teleorb/Assets/Meta.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pixel",
