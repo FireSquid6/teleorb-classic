@@ -6,7 +6,8 @@ onFloor = (tilemap_get_at_pixel(global.collisionMap,bbox_right,bbox_bottom+1) ==
 		|| tilemap_get_at_pixel(global.collisionMap,bbox_left,bbox_bottom+1) == 1)
 orb = mouse_check_button_pressed(mb_left)
 
-if keyboard_check_pressed(ord("S")) y++
+//set image xscale
+if move!=0 image_xscale=move
 
 //state
 switch state

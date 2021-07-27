@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui.yy",
   },
   "resourceVersion": "1.0",
-  "name": "loop_through_function_list",
+  "name": "grid",
   "tags": [],
   "resourceType": "GMScript",
 }

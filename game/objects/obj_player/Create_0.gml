@@ -10,10 +10,12 @@ hspd=0
 vspd=0
 lastMove=0
 state=playerStates.moving
+image_speed=0
 
 //move
 accSpd=1
 maxAcceleration=6
+moveAnimationSpd=0.3
 
 //jump
 jumpFrames=0
