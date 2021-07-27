@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui.yy",
   },
   "resourceVersion": "1.0",
-  "name": "grid",
+  "name": "config",
   "tags": [],
   "resourceType": "GMScript",
 }
