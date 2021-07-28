@@ -31,15 +31,12 @@ function moveto_wallride()
 
 function check_wallride()
 {
-	if (tilemap_get_at_pixel(global.collisionMap,bbox_left-1,bbox_top) || tilemap_get_at_pixel(global.collisionMap,bbox_left-1,bbox_bottom))
+	var i=sign(hspd)
+	if place_meeting(x+i,y,obj_wall) && move!=0
 	{
-		wallrideDir=-1
+		wallrideDir=i
 		return true
 	}
-	if (tilemap_get_at_pixel(global.collisionMap,bbox_right+1,bbox_top) || tilemap_get_at_pixel(global.collisionMap,bbox_right+1,bbox_bottom))
-	{
-		wallrideDir=1
-		return true
-	}
+	
 	return false
 }

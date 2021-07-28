@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_player",
+    "path": "sprites/spr_player/spr_player.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
@@ -30,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Teleorb/Assets/Music/Data/Player.yy",
+    "path": "folders/Teleorb/Data/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_orb",

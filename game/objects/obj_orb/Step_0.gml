@@ -1,9 +1,9 @@
 var foundcol=false
 
 //x collision
-if tile_meeting(x+hspd,y,global.collisionMap)
+if place_meeting(x+hspd,y,obj_wall)
 {
-	while !tile_meeting(x+sign(hspd),y,global.collisionMap) {x+=sign(hspd)}
+	while !place_meeting(x+sign(hspd),y,obj_wall) {x+=sign(hspd)}
 	hspd=0
 	foundcol=true
 	obj_player.x=x
@@ -14,9 +14,9 @@ x+=hspd
 x=floor(x)
 
 //y collision
-if tile_meeting(x,y+vspd,global.collisionMap)
+if place_meeting(x,y+vspd,obj_wall)
 {
-	while !tile_meeting(x,y+sign(vspd),global.collisionMap) {y+=sign(vspd)}
+	while !place_meeting(x,y+sign(vspd),obj_wall) {y+=sign(vspd)}
 	vspd=0
 	foundcol=true
 	obj_player.x=x

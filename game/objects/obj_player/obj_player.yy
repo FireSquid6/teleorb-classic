@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Teleorb/Assets/Music/Data/Player.yy",
+    "path": "folders/Teleorb/Data/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player",

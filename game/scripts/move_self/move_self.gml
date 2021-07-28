@@ -1,44 +1,23 @@
 function move_self()
 {
-	var bbox_side
-	var colmap=global.collisionMap
-	var ret=false
-	
-	//collision check x
-	if(hspd>0) bbox_side=bbox_right else bbox_side=bbox_left
-	if (tilemap_get_at_pixel(colmap,bbox_side+hspd,bbox_top) !=0)
-	|| (tilemap_get_at_pixel(colmap,bbox_side+hspd,bbox_bottom) !=0)
+	//horizontal collision
+	if place_meeting(x+hspd,y,obj_wall)
 	{
-		if (hspd>0)
-		{
-			x=x-(x mod 32) + (31) - (bbox_right-x)
-		}
-		else
-		{
-			x=x-(x mod 32) - (bbox_left-x)
-		}
+		var i=sign(hspd)
+		while !place_meeting(x+i,y,obj_wall) {x+=i}
 		hspd=0
-		ret=true
 	}
-
+	
 	//move x
 	x+=floor(hspd)
+	x=floor(x)
 
 	//collision check y
-	if (vspd>0) bbox_side=bbox_bottom else bbox_side=bbox_top
-	if (tilemap_get_at_pixel(colmap,bbox_left,bbox_side+vspd) !=0)
-	|| (tilemap_get_at_pixel(colmap,bbox_right,bbox_side+vspd) !=0)
+	if place_meeting(x,y+vspd,obj_wall)
 	{
-		if (vspd>0)
-		{
-			y=y-(y mod 32) + (31) - (bbox_bottom-y)
-		}
-		else
-		{
-			y=y-(y mod 32) - (bbox_top-y)
-		}
+		var i=sign(vspd)
+		while !place_meeting(x,y+i,obj_wall) {y+=i}
 		vspd=0
-		ret=true
 	}
 
 	//move y
