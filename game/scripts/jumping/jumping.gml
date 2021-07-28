@@ -26,5 +26,4 @@ function moveto_jump()
 	vspd -= jumpSpd
 	jumpFrames = maxJumpFrames
 	cyoteFrames=0
-	sprite_index=spr_player_falling
 }

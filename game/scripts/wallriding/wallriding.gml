@@ -27,7 +27,6 @@ function moveto_wallride()
 	state=playerStates.wallriding
 	if vspd>0 vspd=0
 	cyoteFrames=0
-	sprite_index=spr_player_wallsliding
 }
 
 function check_wallride()

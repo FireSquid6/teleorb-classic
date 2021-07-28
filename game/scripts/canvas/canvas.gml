@@ -59,10 +59,8 @@ function modui_canvas(_drawType) constructor
 	static update=function()
 	{
 		//figure out which element is selected
-		switch selection_types
-		{
-			
-		}
+		
+		//figure out if an element is pressed
 		
 		//loop through each element's update function
 		for (var i=0; i<length; i++)

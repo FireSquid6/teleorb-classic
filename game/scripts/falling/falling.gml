@@ -23,5 +23,4 @@ function state_fall()
 function moveto_fall()
 {
 	state=playerStates.falling
-	sprite_index=spr_player_falling
 }

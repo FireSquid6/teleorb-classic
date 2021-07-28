@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "States",
-    "path": "folders/Teleorb/Data/Player/States.yy",
+    "path": "folders/Teleorb/Assets/Music/Data/Player/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "wallriding",

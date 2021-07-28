@@ -1,17 +1,5 @@
 function state_move()
 {
-	//sprite
-	if move==0
-	{
-		sprite_index=spr_player_idle
-		image_index=1
-	}
-	else
-	{
-		sprite_index=spr_player_moving
-		image_index+=moveAnimationSpd
-	}
-	
 	//cyote frames
 	cyoteFrames=5
 	
@@ -61,5 +49,4 @@ function moveto_move()
 {
 	canOrb=true
 	state=playerStates.moving
-	sprite_index=spr_player_idle
 }

@@ -1,1 +1,1 @@
-room=rm_levelTemplate
+room=rm_level1
