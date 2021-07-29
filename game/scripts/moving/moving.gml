@@ -1,5 +1,17 @@
 function state_move()
 {
+	//sprite management
+	if move==0
+	{
+		sprite_index=spr_player_idle
+		image_index+=0.05
+	}
+	else
+	{
+		sprite_index=spr_player_walking
+		image_index+=0.2
+	}
+	
 	//cyote frames
 	cyoteFrames=5
 	

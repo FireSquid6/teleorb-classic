@@ -22,6 +22,8 @@ function state_jump()
 
 function moveto_jump()
 {
+	image_index=1
+	sprite_index=spr_player_midair
 	lastState=state
 	state = playerStates.jumping
 	vspd -= jumpSpd

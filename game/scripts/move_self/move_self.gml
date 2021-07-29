@@ -1,5 +1,8 @@
 function move_self()
 {
+	//set mask
+	mask_index=spr_player_idle
+	
 	//add fractions
 	hspd+=hspd_frac
 	vspd+=vspd_frac

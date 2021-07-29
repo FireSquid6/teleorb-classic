@@ -30,6 +30,8 @@ function state_fall()
 
 function moveto_fall()
 {
+	image_index=1
+	sprite_index=spr_player_midair
 	lastState=state
 	state=playerStates.falling
 }

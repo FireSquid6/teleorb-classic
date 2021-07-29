@@ -26,6 +26,8 @@ function state_wallride()
 
 function moveto_wallride()
 {
+	image_index=1
+	sprite_index=spr_player_wallsliding
 	lastState=state
 	state=playerStates.wallriding
 	if vspd>0 vspd=0
