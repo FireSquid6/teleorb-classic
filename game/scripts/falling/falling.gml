@@ -5,8 +5,16 @@ function state_fall()
 	//handle air friction
 	air_friction()
 	
+	//walljump buffer
+	if lastState==playerStates.wallriding
+	{
+		if walljumpBufferFrames>0 && jump_pressed walljump()
+		walljumpBufferFrames--
+		walljumpBufferFrames=clamp(walljumpBufferFrames,0,maxWalljumpBufferFrames)
+	}
+	
 	//gravity
-	vspd+=GRAVITY_SPD
+	vspd+=GRAVITY_SPD*global.gravityDir
 	
 	//cyote frames
 	if cyoteFrames>0 && jump moveto_jump() 
@@ -22,5 +30,6 @@ function state_fall()
 
 function moveto_fall()
 {
+	lastState=state
 	state=playerStates.falling
 }

@@ -26,10 +26,26 @@ layid=layer_get_id("lay_collision")
 		
 		tile=tilemap_get_at_pixel(global.collisionMap,xx,yy)
 		
+		//set tile
 		switch tile
 		{
-			case 1: //wall
+			case 1: //wall - sprite should be a generic wall
 				instance_create_layer(xx,yy,"lay_collision",obj_wall)
+				break
+			case 2: //playerwall
+				instance_create_layer(xx,yy,"lay_collision",obj_playerwall)
+				break
+			case 3: //orbwall
+				instance_create_layer(xx,yy,"lay_collision",obj_orbwall)
+				break
+			case 4: //kill
+				instance_create_layer(xx,yy,"lay_collision",obj_kill)
+				break
+			case 5: //player kill
+				instance_create_layer(xx,yy,"lay_collision",obj_killPlayer)
+				break
+			case 6: //orb kill
+				instance_create_layer(xx,yy,"lay_collision",obj_killOrb)
 				break
 		}
 		

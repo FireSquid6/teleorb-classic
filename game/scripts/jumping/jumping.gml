@@ -4,7 +4,7 @@ function state_jump()
 	throw_orb()
 	
 	//handle air friction
-	if airFrictionCancelFrames<1 air_friction() else airFrictionCancelFrames--
+	if lastState!=playerStates.wallriding air_friction()
 	cyoteFrames=0
 	
 	//remove jump frames
@@ -22,6 +22,7 @@ function state_jump()
 
 function moveto_jump()
 {
+	lastState=state
 	state = playerStates.jumping
 	vspd -= jumpSpd
 	jumpFrames = maxJumpFrames

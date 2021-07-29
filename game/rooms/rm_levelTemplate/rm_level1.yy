@@ -61,7 +61,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_4BDAB745","path":"rooms/rm_levelTemplate/rm_levelTemplate.yy",},
+    {"name":"inst_4BDAB745","path":"rooms/rm_level1/rm_level1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -89,7 +89,7 @@
     "path": "folders/Teleorb/Levels.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rm_levelTemplate",
+  "name": "rm_level1",
   "tags": [],
   "resourceType": "GMRoom",
 }

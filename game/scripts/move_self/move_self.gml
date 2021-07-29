@@ -1,16 +1,30 @@
 function move_self()
 {
+	//add fractions
+	hspd+=hspd_frac
+	vspd+=vspd_frac
+	
+	//store fractions
+	hspd_frac = hspd - (floor(abs(hspd)) * sign(hspd))
+	vspd_frac = vspd - (floor(abs(vspd)) * sign(vspd))
+	
+	//subtract fractions
+	hspd-=hspd_frac
+	vspd-=vspd_frac
+	
 	//horizontal collision
 	if place_meeting(x+hspd,y,obj_wall)
 	{
 		var i=sign(hspd)
-		while !place_meeting(x+i,y,obj_wall) {x+=i}
+		while !place_meeting(x+i,y,obj_wall) 
+		{
+			x+=i
+		}
 		hspd=0
 	}
 	
 	//move x
-	x+=floor(hspd)
-	x=floor(x)
+	x+=hspd
 
 	//collision check y
 	if place_meeting(x,y+vspd,obj_wall)
@@ -21,5 +35,5 @@ function move_self()
 	}
 
 	//move y
-	if global.gravityDir=1 y+=floor(vspd) else y+=ceil(vspd)
+	y+=vspd
 }

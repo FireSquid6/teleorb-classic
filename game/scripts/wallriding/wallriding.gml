@@ -4,18 +4,20 @@ function state_wallride()
 	throw_orb()
 	
 	//wallriding
-	air_friction()
 	vspd+=wallrideGrv
+	air_friction()
 	
 	//FALL
-	if !check_wallride() moveto_fall()
+	if !check_wallride() 
+	{
+		moveto_fall()
+		walljumpBufferFrames=maxWalljumpBufferFrames
+	}
 	
 	//JUMP
 	if jump_pressed
 	{
-		airFrictionCancelFrames=maxAirFrctionCancelFrames
-		hspd=wallrideJumpSpd*wallrideDir
-		moveto_jump()
+		walljump()
 	}
 	
 	//MOVE
@@ -24,6 +26,7 @@ function state_wallride()
 
 function moveto_wallride()
 {
+	lastState=state
 	state=playerStates.wallriding
 	if vspd>0 vspd=0
 	cyoteFrames=0
@@ -39,4 +42,13 @@ function check_wallride()
 	}
 	
 	return false
+}
+
+function walljump()
+{
+	airFrictionCancelFrames=maxAirFrctionCancelFrames
+	hspd=wallrideJumpSpd*wallrideDir
+	vspd=0
+	vspd_frac=0
+	moveto_jump()
 }

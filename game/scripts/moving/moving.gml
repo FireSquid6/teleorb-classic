@@ -5,6 +5,7 @@ function state_move()
 	
 	//set vspd to 0
 	vspd = 0
+	vspd_frac=0
 	
 	//do the orb function
 	throw_orb()
@@ -47,6 +48,7 @@ function state_move()
 
 function moveto_move()
 {
+	lastState=state
 	canOrb=true
 	state=playerStates.moving
 }
