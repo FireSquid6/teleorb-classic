@@ -23,15 +23,16 @@ maxAcceleration=3
 jumpFrames=0
 maxJumpFrames=15
 jumpSpd=3
-airFriction=0.25
+airFriction=0.5
 airFrictionCancelFrames=0
 maxAirFrctionCancelFrames=10
 
 //fall
-#macro GRAVITY_SPD 0.2
+#macro GRAVITY_SPD 0.4
 global.gravityDir=1
 cyoteFrames=0
 maxCyoteFrames=5
+terminalVelocity=7
 
 //wallride
 wallrideDir=1

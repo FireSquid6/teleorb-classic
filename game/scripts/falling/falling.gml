@@ -14,7 +14,10 @@ function state_fall()
 	}
 	
 	//gravity
-	vspd+=GRAVITY_SPD*global.gravityDir
+	var grav=GRAVITY_SPD
+	if lastState=playerStates.jumping && vspd<0 grav*=0.5
+	vspd+=grav*global.gravityDir
+	vspd=clamp(vspd,-25,terminalVelocity)
 	
 	//cyote frames
 	if cyoteFrames>0 && jump moveto_jump() 
