@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "spr_wall",
-    "path": "sprites/spr_wall/spr_wall.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_wall",
-    "path": "objects/obj_wall/obj_wall.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -31,7 +25,7 @@
     "path": "folders/Teleorb/Data/Collision.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_orbwall",
+  "name": "obj_playerwall",
   "tags": [],
   "resourceType": "GMObject",
 }

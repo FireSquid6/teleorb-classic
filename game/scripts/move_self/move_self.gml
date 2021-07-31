@@ -15,8 +15,11 @@ function move_self()
 	hspd-=hspd_frac
 	vspd-=vspd_frac
 	
+	//check if colliding with a killwall
+	if place_meeting(x,y,obj_kill) room_restart()
+	
 	//horizontal collision
-	if place_meeting(x+hspd,y,obj_wall)
+	if place_meeting(x+hspd,y,obj_wall) && !place_meeting(x+hspd,y,obj_orbwall)
 	{
 		var i=sign(hspd)
 		while !place_meeting(x+i,y,obj_wall) 
@@ -30,7 +33,7 @@ function move_self()
 	x+=hspd
 
 	//collision check y
-	if place_meeting(x,y+vspd,obj_wall)
+	if place_meeting(x,y+vspd,obj_wall) && !place_meeting(x,y,obj_orbwall)
 	{
 		var i=sign(vspd)
 		while !place_meeting(x,y+i,obj_wall) {y+=i}
