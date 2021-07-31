@@ -10,7 +10,10 @@ function loop_through_function_list(_list)
 	{
 		size=ds_list_size(_list)
 		var func=ds_list_find_value(_list,i)
-		func()
+		with self
+		{
+			func()
+		}
 		i++
 	}
 	

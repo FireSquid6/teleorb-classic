@@ -39,6 +39,7 @@ function modui_canvas(_drawType) constructor
 	}
 	
 	//grid system for gamepads
+	//make this later
 	static add_grid=function()
 	{
 		grid_enabled=true
@@ -58,13 +59,27 @@ function modui_canvas(_drawType) constructor
 	//update function - run each frame in step event
 	static update=function()
 	{
-		//figure out which element is selected
+		var cursor_x=get_mouse_x()
+		var cursor_y=get_mouse_y()
 		
-		//figure out if an element is pressed
+		if keyboard_check(vk_space)
+		{
+			imposter="sus"
+		}
 		
-		//loop through each element's update function
+		//loop through each element
+		var length=array_length(elements)
 		for (var i=0; i<length; i++)
 		{
+			//check if element is selected
+			if point_in_rectangle(cursor_x,cursor_y,elements[i].bbox_left,
+			elements[i].bbox_top,elements[i].bbox_right,elements[i].bbox_bottom)
+			{
+				elements[i].selected=true
+				
+			}
+			
+			//run update function
 			elements[i].update()
 		}
 	}

@@ -13,9 +13,23 @@ function modui_button(_sprite,_subimage,_x,_y) constructor
 	image_speed=0
 	image_blend=c_white
 	
+	//default bbox variables, can be changed with change_bbox
+	bbox_left=x
+	bbox_top=y
+	bbox_right=x+sprite_get_width(sprite_index)
+	bbox_bottom=y+sprite_get_height(sprite_index)
+	
 	//other vars
 	//don't edit these
 	selected=false
+	
+	static change_bbox=function(_left,_top,_right,_bottom)
+	{
+		bbox_left=_left
+		bbox_right=_right
+		bbox_top=_top
+		bbox_bottom=_bottom
+	}
 	
 	static add_method=function(_method,_event)
 	{
@@ -54,6 +68,7 @@ function modui_button(_sprite,_subimage,_x,_y) constructor
 		
 		if selected
 		{
+			var size=ds_list_size(selected_list)
 			loop_through_function_list(selected_list)
 			if pressed loop_through_function_list(pressed_list)
 		}

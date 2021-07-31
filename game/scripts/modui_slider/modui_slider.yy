@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui/Elements.yy",
   },
   "resourceVersion": "1.0",
-  "name": "slider",
+  "name": "modui_slider",
   "tags": [],
   "resourceType": "GMScript",
 }

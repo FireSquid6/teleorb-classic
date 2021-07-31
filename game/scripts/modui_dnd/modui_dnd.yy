@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "System",
-    "path": "folders/Libraries/Modui/System.yy",
+    "name": "Elements",
+    "path": "folders/Libraries/Modui/Elements.yy",
   },
   "resourceVersion": "1.0",
-  "name": "canvas",
+  "name": "modui_dnd",
   "tags": [],
   "resourceType": "GMScript",
 }
