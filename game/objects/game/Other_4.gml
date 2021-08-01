@@ -4,6 +4,7 @@ global.collisionMap=layer_tilemap_get_id(layid)
 #macro TILE_SIZE 16
 
 //place walls
+doPlatformChecking=false
 layid=layer_get_id("lay_collision")
 if layer_exists(layid)
 {
@@ -26,10 +27,6 @@ if layer_exists(layid)
 		yy=row*TILE_SIZE
 		
 		tile=tilemap_get_at_pixel(global.collisionMap,xx,yy)
-		if tile!=0 && tile!=1
-		{
-			imposter="sus"
-		}
 		
 		//set tile
 		switch tile
@@ -45,7 +42,9 @@ if layer_exists(layid)
 			case 3: //playerwall - only blocks player, orbs go through
 				instance_create_layer(xx,yy,"lay_collision",obj_playerwall)
 				break
-			case 4: //nothing
+			case 4: //platform
+				instance_create_layer(xx,yy,"lay_collision",obj_platform)
+				doPlatformChecking=true
 				break
 			case 5: //nothing
 				break
@@ -61,4 +60,21 @@ if layer_exists(layid)
 		
 		column++
 	}
+}
+
+//place player
+if instance_exists(obj_playerSpawn)
+{
+	var xx,yy
+	with obj_playerSpawn
+	{
+		if spawnpoint==global.spawnpoint
+		{
+			xx=x
+			yy=y
+		}
+		instance_destroy()
+	}
+		
+	instance_create_layer(xx,yy,"lay_player",obj_player)
 }

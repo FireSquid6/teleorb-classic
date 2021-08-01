@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_room_transition",
-    "path": "sprites/spr_room_transition/spr_room_transition.yy",
+    "name": "spr_player_idle",
+    "path": "sprites/spr_player_idle/spr_player_idle.yy",
   },
   "solid": false,
   "visible": true,
@@ -20,23 +20,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [
-    {"varType":5,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[
-        "GMRoom",
-      ],"resourceVersion":"1.0","name":"destination","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"spawnpoint","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Gizmos",
-    "path": "folders/Teleorb/Data/Gizmos.yy",
+    "name": "Player",
+    "path": "folders/Teleorb/Data/Player.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_levelDoor",
+  "name": "obj_playerSpawn",
   "tags": [],
   "resourceType": "GMObject",
 }

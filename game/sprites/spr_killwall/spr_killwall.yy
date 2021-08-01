@@ -121,8 +121,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Meta",
-    "path": "folders/Teleorb/Assets/Meta.yy",
+    "name": "Collision",
+    "path": "folders/Teleorb/Assets/Tilesets/Collision.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_killwall",

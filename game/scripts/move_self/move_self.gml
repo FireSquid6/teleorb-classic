@@ -1,5 +1,7 @@
 function move_self()
 {
+	var _id
+	
 	//set mask
 	mask_index=spr_player_idle
 	
@@ -21,6 +23,7 @@ function move_self()
 	//horizontal collision
 	if place_meeting(x+hspd,y,obj_wall) && !place_meeting(x+hspd,y,obj_orbwall)
 	{
+		_id=instance_place(x+hspd,y,obj_wall)
 		var i=sign(hspd)
 		while !place_meeting(x+i,y,obj_wall) 
 		{

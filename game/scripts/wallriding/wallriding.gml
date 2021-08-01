@@ -36,14 +36,8 @@ function moveto_wallride()
 
 function check_wallride()
 {
-	if keyboard_check(vk_shift)
-	{
-		imposter="sus"
-	}
 	var i=sign(hspd)
-	if i==1 var bbox=bbox_right+i else var bbox=bbox_left+i
-	var colpoint=collision_point(bbox,bbox_top,obj_wall,false,true)
-	if place_meeting(x+i,y,obj_wall) && move!=0 && colpoint
+	if place_meeting(x+i,y,obj_wall) && move!=0 && wallgrab
 	{
 		wallrideDir=i
 		return true

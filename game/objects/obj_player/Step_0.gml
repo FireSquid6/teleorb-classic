@@ -4,6 +4,7 @@ jump = keyboard_check(vk_space)
 jump_pressed = keyboard_check_pressed(vk_space)
 onFloor = place_meeting(x,y+1,obj_wall)
 orb = mouse_check_button_pressed(mb_left)
+wallgrab = keyboard_check(vk_lshift)
 
 //set image xscale
 if move!=0 image_xscale=move
