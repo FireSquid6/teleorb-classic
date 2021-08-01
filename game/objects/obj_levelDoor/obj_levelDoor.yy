@@ -1,14 +1,11 @@
 {
   "spriteId": {
-    "name": "spr_orb",
-    "path": "sprites/spr_orb/spr_orb.yy",
+    "name": "spr_room_transition",
+    "path": "sprites/spr_room_transition/spr_room_transition.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": {
-    "name": "spr_player_idle",
-    "path": "sprites/spr_player_idle/spr_player_idle.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
@@ -26,17 +23,19 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [],
+  "properties": [
+    {"varType":5,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[
+        "GMRoom",
+      ],"resourceVersion":"1.0","name":"destination","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Teleorb/Data/Player.yy",
+    "name": "Gizmos",
+    "path": "folders/Teleorb/Data/Gizmos.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_orb",
+  "name": "obj_levelDoor",
   "tags": [],
   "resourceType": "GMObject",
 }
