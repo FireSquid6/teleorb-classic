@@ -6,6 +6,12 @@ enum playerStates
 	wallriding
 }
 
+//unlocks
+orbUnlocked=false
+dashUnlocked=false
+slideUnlocked=false
+
+//default vars
 hspd=0
 hspd_frac=0
 vspd=0
@@ -15,6 +21,7 @@ state=playerStates.moving
 lastState=state
 image_speed=0
 
+#region MOVEMENT VARS
 //move
 accSpd=0.5
 maxAcceleration=3
@@ -44,3 +51,4 @@ maxWalljumpBufferFrames=5
 //orb
 canOrb=true
 thrown_orb=false
+#endregion
