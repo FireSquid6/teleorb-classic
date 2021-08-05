@@ -1,6 +1,14 @@
 #macro TILE_SIZE 16
 
+#region INDEX LEVEL
 var room_name=room_get_name(room)
+global.currentLevel=string_char_at(room_name,10)
+global.currentLevel=real(global.currentLevel)
+global.currentBranch=string_char_at(room_name,12)
+global.currentBranch=real(global.currentBranch)
+global.currentRoom=string_char_at(room_name,14)
+global.currentRoom=real(global.currentRoom)
+#endregion
 
 #region SETUP LEVEL
 if string_char_at(room_name,4)=="l"

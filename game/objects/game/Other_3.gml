@@ -1,6 +1,7 @@
 //save current data
 var savedata = 
 {
+	spawnpoint : global.spawnpoint,
 	orbUnlocked : global.orbUnlocked,
 	dashUnlocked : global.dashUnlocked,
 	slideUnlocked : global.slideUnlocked,
