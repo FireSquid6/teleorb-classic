@@ -4,14 +4,15 @@ var level,branch,rm
 while room_exists(i)
 {
 	var room_name=room_get_name(i)
+	var digits=string_digits(room_name)
 	
-	if string_char_at(room_name,4)=="l"
+	if string_length(digits)==3
 	{
-		level=string_char_at(room_name,10)
+		level=string_char_at(digits,1)
 		level=real(level)
-		branch=string_char_at(room_name,12)
+		branch=string_char_at(digits,2)
 		branch=real(branch)
-		rm=string_char_at(room_name,14)
+		rm=string_char_at(digits,3)
 		rm=real(rm)
 		global.room_array[level][branch][rm]=i
 	}
