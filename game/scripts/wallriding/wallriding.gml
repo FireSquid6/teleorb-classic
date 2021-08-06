@@ -1,8 +1,5 @@
 function state_wallride()
-{
-	//orb
-	throw_orb()
-	
+{	
 	//wallriding
 	vspd+=wallrideGrv
 	air_friction()

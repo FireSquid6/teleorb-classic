@@ -1,7 +1,5 @@
 function state_fall()
-{
-	throw_orb()
-	
+{	
 	//handle air friction
 	air_friction()
 	
@@ -19,16 +17,20 @@ function state_fall()
 	vspd+=grav*global.gravityDir
 	vspd=clamp(vspd,-25,terminalVelocity)
 	
-	//cyote frames
-	if cyoteFrames>0 && jump moveto_jump() 
-	cyoteFrames--
-	cyoteFrames=clamp(cyoteFrames,0,maxCyoteFrames)
-	
 	//MOVE
 	if onFloor moveto_move()
 	
 	//WALLRIDE
 	if check_wallride() moveto_wallride()
+	
+	//cyote frames
+	if cyoteFrames>0 && jump 
+	{
+		vspd=0
+		moveto_jump() 
+	}
+	cyoteFrames--
+	cyoteFrames=clamp(cyoteFrames,0,maxCyoteFrames)
 }
 
 function moveto_fall()

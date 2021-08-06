@@ -19,9 +19,6 @@ function state_move()
 	vspd = 0
 	vspd_frac=0
 	
-	//do the orb function
-	throw_orb()
-	
 	//ACCELERATION
 	//if the player is holding down the move keys, accelerate
 	if move != 0
