@@ -6,10 +6,9 @@ enum playerStates
 	wallriding
 }
 
-//unlocks
-orbUnlocked=false
-dashUnlocked=false
-slideUnlocked=false
+orb=false
+dash=false
+slide=false
 
 //default vars
 hspd=0
