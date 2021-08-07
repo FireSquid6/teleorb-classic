@@ -2,7 +2,7 @@ if global.debug_mode
 {
 	//set draw
 	draw_reset()
-	draw_set_halign(fa_right)
+	draw_set_halign(fa_middle)
 	
 	//set strings
 	var hspd_string,vspd_string,str

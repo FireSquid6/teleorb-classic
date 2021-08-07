@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 752,
-  "height": 256,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"39e3bf8b-1cfb-40a7-8a46-e660298e4ddd","path":"sprites/spr_foreground/spr_foreground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"39e3bf8b-1cfb-40a7-8a46-e660298e4ddd","path":"sprites/spr_foreground/spr_foreground.yy",},"LayerId":{"name":"80b9d89c-6ef9-4428-905f-15fc786c4cea","path":"sprites/spr_foreground/spr_foreground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_foreground","path":"sprites/spr_foreground/spr_foreground.yy",},"resourceVersion":"1.0","name":"39e3bf8b-1cfb-40a7-8a46-e660298e4ddd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"933113c7-a8a3-49e8-a818-4e812a9d08af","path":"sprites/spr_background_ts/spr_background_ts.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"933113c7-a8a3-49e8-a818-4e812a9d08af","path":"sprites/spr_background_ts/spr_background_ts.yy",},"LayerId":{"name":"9b7ed53f-834f-4e65-8737-92b23d918b04","path":"sprites/spr_background_ts/spr_background_ts.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_background_ts","path":"sprites/spr_background_ts/spr_background_ts.yy",},"resourceVersion":"1.0","name":"933113c7-a8a3-49e8-a818-4e812a9d08af","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_foreground","path":"sprites/spr_foreground/spr_foreground.yy",},
+    "spriteId": {"name":"spr_background_ts","path":"sprites/spr_background_ts/spr_background_ts.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8e6e0048-8b13-4b73-a1a7-00a7be1816b3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"39e3bf8b-1cfb-40a7-8a46-e660298e4ddd","path":"sprites/spr_foreground/spr_foreground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e9b809a8-a3b8-4400-a02c-8c9f1272d636","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"933113c7-a8a3-49e8-a818-4e812a9d08af","path":"sprites/spr_background_ts/spr_background_ts.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_foreground","path":"sprites/spr_foreground/spr_foreground.yy",},
+    "parent": {"name":"spr_background_ts","path":"sprites/spr_background_ts/spr_background_ts.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_foreground",
+    "name": "spr_background_ts",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"80b9d89c-6ef9-4428-905f-15fc786c4cea","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9b7ed53f-834f-4e65-8737-92b23d918b04","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Foreground",
-    "path": "folders/Teleorb/Assets/Tilesets/Foreground.yy",
+    "name": "Background",
+    "path": "folders/Teleorb/Assets/Tilesets/Background.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_foreground",
+  "name": "spr_background_ts",
   "tags": [],
   "resourceType": "GMSprite",
 }
