@@ -4,12 +4,12 @@ function state_move()
 	if move==0
 	{
 		sprite_index=spr_player_idle
-		image_index+=0.05
+		image_speed=0.25
 	}
 	else
 	{
 		sprite_index=spr_player_walking
-		image_index+=0.2
+		image_speed=0.7
 	}
 	
 	//cyote frames

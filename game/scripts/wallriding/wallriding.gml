@@ -23,7 +23,8 @@ function state_wallride()
 
 function moveto_wallride()
 {
-	image_index=1
+	image_index=0
+	image_speed=0
 	sprite_index=spr_player_wallsliding
 	lastState=state
 	state=playerStates.wallriding

@@ -1,4 +1,21 @@
-draw_set_halign(fa_right)
-draw_text(x,y-32,"VSPD: "+string(vspd+vspd_frac))
-draw_text(x,y-42,"HSPD: "+string(hspd+hspd_frac))
-draw_text(x,y-52,"STATE: "+string(state))
+if global.debug_mode
+{
+	//set draw
+	draw_reset()
+	draw_set_halign(fa_right)
+	
+	//set strings
+	var hspd_string,vspd_string,str
+	var hspd_string=string_format(abs(hspd+hspd_frac),2,2)
+	var vspd_string=string_format(abs(vspd+vspd_frac),2,2)
+	
+	if sign(hspd)==1 str="+" else str="-"
+	hspd_string=str+hspd_string
+	if sign(vspd)==1 str="+" else str="-"
+	vspd_string=str+vspd_string
+	
+	//draw text
+	draw_text(x,y-32,"HSPD: "+hspd_string)
+	draw_text(x,y-42,"VSPD: "+vspd_string)
+	draw_text(x,y-52,"STATE: "+string_format(state,2,2))
+}

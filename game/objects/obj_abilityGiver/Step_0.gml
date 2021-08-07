@@ -1,4 +1,4 @@
-if place_meeting(x,y,obj_player) && !used && obj_player.use
+if place_meeting(x,y,obj_player) && !used
 {
 	used=false
 	switch unlock

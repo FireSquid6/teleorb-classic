@@ -16,6 +16,7 @@ if string_char_at(room_name,4)=="l"
 	//get colmap
 	var layid=layer_get_id("ts_collision")
 	global.collisionMap=layer_tilemap_get_id(layid)
+	layer_set_visible(layid,global.debug_mode)
 
 	//place walls
 	doPlatformChecking=false

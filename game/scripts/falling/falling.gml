@@ -12,7 +12,7 @@ function state_fall()
 	}
 	
 	//gravity
-	var grav=GRAVITY_SPD
+	var grav=gravitySpd
 	if lastState=playerStates.jumping && vspd<0 grav*=0.5
 	vspd+=grav*global.gravityDir
 	vspd=clamp(vspd,-25,terminalVelocity)

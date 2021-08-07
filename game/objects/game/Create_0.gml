@@ -1,3 +1,8 @@
+#region GLOBAL VARS
+global.debug_mode = false
+
+#endregion
+
 #region INDEX ROOMS
 var i=room_first
 var level,branch,rm
@@ -54,4 +59,4 @@ else
 }
 #endregion
 
-room_goto_next()
+if DEVELOPER_MODE room_goto_next() else room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)

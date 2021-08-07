@@ -1,0 +1,12 @@
+#macro accSpd 0.5
+#macro maxAcceleration 3
+#macro maxJumpFrames 15
+#macro jumpSpd 3
+#macro airFriction 0.5
+#macro maxAirFrctionCancelFrames 15
+#macro gravitySpd 0.4
+#macro maxCyoteFrames 5
+#macro terminalVelocity 7
+#macro wallrideGrv 0.05
+#macro wallrideJumpSpd -3
+#macro maxWalljumpBufferFrames 5

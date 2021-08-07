@@ -18,6 +18,7 @@
     {"id":{"name":"wallriding","path":"scripts/wallriding/wallriding.yy",},"order":3,},
     {"id":{"name":"ts_foreground","path":"tilesets/ts_foreground/ts_foreground.yy",},"order":1,},
     {"id":{"name":"CleanBatchEndReturnVertexBuffer","path":"scripts/CleanBatchEndReturnVertexBuffer/CleanBatchEndReturnVertexBuffer.yy",},"order":3,},
+    {"id":{"name":"fnt_monospace","path":"fonts/fnt_monospace/fnt_monospace.yy",},"order":1,},
     {"id":{"name":"scribble_glyph_set","path":"scripts/scribble_glyph_set/scribble_glyph_set.yy",},"order":7,},
     {"id":{"name":"scribble_font_add","path":"scripts/scribble_font_add/scribble_font_add.yy",},"order":0,},
     {"id":{"name":"CleanNgon","path":"scripts/CleanNgon/CleanNgon.yy",},"order":6,},
@@ -47,6 +48,7 @@
     {"id":{"name":"__CleanSystem","path":"scripts/__CleanSystem/__CleanSystem.yy",},"order":0,},
     {"id":{"name":"spr_player_walking","path":"sprites/spr_player_walking/spr_player_walking.yy",},"order":4,},
     {"id":{"name":"CleanBatchEndDraw","path":"scripts/CleanBatchEndDraw/CleanBatchEndDraw.yy",},"order":2,},
+    {"id":{"name":"movement_variables","path":"scripts/movement_variables/movement_variables.yy",},"order":4,},
     {"id":{"name":"CleanBatchDrawVertexBuffer","path":"scripts/CleanBatchDrawVertexBuffer/CleanBatchDrawVertexBuffer.yy",},"order":1,},
     {"id":{"name":"__scribble_generate_model","path":"scripts/__scribble_generate_model/__scribble_generate_model.yy",},"order":9,},
     {"id":{"name":"scribble_typewriter_add_character_delay","path":"scripts/scribble_typewriter_add_character_delay/scribble_typewriter_add_character_delay.yy",},"order":2,},
@@ -144,6 +146,7 @@
     {"id":{"name":"spr_killwall","path":"sprites/spr_killwall/spr_killwall.yy",},"order":2,},
     {"id":{"name":"scribble_font_bake_outline","path":"scripts/scribble_font_bake_outline/scribble_font_bake_outline.yy",},"order":0,},
     {"id":{"name":"__scribble_config_colours","path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},"order":0,},
+    {"id":{"name":"config_settings","path":"scripts/config_settings/config_settings.yy",},"order":4,},
     {"id":{"name":"__scribble_class_null_element","path":"scripts/__scribble_class_null_element/__scribble_class_null_element.yy",},"order":4,},
     {"id":{"name":"spr_player_midair","path":"sprites/spr_player_midair/spr_player_midair.yy",},"order":6,},
     {"id":{"name":"BulbStaticOccluder","path":"scripts/BulbStaticOccluder/BulbStaticOccluder.yy",},"order":8,},
@@ -161,7 +164,9 @@
   "tutorialPath": "",
   "configs": {
     "name": "Default",
-    "children": [],
+    "children": [
+      {"name":"dev_mode","children":[],},
+    ],
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
