@@ -1,0 +1,1 @@
+global.renderer.Draw(0,0)

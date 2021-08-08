@@ -94,5 +94,20 @@ if string_char_at(room_name,4)=="l"
 		instance_create_layer(xx,yy,"lay_player",obj_player)
 	}
 }
+#endregion
+
+#region LIGHTING
+global.renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
+global.tile_occluder=BulbOccluderFromTilemap(global.collisionMap,32,global.renderer)
+
+with obj_light
+{
+	light=new BulbLight(global.renderer,sprite,image,x,y)
+	light.xscale=xscale
+	light.yscale=yscale
+	light.angle=angle
+	light.blend=blend
+	light.alpha=alpha
+}
 
 #endregion
