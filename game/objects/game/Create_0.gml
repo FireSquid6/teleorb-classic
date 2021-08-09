@@ -3,6 +3,8 @@ global.debug_mode = false
 
 #endregion
 
+freeRenderer=false
+
 #region INDEX ROOMS
 var i=room_first
 var level,branch,rm

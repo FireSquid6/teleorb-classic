@@ -1,0 +1,7 @@
+sprite=sprite_index
+image=image_index
+xscale=image_xscale
+yscale=image_yscale
+angle=image_angle
+blend=image_blend
+alpha=image_alpha

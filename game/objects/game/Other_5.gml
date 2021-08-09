@@ -1,0 +1,1 @@
+if freeRenderer renderer.Free()

@@ -64,7 +64,7 @@ if string_char_at(room_name,4)=="l"
 				case 5: //nothing
 					break
 				default: //spikes
-					if tile>=6
+					if tile>=6 && tile!=21
 					{
 						inst=instance_create_layer(xx,yy,"lay_collision",obj_kill)
 						inst.image_index=tile-6
@@ -97,12 +97,19 @@ if string_char_at(room_name,4)=="l"
 #endregion
 
 #region LIGHTING
-global.renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
-global.tile_occluder=BulbOccluderFromTilemap(global.collisionMap,32,global.renderer)
+renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
+freeRenderer=true
 
-with obj_light
+//create occluders
+with obj_wall
 {
-	light=new BulbLight(global.renderer,sprite,image,x,y)
+	occluder=new BulbStaticOccluder(other.renderer)
+}
+
+//create lights
+with par_light
+{	
+	light=new BulbLight(other.renderer,sprite,image,x,y)
 	light.xscale=xscale
 	light.yscale=yscale
 	light.angle=angle
