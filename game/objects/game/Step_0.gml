@@ -10,7 +10,7 @@ if DEVELOPER_MODE
 	if keyboard_check_pressed(vk_enter)
 	{
 		global.debug_mode=!global.debug_mode
-		var layid=layer_get_id("ts_collision")
-		layer_set_visible(layid,global.debug_mode)
+		layer_set_visible("ts_collision",global.debug_mode)
+		layer_set_visible("lay_collision",global.debug_mode)
 	}
 }

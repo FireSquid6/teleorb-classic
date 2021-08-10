@@ -1,13 +1,21 @@
 #macro TILE_SIZE 16
 
+layer_set_visible("ts_collision",global.debug_mode)
+layer_set_visible("lay_collision",global.debug_mode)
+layer_set_visible("ts_lighting",false)
+layer_set_visible("lay_lighting",false)
+
 #region INDEX LEVEL
 var room_name=room_get_name(room)
+doPlatformChecking=false
+
 global.currentLevel=string_char_at(room_name,10)
 global.currentLevel=real(global.currentLevel)
 global.currentBranch=string_char_at(room_name,12)
 global.currentBranch=real(global.currentBranch)
 global.currentRoom=string_char_at(room_name,14)
 global.currentRoom=real(global.currentRoom)
+
 #endregion
 
 #region SETUP LEVEL
@@ -19,7 +27,6 @@ if string_char_at(room_name,4)=="l"
 	layer_set_visible(layid,global.debug_mode)
 
 	//place walls
-	doPlatformChecking=false
 	layid=layer_get_id("lay_collision")
 	if layer_exists(layid)
 	{
@@ -76,6 +83,36 @@ if string_char_at(room_name,4)=="l"
 			column++
 		}
 	}
+		
+	//place lights
+	layid=layer_get_id("ts_lighting")
+	global.lightMap=layer_tilemap_get_id(layid)
+	if layer_exists(layid)
+	{
+		width=room_width div TILE_SIZE
+		height=room_height div TILE_SIZE
+	
+		row=0
+		column=0
+	
+		while row!=height
+		{
+			if column>=width
+			{
+				row++
+				column=0
+			}
+		
+			xx=column*TILE_SIZE
+			yy=row*TILE_SIZE
+		
+			tile=tilemap_get_at_pixel(global.lightMap,xx,yy)
+		
+			if tile==1 instance_create_layer(xx,yy,layid,obj_lowLight)
+		
+			column++
+		}
+	}
 
 	//place player
 	if instance_exists(obj_playerSpawn)
@@ -99,6 +136,18 @@ if string_char_at(room_name,4)=="l"
 #region LIGHTING
 renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
 freeRenderer=true
+
+//set lowlight vars
+with obj_lowLight
+{
+	sprite=sprite_index
+	image=image_index
+	xscale=image_xscale
+	yscale=image_yscale
+	angle=image_angle
+	blend=image_blend
+	alpha=image_alpha
+}
 
 //create occluders
 with obj_wall
