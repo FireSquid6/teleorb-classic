@@ -1,0 +1,16 @@
+beginning of game
+- for each level do the following:
+	- draw the tilemap to a surface
+	- fade out the sides of the surface
+	- save the surface to a buffer
+	- write the buffer in a file
+		- file name format = level
+	- add the filename to the ds list buffer_filenames_list
+	
+level loading
+- load the surface from the filename
+- create a sprite from the surface
+- create a light from the resulting surface
+
+end of the game
+- delete all files in the buffer_filenames_list

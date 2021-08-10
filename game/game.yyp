@@ -34,6 +34,7 @@
     {"id":{"name":"rm_level_1_1_1_test","path":"rooms/rm_level_1_1_1_test/rm_level_1_1_1_test.yy",},"order":0,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":4,},
     {"id":{"name":"spr_lightIcon","path":"sprites/spr_lightIcon/spr_lightIcon.yy",},"order":1,},
+    {"id":{"name":"lighting_todo","path":"notes/lighting_todo/lighting_todo.yy",},"order":5,},
     {"id":{"name":"__BulbConfig","path":"scripts/__BulbConfig/__BulbConfig.yy",},"order":2,},
     {"id":{"name":"rm_levelParent","path":"rooms/rm_levelParent/rm_levelParent.yy",},"order":1,},
     {"id":{"name":"secminhoufram","path":"scripts/secminhoufram/secminhoufram.yy",},"order":3,},

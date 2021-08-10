@@ -87,6 +87,7 @@ if string_char_at(room_name,4)=="l"
 	//place lights
 	layid=layer_get_id("ts_lighting")
 	global.lightMap=layer_tilemap_get_id(layid)
+	var inst,tileleft,tileright,tiletop,tilebottom
 	if layer_exists(layid)
 	{
 		width=room_width div TILE_SIZE
@@ -107,8 +108,13 @@ if string_char_at(room_name,4)=="l"
 			yy=row*TILE_SIZE
 		
 			tile=tilemap_get_at_pixel(global.lightMap,xx,yy)
-		
-			if tile==1 instance_create_layer(xx,yy,layid,obj_lowLight)
+			
+			//check if tile is empty
+			if tile==1 
+			{
+				//create the instance
+				inst=instance_create_layer(xx,yy,layid,obj_lowLight)
+			}
 		
 			column++
 		}
@@ -137,7 +143,6 @@ if string_char_at(room_name,4)=="l"
 renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
 freeRenderer=true
 
-//set lowlight vars
 with obj_lowLight
 {
 	sprite=sprite_index
@@ -147,6 +152,7 @@ with obj_lowLight
 	angle=image_angle
 	blend=image_blend
 	alpha=image_alpha
+	image_speed=0
 }
 
 //create occluders
