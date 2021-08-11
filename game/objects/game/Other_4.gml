@@ -87,42 +87,6 @@ if string_char_at(room_name,4)=="l"
 			column++
 		}
 	}
-		
-	//place lights
-	layid=layer_get_id("ts_lighting")
-	global.lightMap=layer_tilemap_get_id(layid)
-	var inst,tileleft,tileright,tiletop,tilebottom
-	if layer_exists(layid)
-	{
-		width=room_width div TILE_SIZE
-		height=room_height div TILE_SIZE
-	
-		row=0
-		column=0
-	
-		while row!=height
-		{
-			if column>=width
-			{
-				row++
-				column=0
-			}
-		
-			xx=column*TILE_SIZE
-			yy=row*TILE_SIZE
-		
-			tile=tilemap_get_at_pixel(global.lightMap,xx,yy)
-			
-			//check if tile is empty
-			if tile==1 
-			{
-				//create the instance
-				inst=instance_create_layer(xx,yy,layid,obj_lowLight)
-			}
-		
-			column++
-		}
-	}
 
 	//place player
 	if instance_exists(obj_playerSpawn)
@@ -147,6 +111,23 @@ if string_char_at(room_name,4)=="l"
 renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
 freeRenderer=true
 
+//get surface
+var fname="lightbuff_"+string(global.currentLevel)+"_"+string(global.currentBranch)+"_"+string(global.currentRoom)+".cbt"
+var buff=buffer_load(fname)
+var surf=surface_create(room_width,room_height)
+buffer_set_surface(buff,surf,0)
+
+//create sprite
+roomSprite=sprite_add_from_surface(spr_)
+surface_free(surf)
+
+//create occluders
+with obj_wall
+{
+	occluder=new BulbStaticOccluder(other.renderer)
+}
+
+//create lights
 with obj_lowLight
 {
 	sprite=sprite_index
@@ -159,13 +140,6 @@ with obj_lowLight
 	image_speed=0
 }
 
-//create occluders
-with obj_wall
-{
-	occluder=new BulbStaticOccluder(other.renderer)
-}
-
-//create lights
 with par_light
 {	
 	light=new BulbLight(other.renderer,sprite,image,x,y)

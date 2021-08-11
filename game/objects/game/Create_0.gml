@@ -13,8 +13,6 @@ freeRenderer=false
 
 
 #region INDEX ROOMS
-
-
 var i=room_first
 var level,branch,rm,tilemap,layid,surf,buff,fname,grid
 global.lightbuff_name_list=ds_list_create()
@@ -47,6 +45,7 @@ while room_exists(i)
 		//draw the tilemap
 		surface_set_target(surf)
 		draw_tilemap(tilemap,0,0)
+		surface_reset_target()
 		
 		//write lighting to file
 		fname="lightbuff_"+string(level)+"_"+string(branch)+"_"+string(rm)+".cbt"
