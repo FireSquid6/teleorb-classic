@@ -36,7 +36,6 @@ if file_exists("file.savedgame")
 	//get struct
 	var buff=buffer_load("file.savedgame")
 	var str=buffer_read(buff,buffer_string)
-	str=base64_decode(str)
 	var struct=json_parse(str)
 	
 	//load data
