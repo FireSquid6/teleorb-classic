@@ -12,6 +12,7 @@ var savedata =
 
 //translate the array to json
 var saveString=json_stringify(savedata)
+base64_encode(saveString)
 
 //store the array in a buffer
 var saveBuffer=buffer_create(32,buffer_grow,1)
