@@ -7,14 +7,18 @@ layer_set_visible("lay_lighting",false)
 
 #region INDEX LEVEL
 var room_name=room_get_name(room)
+var digits=string_digits(room_name)
 doPlatformChecking=false
 
-global.currentLevel=string_char_at(room_name,10)
-global.currentLevel=real(global.currentLevel)
-global.currentBranch=string_char_at(room_name,12)
-global.currentBranch=real(global.currentBranch)
-global.currentRoom=string_char_at(room_name,14)
-global.currentRoom=real(global.currentRoom)
+if digits==3
+{
+	global.currentLevel=string_char_at(room_name,10)
+	global.currentLevel=real(global.currentLevel)
+	global.currentBranch=string_char_at(room_name,12)
+	global.currentBranch=real(global.currentBranch)
+	global.currentRoom=string_char_at(room_name,14)
+	global.currentRoom=real(global.currentRoom)
+}
 
 #endregion
 

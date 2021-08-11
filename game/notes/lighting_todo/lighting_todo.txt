@@ -4,7 +4,8 @@ beginning of game
 	- fade out the sides of the surface
 	- save the surface to a buffer
 	- write the buffer in a file
-		- file name format = level
+		- file name format = lightbuff_[level]_[branch]_[room].cbt
+		- cbt stands for compressed buffer text
 	- add the filename to the ds list buffer_filenames_list
 	
 level loading

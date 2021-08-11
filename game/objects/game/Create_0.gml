@@ -1,3 +1,9 @@
+//draw loading
+draw_set_color(c_black)
+draw_rectangle(0,0,room_width,room_height,false)
+draw_set_color(c_white)
+draw_text(0,0,"NOW LOADING (this shouldn't take long, if it is something is broken)")
+
 #region GLOBAL VARS
 global.debug_mode = false
 
@@ -5,9 +11,13 @@ global.debug_mode = false
 
 freeRenderer=false
 
+
 #region INDEX ROOMS
+
+
 var i=room_first
-var level,branch,rm
+var level,branch,rm,tilemap,layid,surf,buff,fname,grid
+global.lightbuff_name_list=ds_list_create()
 while room_exists(i)
 {
 	var room_name=room_get_name(i)
@@ -15,6 +25,7 @@ while room_exists(i)
 	
 	if string_length(digits)==3
 	{
+		//index the room
 		level=string_char_at(digits,1)
 		level=real(level)
 		branch=string_char_at(digits,2)
@@ -22,6 +33,29 @@ while room_exists(i)
 		rm=string_char_at(digits,3)
 		rm=real(rm)
 		global.room_array[level][branch][rm]=i
+		
+		//setup lighting
+		room_goto(i)
+		grid=ds_grid_create(room_width div TILE_SIZE, room_height div TILE_SIZE)
+		surf=surface_create(room_width,room_height)
+		buff=buffer_create(1,buffer_grow,1)
+		layid=layer_get_id("ts_lighting")
+		tilemap=layer_tilemap_get_id(layid)
+		
+		//decide which tiles need fading
+		
+		//draw the tilemap
+		surface_set_target(surf)
+		draw_tilemap(tilemap,0,0)
+		
+		//write lighting to file
+		fname="lightbuff_"+string(level)+"_"+string(branch)+"_"+string(rm)+".cbt"
+		buffer_get_surface(buff,surf,0)
+		buffer_save(buff,fname)
+		
+		//add the fname to a list
+		ds_list_add(global.lightbuff_name_list,fname)
+		
 	}
 	
 	i=room_next(i)

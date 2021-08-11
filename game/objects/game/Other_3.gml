@@ -19,4 +19,3 @@ buffer_write(saveBuffer,buffer_string,saveString)
 
 //save the buffer
 buffer_save(saveBuffer,"file.savedgame")
-surface_save()
