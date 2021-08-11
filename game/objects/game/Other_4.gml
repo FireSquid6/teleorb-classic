@@ -10,6 +10,11 @@ global.currentRoom=string_char_at(room_name,14)
 global.currentRoom=real(global.currentRoom)
 #endregion
 
+var layid=layer_get_id("ts_collision")
+layer_set_visible(layid,global.debug_mode)
+layid=layer_get_id("lay_collision")
+layer_set_visible(layid,global.debug_mode)
+
 #region SETUP LEVEL
 if string_char_at(room_name,4)=="l"
 {	
@@ -94,27 +99,4 @@ if string_char_at(room_name,4)=="l"
 		instance_create_layer(xx,yy,"lay_player",obj_player)
 	}
 }
-#endregion
-
-#region LIGHTING
-renderer=new BulbRenderer(c_black,BULB_MODE.HARD_BM_ADD_SELFLIGHTING,true)
-freeRenderer=true
-
-//create occluders
-with obj_wall
-{
-	occluder=new BulbStaticOccluder(other.renderer)
-}
-
-//create lights
-with par_light
-{	
-	light=new BulbLight(other.renderer,sprite,image,x,y)
-	light.xscale=xscale
-	light.yscale=yscale
-	light.angle=angle
-	light.blend=blend
-	light.alpha=alpha
-}
-
 #endregion

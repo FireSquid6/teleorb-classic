@@ -12,5 +12,7 @@ if DEVELOPER_MODE
 		global.debug_mode=!global.debug_mode
 		var layid=layer_get_id("ts_collision")
 		layer_set_visible(layid,global.debug_mode)
+		layid=layer_get_id("lay_collision")
+		layer_set_visible(layid,global.debug_mode)
 	}
 }

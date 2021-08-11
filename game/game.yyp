@@ -245,6 +245,7 @@
     {"folderPath":"folders/Teleorb/Assets/Tilesets/Background.yy","order":4,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Teleorb/Assets/Lighting.yy","order":8,"resourceVersion":"1.0","name":"Lighting","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Teleorb/Data/Lighting.yy","order":4,"resourceVersion":"1.0","name":"Lighting","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Teleorb/Assets/Tilesets/Transition.yy","order":5,"resourceVersion":"1.0","name":"Transition","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
