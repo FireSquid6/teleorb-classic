@@ -118,7 +118,9 @@ var surf=surface_create(room_width,room_height)
 buffer_set_surface(buff,surf,0)
 
 //create sprite
-roomSprite=sprite_add_from_surface(spr_)
+//this probably is causing a memory leak
+global.lightingSprite=sprite_create_from_surface(surf,0,0,room_width,room_height,false,false,0,0)
+light=new BulbLight(renderer,global.lightingSprite,0,0,0)
 surface_free(surf)
 
 //create occluders

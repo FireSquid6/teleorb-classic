@@ -6,6 +6,7 @@ draw_text(0,0,"NOW LOADING (this shouldn't take long, if it is something is brok
 
 #region GLOBAL VARS
 global.debug_mode = false
+global.lightingSprite=-1
 
 #endregion
 
@@ -14,7 +15,7 @@ freeRenderer=false
 
 #region INDEX ROOMS
 var i=room_first
-var level,branch,rm,tilemap,layid,surf,buff,fname,grid
+var level,branch,rm,tilemap,layid,surf,buff,fname
 global.lightbuff_name_list=ds_list_create()
 while room_exists(i)
 {
@@ -34,7 +35,6 @@ while room_exists(i)
 		
 		//setup lighting
 		room_goto(i)
-		grid=ds_grid_create(room_width div TILE_SIZE, room_height div TILE_SIZE)
 		surf=surface_create(room_width,room_height)
 		buff=buffer_create(1,buffer_grow,1)
 		layid=layer_get_id("ts_lighting")
@@ -44,8 +44,11 @@ while room_exists(i)
 		
 		//draw the tilemap
 		surface_set_target(surf)
-		draw_tilemap(tilemap,0,0)
+		draw_sprite(spr_lowLight,0,0,0)
 		surface_reset_target()
+		
+		draw_surface(surf,0,0)
+		surface_save(surf,"gayballs.png")
 		
 		//write lighting to file
 		fname="lightbuff_"+string(level)+"_"+string(branch)+"_"+string(rm)+".cbt"
@@ -54,6 +57,9 @@ while room_exists(i)
 		
 		//add the fname to a list
 		ds_list_add(global.lightbuff_name_list,fname)
+		
+		//free the surface
+		surface_free(surf)
 		
 	}
 	
