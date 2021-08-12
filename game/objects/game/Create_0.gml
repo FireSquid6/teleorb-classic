@@ -31,7 +31,7 @@ while room_exists(i)
 
 #region LOAD SAVE
 //if a file exists, load the data
-if file_exists("file.savedgame")
+if file_exists("file.savedgame") && !DEVELOPER_MODE
 {
 	//get struct
 	var buff=buffer_load("file.savedgame")
@@ -61,4 +61,4 @@ else
 }
 #endregion
 
-if DEVELOPER_MODE room_goto_next() else room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)
+room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)
