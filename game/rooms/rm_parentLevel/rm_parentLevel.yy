@@ -170,7 +170,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_3011026","path":"rooms/rm_level_1_1_2/rm_level_1_1_2.yy",},
+    {"name":"inst_3011026","path":"rooms/rm_parentLevel/rm_parentLevel.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -198,7 +198,7 @@
     "path": "folders/Teleorb/Levels/Meta.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rm_level_1_1_2",
+  "name": "rm_parentLevel",
   "tags": [],
   "resourceType": "GMRoom",
 }

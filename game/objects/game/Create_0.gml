@@ -54,7 +54,7 @@ else
 	global.spawnpoint=0
 	global.slideUnlocked=false
 	global.dashUnlocked=false
-	global.orbUnlocked=false
+	global.orbUnlocked=true
 	global.currentBranch=1
 	global.currentLevel=1
 	global.currentRoom=1
