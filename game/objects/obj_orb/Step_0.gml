@@ -11,7 +11,6 @@ if place_meeting(x+hspd,y,obj_wall)
 }
 
 x+=hspd
-x=floor(x)
 
 //y collision
 if place_meeting(x,y+vspd,obj_wall)
@@ -24,7 +23,6 @@ if place_meeting(x,y+vspd,obj_wall)
 }
 
 y+=vspd
-y=floor(y)
 
 //destroy
 if foundcol instance_destroy(id)
