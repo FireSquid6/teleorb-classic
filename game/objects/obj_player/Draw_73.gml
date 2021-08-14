@@ -19,3 +19,17 @@ if global.debug_mode
 	draw_text(x,y-42,"VSPD: "+vspd_string)
 	draw_text(x,y-52,"STATE: "+string_format(state,2,2))
 }
+
+//draw where the orb will end up
+var xx=x
+var yy=y
+var dir=point_direction(x,y,mouse_x,mouse_y)
+while (!collision_point(xx,yy,obj_wall,true,false)) || (xx<0 || xx>room_width) || (yy<0 || yy>room_height)
+{
+	xx+=lengthdir_x(1,dir)
+	yy+=lengthdir_y(1,dir)	
+}
+
+draw_set_color(c_red)
+draw_set_alpha(0.4)
+draw_circle(xx,yy,4,false)

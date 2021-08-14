@@ -44,7 +44,7 @@ if file_exists("file.savedgame") && !DEVELOPER_MODE
 	global.dashUnlocked=struct.dashUnlocked
 	global.orbUnlocked=struct.orbUnlocked
 	global.currentBranch=struct.currentBranch
-	global.currentLevel=struct.currentLevelee
+	global.currentLevel=struct.currentLevel
 	global.currentRoom=struct.currentRoom
 }
 //if no file exists, start a fesh file
@@ -57,7 +57,7 @@ else
 	global.orbUnlocked=true
 	global.currentBranch=1
 	global.currentLevel=1
-	global.currentRoom=3
+	global.currentRoom=1
 }
 #endregion
 

@@ -7,8 +7,6 @@ enum playerStates
 }
 
 #region variables
-lastImage=-1
-
 //keys
 orb=false
 dash=false
