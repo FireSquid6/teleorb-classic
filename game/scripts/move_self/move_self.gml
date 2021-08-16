@@ -18,7 +18,7 @@ function move_self()
 	vspd-=vspd_frac
 	
 	//check if colliding with a killwall
-	if place_meeting(x,y,obj_kill) room_restart()
+	if place_meeting(x,y,obj_kill) && state!=playerStates.dying moveto_die()
 	
 	//horizontal collision
 	if place_meeting(x+hspd,y,obj_wall) && !place_meeting(x+hspd,y,obj_orbwall)

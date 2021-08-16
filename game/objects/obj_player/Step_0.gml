@@ -30,6 +30,12 @@ switch state
 	case playerStates.falling:
 		state_fall()
 		break
+	case playerStates.teleporting:
+		state_teleport()
+		break
+	case playerStates.dying:
+		state_die()
+		break
 }
 
 //move self

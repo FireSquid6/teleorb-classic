@@ -30,6 +30,6 @@ while (!collision_point(xx,yy,obj_wall,true,false)) || (xx<0 || xx>room_width) |
 	yy+=lengthdir_y(1,dir)	
 }
 
-draw_set_color(c_red)
+if canOrb draw_set_color(c_green) else draw_set_color(c_red)
 draw_set_alpha(0.4)
 draw_circle(xx,yy,4,false)

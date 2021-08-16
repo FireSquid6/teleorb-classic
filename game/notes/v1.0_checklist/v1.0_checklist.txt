@@ -1,0 +1,10 @@
+- SFX
+	- Jump - found
+	- Walljump - found
+	- Orb throw - found
+	- Orb hit - found
+	- Dead - found
+	- Wallslide
+	- Music - found
+- Particles
+- Text popups

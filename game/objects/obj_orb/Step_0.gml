@@ -1,87 +1,87 @@
 var foundcol=false
-var bbox_y,bbox_x,xmove,ymove,bbox
+var bbox_y,bbox_x,xmove,ymove,s,bbox_x_name,bbox_y_name
 
-//x collision
-if place_meeting(x+hspd,y,obj_wall)
-{
-	var s=sign(hspd)
-	
+var hcol=place_meeting(x+hspd,y,obj_wall)
+var vcol=place_meeting(x,y+vspd,obj_wall)
+
+//figure out if there is a collision
+if hcol || vcol
+{	
 	//move
-	while !place_meeting(x+s,y,obj_wall) {x+=s}
+	if hcol
+	{
+		s=sign(hspd)
+		while !place_meeting(x+s,y,obj_wall) {x+=s}
+	}
 	
-	//move player to position
-	obj_player.y=floor(y)
+	if vcol
+	{
+		s=sign(vspd)
+		while !place_meeting(x,y+s,obj_wall) {y+=s}
+	}
 	
-	//move player out of position
+	//set to collision found
+	foundcol=true
+}
+if foundcol
+{
 	with obj_player
 	{
-		//figure out which bbox is in a wall
-		if collision_line(bbox_left,bbox_top,bbox_left,bbox_bottom,obj_wall,false,true) 
-		{
-			bbox_x="bbox_left"
-			xmove=1
-		}
-		else 
-		{
-			bbox_x="bbox_right"
-			xmove=-1
-		}
+		//move player
+		moveto_teleport()
+		x=other.x
+		y=other.y
 		
-		//move out
-		bbox=variable_instance_get(id,bbox_x)
-		while collision_line(bbox,bbox_top,bbox,bbox_bottom,obj_wall,false,true) 
+		//figure out which bboxes are in collision
+		if hcol
 		{
-			bbox=variable_instance_get(id,bbox_x)
-			x+=xmove
+			if collision_line(bbox_left,bbox_top,bbox_left,bbox_bottom,obj_wall,false,true)
+			{
+				bbox_x_name="bbox_left"
+				xmove=1
+			}
+			else
+			{
+				bbox_x_name="bbox_right"
+				xmove=-1
+			}
+		}
+		if vcol
+		{
+			if collision_line(bbox_left,bbox_top,bbox_right,bbox_top,obj_wall,false,true)
+			{
+				bbox_y_name="bbox_top"
+				ymove=1
+			}
+			else
+			{
+				bbox_y_name="bbox_bottom"
+				ymove=-1
+			}
+		}
+	
+		//move player out of wall
+		while place_meeting(x,y,obj_wall)
+		{
+			if hcol bbox_x=variable_instance_get(id,bbox_x_name)
+			if vcol bbox_y=variable_instance_get(id,bbox_y_name)
+			
+			if hcol && collision_line(bbox_x,bbox_top,bbox_x,bbox_bottom,obj_wall,false,true)
+			{
+				x+=xmove
+			}
+			
+			if vcol && collision_line(bbox_right,bbox_y,bbox_left,bbox_y,obj_wall,false,true)
+			{
+				y+=ymove
+			}
 		}
 	}
 	
-	//set to collision
-	foundcol=true
+	//kill self
+	instance_destroy()
 }
 
+//move self
 x+=hspd
-
-//y collision
-if place_meeting(x,y+vspd,obj_wall)
-{
-	var s=sign(vspd)
-	
-	//move
-	while !place_meeting(x,y+s,obj_wall) {y+=s}
-	
-	//move player to position
-	obj_player.y=floor(y)
-	
-	//move player out of position
-	with obj_player
-	{
-		//figure out which bbox is in a wall
-		if collision_line(bbox_left,bbox_top,bbox_right,bbox_top,obj_wall,false,true) 
-		{
-			bbox_y="bbox_top"
-			ymove=1
-		}
-		else 
-		{
-			bbox_y="bbox_bottom"
-			ymove=-1
-		}
-		
-		//move out
-		bbox=variable_instance_get(id,bbox_y)
-		while collision_line(bbox_left,bbox,bbox_right,bbox,obj_wall,false,true) 
-		{
-			bbox=variable_instance_get(id,bbox_y)
-			y+=ymove
-		}
-	}
-	
-	//set to collision
-	foundcol=true
-}
-
 y+=vspd
-
-//destroy
-if foundcol instance_destroy(id)

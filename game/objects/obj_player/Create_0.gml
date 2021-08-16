@@ -3,7 +3,9 @@ enum playerStates
 	moving,
 	jumping,
 	falling,
-	wallriding
+	wallriding,
+	teleporting,
+	dying
 }
 
 #region variables
