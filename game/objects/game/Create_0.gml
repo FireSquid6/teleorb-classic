@@ -1,9 +1,13 @@
 #region GLOBAL VARS
 global.debug_mode = false
+lastLevel=0
+lastRoom=0
+lastBranch=0
 
 #endregion
 
-freeRenderer=false
+//play sound
+audio_play_sound(mus_spacetrivia,25,true)
 
 #region INDEX ROOMS
 var i=room_first

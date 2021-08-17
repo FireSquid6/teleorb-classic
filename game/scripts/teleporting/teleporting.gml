@@ -11,9 +11,7 @@ function state_teleport()
 	}
 }
 function moveto_teleport()
-{
-	audio_play_sound(sfx_orb_throw,50,false)
-	
+{	
 	//state
 	state=playerStates.teleporting
 	

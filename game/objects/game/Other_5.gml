@@ -1,0 +1,3 @@
+lastLevel=global.currentLevel
+lastBranch=global.currentBranch
+lastRoom=global.currentRoom

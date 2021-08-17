@@ -2,6 +2,7 @@
 
 #region INDEX LEVEL
 var room_name=room_get_name(room)
+
 global.currentLevel=string_char_at(room_name,10)
 global.currentLevel=real(global.currentLevel)
 global.currentBranch=string_char_at(room_name,12)
@@ -18,6 +19,21 @@ layer_set_visible(layid,global.debug_mode)
 #region SETUP LEVEL
 if string_char_at(room_name,4)=="l"
 {	
+	if lastLevel!=global.currentLevel
+	{
+		audio_stop_all()
+		audio_play_sound(amb_cave,15,true)
+		switch global.currentLevel
+		{
+			case 1:
+				audio_play_sound(mus_astrorace,25,true)
+				break
+			case 2:
+				audio_play_sound(mus_spacetrivia,25,true)
+				break
+		}
+	}
+	
 	//get colmap
 	var layid=layer_get_id("ts_collision")
 	global.collisionMap=layer_tilemap_get_id(layid)
