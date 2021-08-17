@@ -28,6 +28,7 @@ if foundcol
 	with obj_player
 	{
 		//move player
+		audio_play_sound(sfx_orb_hit,50,false)
 		moveto_teleport()
 		x=other.x
 		y=other.y

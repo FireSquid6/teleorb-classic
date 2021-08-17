@@ -19,6 +19,7 @@ function state_jump()
 
 function moveto_jump()
 {
+	audio_play_sound(sfx_jump,50,false)
 	image_index=0
 	image_speed=0
 	sprite_index=spr_player_midair

@@ -35,6 +35,7 @@ function set_audio_volumes()
 				break
 		}
 		audio_sound_gain(i,volume,0)
+		i++
 	}
 }
 
