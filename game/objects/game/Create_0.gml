@@ -67,3 +67,4 @@ else
 #endregion
 
 room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)
+if DEVELOPER_MODE room=room_next(room_first)

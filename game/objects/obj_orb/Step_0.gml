@@ -1,8 +1,8 @@
 var foundcol=false
 var bbox_y,bbox_x,xmove,ymove,s,bbox_x_name,bbox_y_name
 
-var hcol=place_meeting(x+hspd,y,obj_wall)
-var vcol=place_meeting(x,y+vspd,obj_wall)
+var hcol=place_meeting(x+hspd,y,obj_orbwall)
+var vcol=place_meeting(x,y+vspd,obj_orbwall)
 
 //figure out if there is a collision
 if hcol || vcol
@@ -11,13 +11,13 @@ if hcol || vcol
 	if hcol
 	{
 		s=sign(hspd)
-		while !place_meeting(x+s,y,obj_wall) {x+=s}
+		while !place_meeting(x+s,y,obj_orbwall) {x+=s}
 	}
 	
 	if vcol
 	{
 		s=sign(vspd)
-		while !place_meeting(x,y+s,obj_wall) {y+=s}
+		while !place_meeting(x,y+s,obj_orbwall) {y+=s}
 	}
 	
 	//set to collision found
@@ -36,7 +36,7 @@ if foundcol
 		//figure out which bboxes are in collision
 		if hcol
 		{
-			if collision_line(bbox_left,bbox_top,bbox_left,bbox_bottom,obj_wall,false,true)
+			if collision_line(bbox_left,bbox_top,bbox_left,bbox_bottom,obj_orbwall,false,true)
 			{
 				bbox_x_name="bbox_left"
 				xmove=1
@@ -49,7 +49,7 @@ if foundcol
 		}
 		if vcol
 		{
-			if collision_line(bbox_left,bbox_top,bbox_right,bbox_top,obj_wall,false,true)
+			if collision_line(bbox_left,bbox_top,bbox_right,bbox_top,obj_orbwall,false,true)
 			{
 				bbox_y_name="bbox_top"
 				ymove=1
@@ -62,17 +62,17 @@ if foundcol
 		}
 	
 		//move player out of wall
-		while place_meeting(x,y,obj_wall)
+		while place_meeting(x,y,obj_orbwall)
 		{
 			if hcol bbox_x=variable_instance_get(id,bbox_x_name)
 			if vcol bbox_y=variable_instance_get(id,bbox_y_name)
 			
-			if hcol && collision_line(bbox_x,bbox_top,bbox_x,bbox_bottom,obj_wall,false,true)
+			if hcol && collision_line(bbox_x,bbox_top,bbox_x,bbox_bottom,obj_orbwall,false,true)
 			{
 				x+=xmove
 			}
 			
-			if vcol && collision_line(bbox_right,bbox_y,bbox_left,bbox_y,obj_wall,false,true)
+			if vcol && collision_line(bbox_right,bbox_y,bbox_left,bbox_y,obj_orbwall,false,true)
 			{
 				y+=ymove
 			}

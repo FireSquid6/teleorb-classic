@@ -21,7 +21,7 @@ function move_self()
 	if place_meeting(x,y,obj_kill) && state!=playerStates.dying moveto_die()
 	
 	//horizontal collision
-	if place_meeting(x+hspd,y,obj_wall) && !place_meeting(x+hspd,y,obj_orbwall)
+	if place_meeting(x+hspd,y,obj_wall)
 	{
 		_id=instance_place(x+hspd,y,obj_wall)
 		var i=sign(hspd)
@@ -36,7 +36,7 @@ function move_self()
 	x+=hspd
 
 	//collision check y
-	if place_meeting(x,y+vspd,obj_wall) && !place_meeting(x,y,obj_orbwall)
+	if place_meeting(x,y+vspd,obj_wall)
 	{
 		var i=sign(vspd)
 		while !place_meeting(x,y+i,obj_wall) {y+=i}

@@ -24,7 +24,8 @@ if global.debug_mode
 var xx=x
 var yy=y
 var dir=point_direction(x,y,mouse_x,mouse_y)
-while (!collision_point(xx,yy,obj_wall,true,false)) || (xx<0 || xx>room_width) || (yy<0 || yy>room_height)
+mask_index=spr_orb
+while (!place_meeting(xx,yy,obj_orbwall)) || (xx<0 || xx>room_width) || (yy<0 || yy>room_height)
 {
 	xx+=lengthdir_x(1,dir)
 	yy+=lengthdir_y(1,dir)	
@@ -33,3 +34,4 @@ while (!collision_point(xx,yy,obj_wall,true,false)) || (xx<0 || xx>room_width) |
 if canOrb draw_set_color(c_green) else draw_set_color(c_red)
 draw_set_alpha(0.4)
 draw_circle(xx,yy,4,false)
+mask_index=spr_player_idle
