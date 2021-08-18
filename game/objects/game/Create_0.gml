@@ -3,6 +3,7 @@ global.debug_mode = false
 lastLevel=0
 lastRoom=0
 lastBranch=0
+muted=false
 
 #endregion
 

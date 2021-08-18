@@ -16,3 +16,11 @@ if DEVELOPER_MODE
 		layer_set_visible(layid,global.debug_mode)
 	}
 }
+
+//volume
+if keyboard_check_pressed(ord("M"))
+{
+	muted=!muted
+	if muted global.master_volume=0 else global.master_volume=1
+	set_audio_volumes()
+}
