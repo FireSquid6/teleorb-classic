@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Lighting",
-    "path": "folders/Teleorb/Assets/Lighting.yy",
+    "path": "folders/Teleorb/Assets/Sprites/Lighting.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_lowLight",

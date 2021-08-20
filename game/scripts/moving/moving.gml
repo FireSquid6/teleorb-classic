@@ -32,6 +32,17 @@ function state_move()
 			//accelerate
 			hspd += (accSpd * move)
 		}
+		//check if hspd should be rounded up to max acceleration
+		else if abs(hspd)>=maxAcceleration-accSpd && abs(hspd)<=maxAcceleration
+		{
+			hspd = maxAcceleration * sign(hspd)
+		}
+		
+		//decelerate if the player is going really fast
+		if abs(hspd)>maxAcceleration
+		{
+			hspd -= accSpd * sign(hspd)
+		}
 	}
 	//if the player isn't holding down the move keys, deaccelerate
 	else if move==0

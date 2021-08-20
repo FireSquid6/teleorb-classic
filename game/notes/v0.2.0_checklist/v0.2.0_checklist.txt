@@ -1,10 +1,6 @@
-- Movement explanation
-	- Diagram of WASD with A and D highlighted
-	- Diagram of space showing an arrow to jump
-	- Diagram of a mouse with the left button highlighted
 - Orbwall levels
 	- First room just has the player walk through it
 	- Second room has the player throw an orb through it
-- Orbwall autotiling
+- Orbwall "slime" sounds
 - Pause menu
 - Options menu

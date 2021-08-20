@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gui",
-    "path": "folders/Teleorb/Assets/Gui.yy",
+    "path": "folders/Teleorb/Assets/Sprites/Gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_box",

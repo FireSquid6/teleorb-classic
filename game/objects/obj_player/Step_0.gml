@@ -15,6 +15,10 @@ if move!=0 image_xscale=move
 //orb
 throw_orb()
 
+//add fractions
+hspd+=hspd_frac
+vspd+=vspd_frac
+
 //state
 switch state
 {

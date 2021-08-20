@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gizmos",
-    "path": "folders/Teleorb/Assets/Gizmos.yy",
+    "path": "folders/Teleorb/Assets/Sprites/Gizmos.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_room_transition",

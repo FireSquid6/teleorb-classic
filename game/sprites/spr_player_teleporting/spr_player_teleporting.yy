@@ -86,7 +86,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Player",
-    "path": "folders/Teleorb/Assets/Player.yy",
+    "path": "folders/Teleorb/Assets/Sprites/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_player_teleporting",

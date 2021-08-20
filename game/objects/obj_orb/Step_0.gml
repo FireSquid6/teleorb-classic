@@ -29,6 +29,8 @@ if foundcol
 	{
 		//move player
 		audio_play_sound(sfx_orb_hit,50,false)
+		hspd+=other.hspd*0.5
+		vspd+=other.vspd*0.5
 		moveto_teleport()
 		x=other.x
 		y=other.y
