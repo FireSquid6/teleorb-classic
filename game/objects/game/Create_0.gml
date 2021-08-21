@@ -3,6 +3,7 @@ global.debug_mode = false
 lastLevel=0
 lastRoom=0
 lastBranch=0
+paused=false
 muted=DEVELOPER_MODE
 if muted global.master_volume=0 else global.master_volume=1
 set_audio_volumes()
