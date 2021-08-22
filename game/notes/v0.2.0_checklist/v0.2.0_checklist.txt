@@ -3,4 +3,9 @@
 	- Second room has the player throw an orb through it
 - Orbwall "slime" sounds
 - Pause menu
-- Options menu
+	- Restart Level
+	- Return to Hub
+	- Exit Game
+	
+	- Disable Music
+	- Disable Sound

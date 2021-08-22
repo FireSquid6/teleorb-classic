@@ -8,6 +8,15 @@ muted=DEVELOPER_MODE
 if muted global.master_volume=0 else global.master_volume=1
 set_audio_volumes()
 
+//pause ui setup
+canvas=new modui_canvas(display_mouse_get_x(),display_mouse_get_y(),mouse_check_button_pressed(mb_left))
+
+//music enabler
+var guiscale=4
+var element=new modui_button_sprite(spr_music,0,0,room_width+(sprite_get_height(spr_music)*guiscale))
+
+
+
 #endregion
 
 //play sound

@@ -31,6 +31,11 @@ if keyboard_check_pressed(vk_escape)
 	}
 }
 
+if paused
+{
+	canvas.update()
+}
+
 //volume
 if keyboard_check_pressed(ord("M"))
 {
