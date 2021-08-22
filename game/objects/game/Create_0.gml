@@ -16,7 +16,6 @@ var guiscale=4
 var element=new modui_button_sprite(spr_music,0,0,room_width+(sprite_get_height(spr_music)*guiscale))
 
 
-
 #endregion
 
 //play sound
