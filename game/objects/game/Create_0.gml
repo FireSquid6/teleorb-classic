@@ -18,7 +18,7 @@ with element
 	add_method(sound_settings_on_update,MODUI_EVENTS.UPDATE)
 	image_xscale=guiscale
 	image_yscale=guiscale
-	change_bbox(x,y,x+((sprite_get_width(sprite_index)*guiscale)-1),y+((sprite_get_height(sprite_index)*guiscale)-1))
+	snap_bbox_to_scale()
 }
 canvas.add_element(element)
 
@@ -30,10 +30,30 @@ with element
 	add_method(sound_settings_on_update,MODUI_EVENTS.UPDATE)
 	image_xscale=guiscale
 	image_yscale=guiscale
-	change_bbox(x,y,x+((sprite_get_width(sprite_index)*guiscale)-1),y+((sprite_get_height(sprite_index)*guiscale)-1))
+	snap_bbox_to_scale()
 }
 canvas.add_element(element)
 
+//BOXES
+function format_box_scribble(_element)
+{
+	_element.starting_format("fnt_lcd",c_black)
+	_element.align(fa_center,fa_middle)
+	return _element
+}
+
+//back to game
+element=new modui_button_sprite(spr_box,0,250,250)
+with element
+{
+	add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
+	scrib_x=x+(sprite_get_width(sprite_index)*0.5)
+	scrib_y=y+(sprite_get_height(sprite_index)*0.5)
+	scribble_element=new scribble("BACK TO GAME")
+	scribble_element=format_box_scribble(scribble_element)
+	image_xscale=guiscale
+	image_yscale=guiscale
+}
 
 #endregion
 

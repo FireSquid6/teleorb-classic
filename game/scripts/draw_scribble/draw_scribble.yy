@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Libraries/Modui/Effects.yy",
+    "name": "Teleorb Pause Screen",
+    "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen.yy",
   },
   "resourceVersion": "1.0",
-  "name": "effects",
+  "name": "draw_scribble",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -1,3 +1,8 @@
+#region FONTS
+scribble_font_add("fnt_lcd")
+
+#endregion
+
 #region PARTICLES
 //wallslide trail
 var p=part_type_create()

@@ -3,7 +3,6 @@ if DEVELOPER_MODE
 {
 	//keys
 	if keyboard_check(vk_lalt) room_speed=2 else room_speed=60
-	if keyboard_check_pressed(vk_tab) game_restart()
 	
 	//debug mode
 	if keyboard_check_pressed(vk_enter)

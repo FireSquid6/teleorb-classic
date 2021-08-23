@@ -111,6 +111,11 @@ function modui_button_sprite(_sprite,_subimage,_x,_y) : modui_element_parent() c
 		bbox_bottom=_bottom
 	}
 	
+	static snap_bbox_to_scale=function()
+	{
+		change_bbox(x,y,x+((sprite_get_width(sprite_index)*image_xscale)-1),y+((sprite_get_height(sprite_index)*image_yscale)-1))
+	}
+	
 	static transform=function(_x,_y,_xscale,_yscale)
 	{
 		x=_x

@@ -1,11 +1,18 @@
+ON THE HORIZON:
+
+
+FOR v0.2.0:
 - Orbwall levels
 	- First room just has the player walk through it
 	- Second room has the player throw an orb through it
 - Orbwall "slime" sounds
+- Debug Orb colliding with orbwall
+- Debug Player clipping into wall after throwing Orb
 - Pause menu
+	- Resume Game
 	- Restart Level
 	- Return to Hub
-	- Exit Game
+	- Save and Exit
 	
-	- Disable Music
-	- Disable Sound
+DONE:
+- Orbwall implementation

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Teleorb/Data/Meta/Scripts.yy",
+    "name": "Teleorb Pause Screen",
+    "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen.yy",
   },
   "resourceVersion": "1.0",
-  "name": "config_settings",
+  "name": "mute_audio",
   "tags": [],
   "resourceType": "GMScript",
 }

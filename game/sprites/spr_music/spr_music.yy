@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "GUI",
-    "path": "folders/Teleorb/Assets/GUI.yy",
+    "name": "Sprites",
+    "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_music",
