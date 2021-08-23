@@ -8,10 +8,14 @@ paused=false
 
 //pause ui setup
 canvas=new modui_canvas()
-var guiscale=4
+var guiscale=4 //scale of the GUI
+var padding=30 //padding away from the edge
+var audio_space=25 //space between audio controls
+var box_space=30 //space between boxes
+var box_pos=250
 
 //music enable
-var element=new modui_button_sprite(spr_music,0,0,0)
+var element=new modui_button_sprite(spr_music,0,padding,padding)
 with element
 {
 	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
@@ -23,7 +27,7 @@ with element
 canvas.add_element(element)
 
 //sound enable
-element=new modui_button_sprite(spr_sound,0,sprite_get_width(spr_sound)*guiscale,0)
+element=new modui_button_sprite(spr_sound,0,(sprite_get_width(spr_sound)*guiscale)+padding+audio_space,padding)
 with element
 {
 	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
@@ -39,21 +43,27 @@ function format_box_scribble(_element)
 {
 	_element.starting_format("fnt_lcd",c_black)
 	_element.align(fa_center,fa_middle)
+	_element.transform(1.75,1.75,0)
 	return _element
 }
 
 //back to game
-element=new modui_button_sprite(spr_box,0,250,250)
+element=new modui_button_sprite(spr_gui_box,0,padding,box_pos)
 with element
 {
 	add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
-	scrib_x=x+(sprite_get_width(sprite_index)*0.5)
-	scrib_y=y+(sprite_get_height(sprite_index)*0.5)
-	scribble_element=new scribble("BACK TO GAME")
+	image_xscale=4+guiscale
+	image_yscale=4+guiscale
+	scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale
+	scrib_y=y+(sprite_get_height(sprite_index)*0.5)*image_yscale
+	scribble_element=scribble("BACK TO GAME")
 	scribble_element=format_box_scribble(scribble_element)
-	image_xscale=guiscale
-	image_yscale=guiscale
+	snap_bbox_to_scale()
+	cx=bbox_left+25
+	cy=bbox_top+25
 }
+
+canvas.add_element(element)
 
 #endregion
 
