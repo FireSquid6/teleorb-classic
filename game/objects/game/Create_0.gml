@@ -53,6 +53,7 @@ with element
 {
 	add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
 	add_method(store_selected,MODUI_EVENTS.UPDATE)
+	add_method(unpause,MODUI_EVENTS.PRESSED)
 	image_xscale=4+guiscale
 	image_yscale=4+guiscale
 	scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale

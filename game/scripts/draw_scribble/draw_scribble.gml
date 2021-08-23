@@ -19,3 +19,12 @@ function store_selected()
 {
 	wasselected=selected
 }
+
+function unpause()
+{
+	with game
+	{
+		paused=false
+		instance_activate_all()
+	}
+}
