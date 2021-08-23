@@ -12,7 +12,7 @@ var guiscale=4 //scale of the GUI
 var padding=30 //padding away from the edge
 var audio_space=25 //space between audio controls
 var box_space=30 //space between boxes
-var box_pos=250
+var box_pos=250 //y pos of the box
 
 //music enable
 var element=new modui_button_sprite(spr_music,0,padding,padding)
@@ -52,6 +52,7 @@ element=new modui_button_sprite(spr_gui_box,0,padding,box_pos)
 with element
 {
 	add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
+	add_method(store_selected,MODUI_EVENTS.UPDATE)
 	image_xscale=4+guiscale
 	image_yscale=4+guiscale
 	scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale
@@ -59,8 +60,6 @@ with element
 	scribble_element=scribble("BACK TO GAME")
 	scribble_element=format_box_scribble(scribble_element)
 	snap_bbox_to_scale()
-	cx=bbox_left+25
-	cy=bbox_top+25
 }
 
 canvas.add_element(element)

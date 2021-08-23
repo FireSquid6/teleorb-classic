@@ -5,16 +5,17 @@
 
 function draw_scribble_end_draw()
 {
-	if keyboard_check(vk_space)
+	if wasselected 
 	{
-		imposter="sus"
-	}
-	if selected 
-	{
-		draw_sprite(sprite_index,1,x,y)
+		draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha)
 	}
 	if variable_struct_exists(self,"scribble_element")
 	{
 		scribble_element.draw(scrib_x,scrib_y)
 	}
+}
+
+function store_selected()
+{
+	wasselected=selected
 }
