@@ -6,7 +6,7 @@
     "path": "folders/Teleorb/Data/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "init",
+  "name": "init_game",
   "tags": [],
   "resourceType": "GMScript",
 }

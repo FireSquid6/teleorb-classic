@@ -11,7 +11,7 @@ part_type_speed(p,4,4,0,0)
 
 #region SOUND
 global.master_volume=1
-global.music_modifier=0.25
+global.music_modifier=1
 global.game_modifier=0
 global.ambient_modifier=0
 

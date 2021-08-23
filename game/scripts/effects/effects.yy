@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui/Effects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sound_settings",
+  "name": "effects",
   "tags": [],
   "resourceType": "GMScript",
 }

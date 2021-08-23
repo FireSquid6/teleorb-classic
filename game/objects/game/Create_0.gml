@@ -1,19 +1,38 @@
 #region GLOBAL VARS
 global.debug_mode = false
+global.modui_debug = false
 lastLevel=0
 lastRoom=0
 lastBranch=0
 paused=false
-muted=DEVELOPER_MODE
-if muted global.master_volume=0 else global.master_volume=1
-set_audio_volumes()
 
 //pause ui setup
-canvas=new modui_canvas(display_mouse_get_x(),display_mouse_get_y(),mouse_check_button_pressed(mb_left))
-
-//music enabler
+canvas=new modui_canvas()
 var guiscale=4
-var element=new modui_button_sprite(spr_music,0,0,room_width+(sprite_get_height(spr_music)*guiscale))
+
+//music enable
+var element=new modui_button_sprite(spr_music,0,0,0)
+with element
+{
+	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
+	add_method(sound_settings_on_update,MODUI_EVENTS.UPDATE)
+	image_xscale=guiscale
+	image_yscale=guiscale
+	change_bbox(x,y,x+((sprite_get_width(sprite_index)*guiscale)-1),y+((sprite_get_height(sprite_index)*guiscale)-1))
+}
+canvas.add_element(element)
+
+//sound enable
+element=new modui_button_sprite(spr_sound,0,sprite_get_width(spr_sound)*guiscale,0)
+with element
+{
+	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
+	add_method(sound_settings_on_update,MODUI_EVENTS.UPDATE)
+	image_xscale=guiscale
+	image_yscale=guiscale
+	change_bbox(x,y,x+((sprite_get_width(sprite_index)*guiscale)-1),y+((sprite_get_height(sprite_index)*guiscale)-1))
+}
+canvas.add_element(element)
 
 
 #endregion
