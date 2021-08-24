@@ -6,7 +6,7 @@
 #macro maxAirFrctionCancelFrames 15
 #macro gravitySpd 0.4
 #macro maxCyoteFrames 5
-#macro terminalVelocity 7
+#macro terminalVelocity 8
 #macro wallrideGrv 0.05
 #macro wallrideJumpSpd -3
 #macro maxWalljumpBufferFrames 5

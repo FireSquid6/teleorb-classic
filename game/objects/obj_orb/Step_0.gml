@@ -1,8 +1,10 @@
 var foundcol=false
-var bbox_y,bbox_x,xmove,ymove,s,bbox_x_name,bbox_y_name
+var s
 
 var hcol=place_meeting(x+hspd,y,obj_orbwall)
 var vcol=place_meeting(x,y+vspd,obj_orbwall)
+
+angle+=3*sign(hspd)
 
 //figure out if there is a collision
 if hcol || vcol
@@ -25,6 +27,35 @@ if hcol || vcol
 }
 if foundcol
 {
+	//get the dir to move
+	var movex=sign(hspd)
+	var movey=sign(vspd)
+	
+	var playerposx,playerposy,playerxbbox,playerybbox
+	
+	//get the correct bbox to move to
+	if movex==1 
+	{
+		playerposx=bbox_right 
+		playerxbbox="bbox_right"
+	}
+	else 
+	{
+		playerposx=bbox_left
+		playerxbbox="bbox_left"
+	}
+	
+	if movey==1 
+	{
+		playerposy=bbox_bottom
+		playerybbox="bbox_bottom"
+	}
+	else 
+	{
+		playerposy=bbox_top
+		playerybbox="bbox_top"
+	}
+	
 	with obj_player
 	{
 		//play sound
@@ -43,50 +74,9 @@ if foundcol
 		x=other.x
 		y=other.y
 		
-		//figure out which bboxes are in collision
-		if hcol
-		{
-			if collision_line(bbox_left,bbox_top,bbox_left,bbox_bottom,obj_orbwall,false,true)
-			{
-				bbox_x_name="bbox_left"
-				xmove=1
-			}
-			else
-			{
-				bbox_x_name="bbox_right"
-				xmove=-1
-			}
-		}
-		if vcol
-		{
-			if collision_line(bbox_left,bbox_top,bbox_right,bbox_top,obj_orbwall,false,true)
-			{
-				bbox_y_name="bbox_top"
-				ymove=1
-			}
-			else
-			{
-				bbox_y_name="bbox_bottom"
-				ymove=-1
-			}
-		}
-	
-		//move player out of wall
-		while place_meeting(x,y,obj_orbwall)
-		{
-			if hcol bbox_x=variable_instance_get(id,bbox_x_name)
-			if vcol bbox_y=variable_instance_get(id,bbox_y_name)
-			
-			if hcol && collision_line(bbox_x,bbox_top,bbox_x,bbox_bottom,obj_orbwall,false,true)
-			{
-				x+=xmove
-			}
-			
-			if vcol && collision_line(bbox_right,bbox_y,bbox_left,bbox_y,obj_orbwall,false,true)
-			{
-				y+=ymove
-			}
-		}
+		//snap the player
+		while variable_instance_get(id,playerxbbox)!=playerposx {x+=movex}
+		while variable_instance_get(id,playerybbox)!=playerposy {y+=movey}
 	}
 	
 	//kill self

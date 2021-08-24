@@ -30,7 +30,6 @@ function moveto_wallride()
 	state=playerStates.wallriding
 	if vspd>0 vspd=0
 	cyoteFrames=0
-	canOrb=true
 }
 
 function check_wallride()

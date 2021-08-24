@@ -15,7 +15,6 @@ function state_fall()
 	var grav=gravitySpd
 	if lastState=playerStates.jumping && vspd<0 grav*=0.5
 	vspd+=grav*global.gravityDir
-	vspd=clamp(vspd,-25,terminalVelocity)
 	
 	//MOVE
 	if onFloor moveto_move()

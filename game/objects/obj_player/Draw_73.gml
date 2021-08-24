@@ -22,8 +22,8 @@ if global.debug_mode
 
 //draw where the orb will end up
 var xx=x
-var yy=y
-var dir=point_direction(x,y,mouse_x,mouse_y)
+var yy=y - (sprite_height*0.33)
+var dir=point_direction(xx,yy,mouse_x,mouse_y)
 mask_index=spr_orb
 while (!place_meeting(xx,yy,obj_orbwall)) 
 {
@@ -35,7 +35,7 @@ while (!place_meeting(xx,yy,obj_orbwall))
 	}
 }
 
-if canOrb draw_set_color(c_green) else draw_set_color(c_red)
-draw_set_alpha(0.4)
-draw_circle(xx,yy,4,false)
+var color
+if canOrb color=c_white else color=c_red
+draw_sprite_ext(spr_orb,0,xx,yy,1,1,0,color,0.4)
 mask_index=spr_player_idle

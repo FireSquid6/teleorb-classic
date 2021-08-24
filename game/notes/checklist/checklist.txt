@@ -1,8 +1,5 @@
 FOR v0.2.0:
 - Orbwall levels
-	- First room just has the player walk through it
-	- Second room has the player throw an orb through it
-
 
 DONE:
 - Orbwall implementation
@@ -28,3 +25,4 @@ ON THE HORIZON:
 - Room transitions
 - UI SFX
 - Change spikes to double sided system
+- Debug orb clipping player into wall when you stand close to it

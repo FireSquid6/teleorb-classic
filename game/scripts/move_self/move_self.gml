@@ -13,6 +13,9 @@ function move_self()
 	hspd-=hspd_frac
 	vspd-=vspd_frac
 	
+	//clamp speed
+	vspd=clamp(vspd,-999,terminalVelocity)
+	
 	//check if colliding with a killwall
 	if place_meeting(x,y,obj_kill) && state!=playerStates.dying moveto_die()
 	
