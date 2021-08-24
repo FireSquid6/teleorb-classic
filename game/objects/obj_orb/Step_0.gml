@@ -91,12 +91,19 @@ if foundcol
 			mybbox=variable_instance_get(id,bbox_y_name)
 		}
 		
-		//check if player is still in a wall
+		//if the player is still in a wall, cry about it
 		if place_meeting(x,y,obj_wall)
 		{
-			//figure out why the player is stuck in a wall
+			show_debug_message("******************************** KILL ME NOW ******************************")
 			
-			//move accordingly
+			show_debug_message("bbox_left: "+string(bbox_left))
+			show_debug_message("bbox_right: "+string(bbox_right))
+			show_debug_message("bbox_top: "+string(bbox_top))
+			show_debug_message("bbox_bottom: "+string(bbox_bottom))
+			show_debug_message("bbox_x_name: "+string(bbox_x_name))
+			show_debug_message("bbox_y_name: "+string(bbox_y_name))
+			show_debug_message("movex: "+string(movex))
+			show_debug_message("movey: "+string(movey))
 		}
 	}
 	
