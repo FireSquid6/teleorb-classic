@@ -22,7 +22,6 @@ function sound_settings_on_update()
 		if sprite_index==spr_music
 		{
 			global.music_modifier=!global.music_modifier
-			global.ambient_modifier=!global.ambient_modifier
 		}
 		else
 		{

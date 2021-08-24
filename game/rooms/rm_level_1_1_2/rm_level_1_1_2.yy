@@ -202,8 +202,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Level 1",
-    "path": "folders/Teleorb/Levels/Level 1.yy",
+    "name": "Branch 1",
+    "path": "folders/Teleorb/Levels/Level 1/Branch 1.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_level_1_1_2",

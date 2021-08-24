@@ -19,19 +19,24 @@ layer_set_visible(layid,global.debug_mode)
 #region SETUP LEVEL
 if string_char_at(room_name,4)=="l"
 {	
-	if lastLevel!=global.currentLevel
+	//audio
+	switch global.currentLevel
+	{
+		case 1:
+			music_index=mus_spacetrivia
+			break
+		case 2:
+			music_index=mus_astrorace
+			break
+		default:
+			music_index=mus_synth
+			break
+	}
+	if !audio_is_playing(music_index)
 	{
 		audio_stop_all()
-		audio_play_sound(amb_cave,15,true)
-		switch global.currentLevel
-		{
-			case 1:
-				audio_play_sound(mus_astrorace,25,true)
-				break
-			case 2:
-				audio_play_sound(mus_spacetrivia,25,true)
-				break
-		}
+		audio_play_sound(amb_cave,25,true)
+		audio_play_sound(music_index,25,true)
 	}
 	
 	//get colmap

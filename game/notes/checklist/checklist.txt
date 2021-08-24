@@ -1,17 +1,30 @@
-ON THE HORIZON:
-
-
 FOR v0.2.0:
 - Orbwall levels
 	- First room just has the player walk through it
 	- Second room has the player throw an orb through it
-- Orbwall "slime" sounds
-- Debug Orb colliding with orbwall
-- Debug Player clipping into wall after throwing Orb
+
+
+DONE:
+- Orbwall implementation
 - Pause menu
 	- Resume Game
 	- Restart Level
 	- Save and Exit
-	
-DONE:
-- Orbwall implementation
+- Debug Orb colliding with orbwall
+- Debug audio
+
+ON THE HORIZON:
+- Options Menu
+	- Faster teleport animation
+	- Show speed
+- Save audio settings
+- Speedrun mode
+- Better orbwall cosmetics
+	- Different sprite
+	- "Slime" sounds
+- Debug Player clipping into wall after throwing Orb
+- Sound effects for gravity switch and orb giver
+- Fun bouncepad
+- Room transitions
+- UI SFX
+- Change spikes to double sided system

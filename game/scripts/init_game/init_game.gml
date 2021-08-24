@@ -16,7 +16,7 @@ part_type_speed(p,4,4,0,0)
 
 #region SOUND
 global.master_volume=1
-global.music_modifier=1
+global.music_modifier=0
 global.game_modifier=0
 global.ambient_modifier=0
 
@@ -30,7 +30,7 @@ function set_audio_volumes()
 		switch string_char_at(name,0)
 		{
 			case "a":
-				volume=global.master_volume-global.ambient_modifier
+				volume=global.master_volume-global.music_modifier
 				break
 			case "m":
 				volume=global.master_volume-global.music_modifier

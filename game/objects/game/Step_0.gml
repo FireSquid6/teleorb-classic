@@ -16,6 +16,20 @@ if DEVELOPER_MODE
 	}
 }
 
+//make sure music is playing
+if !audio_is_playing(music_index) audio_play_sound(music_index,25,true)
+
+//mute switch
+if DEVELOPER_MODE
+{
+	if keyboard_check_pressed(ord("M"))
+	{
+		muted=!muted
+		global.master_volume=muted
+		set_audio_volumes()
+	}
+}
+
 //pause switch
 if keyboard_check_pressed(vk_escape)
 {

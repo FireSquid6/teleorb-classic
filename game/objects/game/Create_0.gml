@@ -5,6 +5,11 @@ lastLevel=0
 lastRoom=0
 lastBranch=0
 paused=false
+muted=!DEVELOPER_MODE
+
+global.master_volume=muted
+set_audio_volumes()
+
 #endregion
 
 #region UI SETUP
@@ -112,9 +117,6 @@ paused_text.starting_format("fnt_lcd",c_white)
 paused_text.align(fa_center,fa_middle)
 
 #endregion
-
-//play sound
-audio_play_sound(mus_spacetrivia,25,true)
 
 #region INDEX ROOMS
 var i=room_first
