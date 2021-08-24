@@ -8,9 +8,6 @@ function state_teleport()
 		vspd=prev_vspd
 		
 		moveto_fall()
-		
-		//cheat my bad code
-		lastState=playerStates.falling
 	}
 }
 function moveto_teleport()

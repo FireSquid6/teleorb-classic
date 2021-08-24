@@ -27,10 +27,18 @@ if foundcol
 {
 	with obj_player
 	{
-		//move player
+		//play sound
 		audio_play_sound(sfx_orb_hit,50,false)
+		
+		//if the player is traveling downwards, set vspd to 0
+		//This is to make speed conversion feel right
+		if vspd>0 vspd=0
+		
+		//add speeds
 		hspd+=other.hspd*0.5
 		vspd+=other.vspd*0.5
+		
+		//move the player
 		moveto_teleport()
 		x=other.x
 		y=other.y

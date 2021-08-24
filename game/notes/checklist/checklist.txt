@@ -11,7 +11,6 @@ FOR v0.2.0:
 - Pause menu
 	- Resume Game
 	- Restart Level
-	- Return to Hub
 	- Save and Exit
 	
 DONE:

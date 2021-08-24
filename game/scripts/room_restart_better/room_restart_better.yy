@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Teleorb Pause Screen",
-    "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen.yy",
+    "name": "Scripts",
+    "path": "folders/Teleorb/Data/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_scribble",
+  "name": "room_restart_better",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -25,10 +25,14 @@ var xx=x
 var yy=y
 var dir=point_direction(x,y,mouse_x,mouse_y)
 mask_index=spr_orb
-while (!place_meeting(xx,yy,obj_orbwall)) || (xx<0 || xx>room_width) || (yy<0 || yy>room_height)
+while (!place_meeting(xx,yy,obj_orbwall)) 
 {
 	xx+=lengthdir_x(1,dir)
-	yy+=lengthdir_y(1,dir)	
+	yy+=lengthdir_y(1,dir)
+	if !point_in_rectangle(xx,yy,0,0,room_width,room_height)
+	{
+		break
+	}
 }
 
 if canOrb draw_set_color(c_green) else draw_set_color(c_red)

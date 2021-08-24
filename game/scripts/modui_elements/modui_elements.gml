@@ -103,6 +103,17 @@ function modui_button_sprite(_sprite,_subimage,_x,_y) : modui_element_parent() c
 	postdraw_list=ds_list_create()
 	
 	//MODIFYING METHODS
+	static clear_methods=function()
+	{
+		init_list=ds_list_create()
+		destroy_list=ds_list_create()
+		update_list=ds_list_create()
+		selected_list=ds_list_create()
+		pressed_list=ds_list_create()
+		predraw_list=ds_list_create()
+		postdraw_list=ds_list_create()
+	}
+	
 	static change_bbox=function(_left,_top,_right,_bottom)
 	{
 		bbox_left=_left

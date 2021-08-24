@@ -28,3 +28,4 @@ function unpause()
 		instance_activate_all()
 	}
 }
+

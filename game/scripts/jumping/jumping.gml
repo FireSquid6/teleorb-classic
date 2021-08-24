@@ -25,7 +25,7 @@ function moveto_jump()
 	sprite_index=spr_player_midair
 	lastState=state
 	state = playerStates.jumping
-	vspd -= jumpSpd
+	vspd -= jumpSpd * global.gravityDir
 	jumpFrames = maxJumpFrames
 	cyoteFrames=0
 }

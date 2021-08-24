@@ -5,17 +5,21 @@ lastLevel=0
 lastRoom=0
 lastBranch=0
 paused=false
+#endregion
 
-//pause ui setup
+#region UI SETUP
+//canvas
 canvas=new modui_canvas()
-var guiscale=4 //scale of the GUI
-var padding=30 //padding away from the edge
-var audio_space=25 //space between audio controls
+#macro guiscale 4 //scale of the GUI
+#macro padding 30 //padding away from the edge
+#macro audio_space 25 //space between audio controls
 var box_space=30 //space between boxes
 var box_pos=250 //y pos of the box
+#macro box_scale 8
+var audio_y=(display_get_gui_height())
 
 //music enable
-var element=new modui_button_sprite(spr_music,0,padding,padding)
+var element=new modui_button_sprite(spr_music,0,padding,audio_y)
 with element
 {
 	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
@@ -27,7 +31,7 @@ with element
 canvas.add_element(element)
 
 //sound enable
-element=new modui_button_sprite(spr_sound,0,(sprite_get_width(spr_sound)*guiscale)+padding+audio_space,padding)
+element=new modui_button_sprite(spr_sound,0,(sprite_get_width(spr_sound)*guiscale)+padding+audio_space,audio_y)
 with element
 {
 	add_method(sound_settings_on_init,MODUI_EVENTS.INIT)
@@ -47,23 +51,65 @@ function format_box_scribble(_element)
 	return _element
 }
 
+function format_box(_element)
+{
+	with _element
+	{
+		image_xscale=box_scale
+		image_yscale=box_scale
+		scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale
+		scrib_y=y+(sprite_get_height(sprite_index)*0.5)*image_yscale
+		snap_bbox_to_scale()
+		add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
+		add_method(store_selected,MODUI_EVENTS.UPDATE)
+	}
+	return _element
+}
+
 //back to game
 element=new modui_button_sprite(spr_gui_box,0,padding,box_pos)
 with element
 {
-	add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
-	add_method(store_selected,MODUI_EVENTS.UPDATE)
 	add_method(unpause,MODUI_EVENTS.PRESSED)
-	image_xscale=4+guiscale
-	image_yscale=4+guiscale
-	scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale
-	scrib_y=y+(sprite_get_height(sprite_index)*0.5)*image_yscale
+	element=format_box(element)
 	scribble_element=scribble("BACK TO GAME")
 	scribble_element=format_box_scribble(scribble_element)
-	snap_bbox_to_scale()
+}
+canvas.add_element(element)
+
+
+//restart room
+var height=sprite_get_height(spr_gui_box)
+var pos=box_pos+(((height*box_scale)+box_space)*1)
+element=new modui_button_sprite(spr_gui_box,0,padding,pos)
+with element
+{
+	element=format_box(element)
+	scribble_element=scribble("RESTART ROOM")
+	scribble_element=format_box_scribble(scribble_element)
+	add_method(room_restart_better,MODUI_EVENTS.PRESSED)
+	add_method(unpause,MODUI_EVENTS.PRESSED)
 }
 
 canvas.add_element(element)
+
+//exit game
+pos=box_pos+(((height*box_scale)+box_space)*2)
+element=new modui_button_sprite(spr_gui_box,0,padding,pos)
+with element
+{
+	element=format_box(element)
+	scribble_element=scribble("SAVE AND EXIT")
+	scribble_element=format_box_scribble(scribble_element)
+	add_method(game_end,MODUI_EVENTS.PRESSED)
+}
+canvas.add_element(element)
+
+//GAME PAUSED Text
+paused_text=scribble("- GAME PAUSED -")
+paused_text.transform(4,4,0)
+paused_text.starting_format("fnt_lcd",c_white)
+paused_text.align(fa_center,fa_middle)
 
 #endregion
 
