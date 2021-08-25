@@ -76,12 +76,16 @@ if foundcol
 		x=other.x
 		y=other.y
 		
+		var xreps=0
+		var yreps=0
+		
 		//move player bbox to orb bbox
 		var mybbox=variable_instance_get(id,bbox_x_name)
 		while mybbox!=bbox_x
 		{
 			x-=movex
 			mybbox=variable_instance_get(id,bbox_x_name)
+			xreps++
 		}
 		
 		mybbox=variable_instance_get(id,bbox_y_name)
@@ -89,6 +93,7 @@ if foundcol
 		{
 			y-=movey
 			mybbox=variable_instance_get(id,bbox_y_name)
+			yreps++
 		}
 		
 		//if the player is still in a wall, cry about it
@@ -104,6 +109,12 @@ if foundcol
 			show_debug_message("bbox_y_name: "+string(bbox_y_name))
 			show_debug_message("movex: "+string(movex))
 			show_debug_message("movey: "+string(movey))
+			show_debug_message("bbox_x: "+string(bbox_x))
+			show_debug_message("bbox_y: "+string(bbox_y))
+			show_debug_message("hcol: "+string(hcol))
+			show_debug_message("vcol: "+string(vcol))
+			show_debug_message("xreps: "+string(xreps))
+			show_debug_message("yreps: "+string(yreps))
 		}
 	}
 	
