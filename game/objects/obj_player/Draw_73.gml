@@ -22,7 +22,7 @@ if global.debug_mode
 
 //draw where the orb will end up
 var xx=x
-var yy=y - (sprite_height*0.33)
+var yy=y
 var dir=point_direction(xx,yy,mouse_x,mouse_y)
 mask_index=spr_orb
 while (!place_meeting(xx,yy,obj_orbwall)) 
