@@ -34,6 +34,8 @@ if foundcol
 	//get the dir to move
 	var movex=sign(hspd)
 	var movey=sign(vspd)
+	if movex=0 movex=1
+	if movey=0 movey=1
 	
 	//get the correct bbox to move to and the name
 	if movex==1 
@@ -115,6 +117,8 @@ if foundcol
 			show_debug_message("vcol: "+string(vcol))
 			show_debug_message("xreps: "+string(xreps))
 			show_debug_message("yreps: "+string(yreps))
+			show_debug_message("hspd: "+string(other.hspd))
+			show_debug_message("vspd: "+string(other.vspd))
 		}
 	}
 	
