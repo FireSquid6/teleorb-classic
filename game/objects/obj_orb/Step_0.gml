@@ -1,5 +1,4 @@
-var foundcol=false
-var s,bbox_x,bbox_y,bbox_x_name,bbox_y_name
+var s,bbox_x,bbox_y,bbox_x_name,bbox_y_name,movex,movey,hcol_moved,vcol_moved
 
 var hcol=place_meeting(x+hspd,y,obj_orbwall)
 var vcol=place_meeting(x,y+vspd,obj_orbwall)
@@ -9,13 +8,40 @@ angle+=3*sign(hspd)
 //figure out if there is a collision
 if hcol || vcol
 {	
-	//move
+	//move to wall
 	if hcol
 	{
+		//move to wall
 		x=floor(x)
 		y=floor(y)
 		s=sign(hspd)
 		while !place_meeting(x+s,y,obj_orbwall) {x+=s}
+		hcol_moved=true
+	}
+	else
+	{
+		if collision_line(x,y,bbox_right+ORB_SNAP_DISTANCE,y,obj_orbwall,false,true)
+		{
+			while !place_meeting(x,y,obj_orbwall) {x+=movex}
+			hcol_moved=true
+			movex=1
+		}
+	}
+	
+	//set collision variables
+	if hcol_moved
+	{
+		movex=s
+		if movex==1
+		{
+			bbox_x=bbox_right
+			bbox_x_name="bbox_right"
+		}
+		else
+		{
+			bbox_x=bbox_left
+			bbox_x_name="bbox_right"
+		}
 	}
 	
 	if vcol
@@ -26,40 +52,7 @@ if hcol || vcol
 		while !place_meeting(x,y+s,obj_orbwall) {y+=s}
 	}
 	
-	//set to collision found
-	foundcol=true
-}
-if foundcol
-{
-	//get the dir to move
-	var movex=sign(hspd)
-	var movey=sign(vspd)
-	if movex=0 movex=1
-	if movey=0 movey=1
-	
-	//get the correct bbox to move to and the name
-	if movex==1 
-	{
-		bbox_x=bbox_right 
-		bbox_x_name="bbox_right"
-	}
-	else 
-	{
-		bbox_x=bbox_left
-		bbox_x_name="bbox_left"
-	}
-	
-	if movey==1 
-	{
-		bbox_y=bbox_bottom
-		bbox_y_name="bbox_bottom"
-	}
-	else 
-	{
-		bbox_y=bbox_top
-		bbox_y_name="bbox_top"
-	}
-	
+	//move the player
 	with obj_player
 	{
 		//play sound
