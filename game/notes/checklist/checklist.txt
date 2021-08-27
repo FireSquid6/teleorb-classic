@@ -1,5 +1,4 @@
 FOR v0.2.1:
-- Orbwall levels
 - Game reset option
 
 FOR v0.3.0"
