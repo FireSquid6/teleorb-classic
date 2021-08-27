@@ -1,37 +1,67 @@
-var s,bbox_x,bbox_y,bbox_x_name,bbox_y_name,movex,movey,hcol_moved,vcol_moved
+var bbox_x=-5,bbox_y=-5,bbox_x_name=-5,bbox_y_name=-5,movex=-5,movey=-5,hcol_moved=-5,vcol_moved=-5
 
 var hcol=place_meeting(x+hspd,y,obj_orbwall)
 var vcol=place_meeting(x,y+vspd,obj_orbwall)
 
-angle+=3*sign(hspd)
+angle+=4*sign(hspd)
 
 //figure out if there is a collision
 if hcol || vcol
 {	
-	//move to wall
+	x=floor(x)
+	y=floor(y)
+	
+	//horizontal collision
 	if hcol
 	{
-		//move to wall
-		x=floor(x)
-		y=floor(y)
-		s=sign(hspd)
-		while !place_meeting(x+s,y,obj_orbwall) {x+=s}
+		movex=sign(hspd)
+		while !place_meeting(x+movex,y,obj_orbwall) {x+=movex}
 		hcol_moved=true
 	}
 	else
 	{
-		if collision_line(x,y,bbox_right+ORB_SNAP_DISTANCE,y,obj_orbwall,false,true)
+		var line_right=collision_line(x,y,bbox_right+ORB_SNAP_DISTANCE,y,obj_orbwall,false,true)
+		var line_left=collision_line(x,y,bbox_left-ORB_SNAP_DISTANCE,y,obj_orbwall,false,true)
+		if line_right || line_left
 		{
-			while !place_meeting(x,y,obj_orbwall) {x+=movex}
+			
+			if line_right movex=1 else movex=-1
+			while !place_meeting(x+movex,y,obj_orbwall) {x+=movex}
 			hcol_moved=true
-			movex=1
+		}
+		else
+		{
+			hcol_moved=false
+		}
+	}
+	
+	//vertical collision
+	if vcol
+	{
+		movey=sign(vspd)
+		while !place_meeting(x,y+movey,obj_orbwall) {y+=movey}
+		vcol_moved=true
+	}
+	else
+	{
+		var line_top=collision_line(x,y,x,y-ORB_SNAP_DISTANCE,obj_orbwall,false,true)
+		var line_bottom=collision_line(x,y,x,y+ORB_SNAP_DISTANCE,obj_orbwall,false,true)
+		
+		if line_top || line_bottom
+		{
+			if line_bottom movey=1 else movey=-1
+			while !place_meeting(x,y+movey,obj_orbwall) {y+=movey}
+			vcol_moved=true
+		}
+		else
+		{
+			vcol_moved=false
 		}
 	}
 	
 	//set collision variables
 	if hcol_moved
 	{
-		movex=s
 		if movex==1
 		{
 			bbox_x=bbox_right
@@ -40,16 +70,23 @@ if hcol || vcol
 		else
 		{
 			bbox_x=bbox_left
-			bbox_x_name="bbox_right"
+			bbox_x_name="bbox_left"
 		}
 	}
 	
-	if vcol
+	//set collision variables
+	if vcol_moved
 	{
-		y=floor(y)
-		x=floor(x)
-		s=sign(vspd)
-		while !place_meeting(x,y+s,obj_orbwall) {y+=s}
+		if movey==1
+		{
+			bbox_y=bbox_bottom
+			bbox_y_name="bbox_bottom"
+		}
+		else
+		{
+			bbox_y=bbox_top
+			bbox_y_name="bbox_top"
+		}
 	}
 	
 	//move the player
@@ -75,20 +112,27 @@ if hcol || vcol
 		var yreps=0
 		
 		//move player bbox to orb bbox
-		var mybbox=variable_instance_get(id,bbox_x_name)
-		while mybbox!=bbox_x
+		var mybbox
+		if hcol_moved
 		{
-			x-=movex
 			mybbox=variable_instance_get(id,bbox_x_name)
-			xreps++
+			while mybbox!=bbox_x
+			{
+				x-=movex
+				mybbox=variable_instance_get(id,bbox_x_name)
+				xreps++
+			}
 		}
 		
-		mybbox=variable_instance_get(id,bbox_y_name)
-		while mybbox!=bbox_y
+		if vcol_moved
 		{
-			y-=movey
 			mybbox=variable_instance_get(id,bbox_y_name)
-			yreps++
+			while mybbox!=bbox_y
+			{
+				y-=movey
+				mybbox=variable_instance_get(id,bbox_y_name)
+				yreps++
+			}
 		}
 		
 		//if the player is still in a wall, cry about it
@@ -112,6 +156,8 @@ if hcol || vcol
 			show_debug_message("yreps: "+string(yreps))
 			show_debug_message("hspd: "+string(other.hspd))
 			show_debug_message("vspd: "+string(other.vspd))
+			show_debug_message("hcol_moved"+string(hcol_moved))
+			show_debug_message("vcol_moved"+string(vcol_moved))
 		}
 	}
 	

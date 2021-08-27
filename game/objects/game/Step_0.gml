@@ -1,6 +1,15 @@
 //dev mode options
 if DEVELOPER_MODE
 {
+	//delete save file
+	if keyboard_check_pressed(vk_backspace)
+	{
+		file_delete("file.savedgame")
+		show_debug_message("*****************")
+		show_debug_message("GAME SAVE DELETED")
+		show_debug_message("*****************")
+	}
+	
 	//keys
 	if keyboard_check(vk_lalt) room_speed=4 else room_speed=60
 	
