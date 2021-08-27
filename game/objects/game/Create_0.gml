@@ -95,8 +95,8 @@ with element
 	add_method(room_restart_better,MODUI_EVENTS.PRESSED)
 	add_method(unpause,MODUI_EVENTS.PRESSED)
 }
-
 canvas.add_element(element)
+
 
 //exit game
 pos=box_pos+(((height*box_scale)+box_space)*2)

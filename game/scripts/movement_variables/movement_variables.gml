@@ -2,8 +2,8 @@
 #macro maxAcceleration 3
 #macro maxJumpFrames 15
 #macro jumpSpd 3
-#macro airFriction 0.5
-#macro airAcceleration 0.5
+#macro airFriction 0.4
+#macro airAcceleration 0.4
 #macro maxAirFrctionCancelFrames 15
 #macro gravitySpd 0.4
 #macro maxCyoteFrames 5

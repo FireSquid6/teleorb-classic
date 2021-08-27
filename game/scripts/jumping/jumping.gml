@@ -1,8 +1,7 @@
 function state_jump()
 {		
 	//handle air friction
-	if lastState!=playerStates.wallriding air_friction()
-	cyoteFrames=0
+	air_friction()
 	
 	//remove jump frames
 	jumpFrames--

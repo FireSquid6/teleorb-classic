@@ -1,17 +1,21 @@
 function air_friction()
 {
-	//check if moving
-	if move != 0 
+	//check if can move
+	if lastState!=playerStates.wallriding
 	{
-		//make sure that hspd won't grow
-		if abs(hspd+(airAcceleration*move))<=maxAcceleration
+		//check if moving
+		if move != 0 
 		{
-			hspd += (airAcceleration * move)
+			//make sure that hspd won't grow
+			if abs(hspd+(airAcceleration*move))<=maxAcceleration
+			{
+				hspd += (airAcceleration * move)
+			}
 		}
-	}
-	//if not moving, decelerate
-	else
-	{
-		if abs(hspd) <= airFriction hspd = 0 else hspd -= airFriction * sign(hspd)
+		//if not moving, decelerate
+		else
+		{
+			if abs(hspd) <= airFriction hspd = 0 else hspd -= airFriction * sign(hspd)
+		}
 	}
 }
