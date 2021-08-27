@@ -3,6 +3,7 @@ function state_wallride()
 	//wallriding
 	vspd+=wallrideGrv
 	air_friction()
+	if wallgrab vspd=0
 	
 	//FALL
 	if !check_wallride() 
@@ -35,7 +36,7 @@ function moveto_wallride()
 function check_wallride()
 {
 	var i=sign(hspd)
-	if place_meeting(x+i,y,obj_wall) && move!=0 && wallgrab
+	if place_meeting(x+i,y,obj_wall) && move!=0
 	{
 		wallrideDir=i
 		return true

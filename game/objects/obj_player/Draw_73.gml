@@ -36,6 +36,6 @@ while (!place_meeting(xx,yy,obj_orbwall))
 }
 
 var color
-if canOrb color=c_white else color=c_red
+if canOrb && !thrown_orb color=c_white else color=c_red
 draw_sprite_ext(spr_orb,0,xx,yy,1,1,0,color,0.4)
 mask_index=spr_player_idle

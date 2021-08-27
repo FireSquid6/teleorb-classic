@@ -4,9 +4,9 @@ function air_friction()
 	if move != 0 
 	{
 		//make sure that hspd won't grow
-		if abs(hspd+(airFriction*move))<=maxAcceleration
+		if abs(hspd+(airAcceleration*move))<=maxAcceleration
 		{
-			hspd += (airFriction * move)
+			hspd += (airAcceleration * move)
 		}
 	}
 	//if not moving, decelerate

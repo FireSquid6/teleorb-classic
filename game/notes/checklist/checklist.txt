@@ -1,14 +1,21 @@
-FOR v0.2.0:
+FOR v0.2.1:
 - Orbwall levels
+- Game reset option
+
+FOR v0.3.0"
+- UI SFX
+- Finish Level 1
+- Bouncepad
+- Fun bouncepad
+- Room transitions
+- Better orbwall cosmetics
+	- Different sprite
+	- "Slime" sounds
 
 DONE:
-- Orbwall implementation
-- Pause menu
-	- Resume Game
-	- Restart Level
-	- Save and Exit
-- Debug Orb colliding with orbwall
-- Debug audio
+- Fixed the orb "fr this time"
+- Fixed bug where orb was still displaying as can be thrown when it couldn't be
+- Hold shift to grab onto a wall
 
 ON THE HORIZON:
 - Options Menu
@@ -16,13 +23,6 @@ ON THE HORIZON:
 	- Show speed
 - Save audio settings
 - Speedrun mode
-- Better orbwall cosmetics
-	- Different sprite
-	- "Slime" sounds
 - Debug Player clipping into wall after throwing Orb
 - Sound effects for gravity switch and orb giver
-- Fun bouncepad
-- Room transitions
-- UI SFX
-- Change spikes to double sided system
-- Debug orb clipping player into wall when you stand close to it
+- Discord rich presence
