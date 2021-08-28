@@ -22,10 +22,15 @@ if hcol || vcol
 	y += (y mod 2)
 	
 	//horizontal collision
+	var hcol_loops=0
 	if hcol
 	{
 		movex=sign(hspd)
-		while !place_meeting(x+movex,y,obj_orbwall) {x+=movex}
+		while !place_meeting(x+movex,y,obj_orbwall) 
+		{
+			x+=movex
+			hcol_loops++
+		}
 		hcol_moved=true
 		hcol_move_type=1
 	}
@@ -37,7 +42,11 @@ if hcol || vcol
 		{
 			
 			if line_right movex=1 else movex=-1
-			while !place_meeting(x+movex,y,obj_orbwall) {x+=movex}
+			while !place_meeting(x+movex,y,obj_orbwall) 
+			{
+				x+=movex
+				hcol_loops++
+			}
 			hcol_moved=true
 			hcol_move_type=2
 		}
@@ -49,10 +58,15 @@ if hcol || vcol
 	}
 	
 	//vertical collision
+	var vcol_loops=0
 	if vcol
 	{
 		movey=sign(vspd)
-		while !place_meeting(x,y+movey,obj_orbwall) {y+=movey}
+		while !place_meeting(x,y+movey,obj_orbwall) 
+		{
+			y+=movey
+			vcol_loops++
+		}
 		vcol_moved=true
 		vcol_move_type=1
 	}
@@ -64,7 +78,11 @@ if hcol || vcol
 		if line_top xor line_bottom
 		{
 			if line_bottom movey=1 else movey=-1
-			while !place_meeting(x,y+movey,obj_orbwall) {y+=movey}
+			while !place_meeting(x,y+movey,obj_orbwall) 
+			{
+				y+=movey
+				vcol_loops++
+			}
 			vcol_moved=true
 			vcol_move_type=2
 		}
@@ -186,6 +204,8 @@ if hcol || vcol
 		show_debug_message("line_top: "+string(line_top))
 		show_debug_message("line_bottom: "+string(line_bottom))
 		show_debug_message("line_right: "+string(line_right))
+		show_debug_message("hcol_loops: "+string(hcol_loops))
+		show_debug_message("vcol_loops: "+string(vcol_loops))
 	}
 	
 	//kill self
