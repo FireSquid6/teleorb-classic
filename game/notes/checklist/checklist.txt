@@ -1,4 +1,4 @@
-FOR v0.3.0"
+FOR v0.3.0
 - Finish Level 1
 - Fun bouncepad
 - Room transitions

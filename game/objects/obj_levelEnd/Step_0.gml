@@ -5,15 +5,15 @@ if place_meeting(x,y,obj_player)
 	{
 		if hasBestTime
 		{
-			if minutes<=best_minutes 
+			if minutes<best_minutes 
 			{
 				save_time=true
 			}
-			else if minutes==best_minutes && seconds<=best_seconds
+			else if minutes==best_minutes && seconds<best_seconds
 			{
 				save_time=true
 			}
-			else if minutes==best_minutes && seconds==best_seconds && frames==best_frames
+			else if minutes==best_minutes && seconds==best_seconds && frames<best_frames
 			{
 				save_time=true
 			}

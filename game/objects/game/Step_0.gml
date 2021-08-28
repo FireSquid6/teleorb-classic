@@ -24,6 +24,12 @@ if DEVELOPER_MODE
 		layer_set_visible(layid,global.debug_mode)
 		global.modui_debug=global.debug_mode
 	}
+	
+	//reset
+	if keyboard_check_pressed(ord("R"))
+	{
+		reset_game()
+	}
 }
 
 //make sure music is playing
