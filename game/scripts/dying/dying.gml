@@ -3,7 +3,7 @@ function state_die()
 	canOrb=false
 	onFloor=false
 	image_xscale=prevxscale
-	image_index+=0.2
+	image_index+=0.4
 	if image_index>=image_number room_restart()
 }
 

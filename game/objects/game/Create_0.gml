@@ -7,8 +7,29 @@ lastBranch=0
 paused=false
 muted=!DEVELOPER_MODE
 
+minutes=0
+seconds=0
+frames=0
+
 global.master_volume=muted
 set_audio_volumes()
+
+display_set_gui_size(display_get_width(),display_get_height())
+
+#endregion
+
+#region BEST TIME
+if file_exists("besttime.savedgame")
+{
+	hasBestTime=true
+	var buff=buffer_load("besttime.savedgame")
+	var str_besttime=buffer_read(buff,buffer_string)
+	var json_data=json_parse(str_besttime)
+	best_minutes=json_data.minutes
+	best_seconds=json_data.seconds
+	best_frames=json_data.frames
+}
+else hasBestTime=false
 
 #endregion
 
@@ -21,7 +42,7 @@ canvas=new modui_canvas()
 var box_space=30 //space between boxes
 var box_pos=250 //y pos of the box
 #macro box_scale 8
-var audio_y=(display_get_gui_height())
+var audio_y=(display_get_gui_height() - (sprite_get_height(spr_music)*guiscale)) - padding
 
 //music enable
 var element=new modui_button_sprite(spr_music,0,padding,audio_y)
@@ -44,6 +65,23 @@ with element
 	image_xscale=guiscale
 	image_yscale=guiscale
 	snap_bbox_to_scale()
+}
+canvas.add_element(element)
+
+//delete
+var xx=display_get_width()-((sprite_get_width(spr_trashCan)*guiscale)+padding)
+var yy=display_get_gui_height() - ((sprite_get_height(spr_trashCan)*guiscale)+padding)
+element=new modui_button_sprite(spr_trashCan,0,xx,yy)
+with element
+{
+	image_xscale=guiscale
+	image_yscale=guiscale
+	snap_bbox_to_scale()
+	normal_index=0
+	selected_index=1
+	pressed_index=2
+	add_method(change_image_index,MODUI_EVENTS.UPDATE)
+	add_method(reset_game,MODUI_EVENTS.PRESSED)
 }
 canvas.add_element(element)
 

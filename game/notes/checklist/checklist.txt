@@ -1,13 +1,8 @@
-FOR v0.2.1:
-- Orbwall levels
-- Game reset option
-
 FOR v0.3.0"
-- UI SFX
 - Finish Level 1
-- Bouncepad
 - Fun bouncepad
 - Room transitions
+- UI SFX
 - Better orbwall cosmetics
 	- Different sprite
 	- "Slime" sounds
@@ -16,6 +11,11 @@ DONE:
 - Fixed the orb "fr this time"
 - Fixed bug where orb was still displaying as can be thrown when it couldn't be
 - Hold shift to grab onto a wall
+- Sped up death animation
+- Lowered air friction and air acceleration
+- Game reset option
+- Added 3 new levels
+- Added a timer
 
 ON THE HORIZON:
 - Options Menu
@@ -25,4 +25,4 @@ ON THE HORIZON:
 - Speedrun mode
 - Debug Player clipping into wall after throwing Orb
 - Sound effects for gravity switch and orb giver
-- Discord rich presence
+- Mac and Linux builds (html5 isn't possible due to the shaders the game uses. I could make it but it would be too much work rn.)

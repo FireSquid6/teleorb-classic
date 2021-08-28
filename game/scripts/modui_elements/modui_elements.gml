@@ -1,6 +1,35 @@
 #region PARENT
 function modui_element_parent() constructor
 {
+	//other vars
+	//don't touch these
+	selected=false
+	pressed=false
+	canvasRef=-1
+	
+	//function lists
+	//don't touch these
+	//use the add_method function instead
+	init_list=ds_list_create()
+	destroy_list=ds_list_create()
+	update_list=ds_list_create()
+	selected_list=ds_list_create()
+	pressed_list=ds_list_create()
+	predraw_list=ds_list_create()
+	postdraw_list=ds_list_create()
+	
+	//MODIFYING METHODS
+	static clear_methods=function()
+	{
+		init_list=ds_list_create()
+		destroy_list=ds_list_create()
+		update_list=ds_list_create()
+		selected_list=ds_list_create()
+		pressed_list=ds_list_create()
+		predraw_list=ds_list_create()
+		postdraw_list=ds_list_create()
+	}
+	
 	static add_method=function(_method,_event)
 	{
 		switch _event
@@ -60,6 +89,11 @@ function modui_element_parent() constructor
 #endregion
 
 #region BUTTON
+function modui_text(_scribble) : modui_element_parent() constructor
+{
+	
+}
+
 function modui_button_sprite(_sprite,_subimage,_x,_y) : modui_element_parent() constructor
 {
 	//default transform and display vars
@@ -84,35 +118,6 @@ function modui_button_sprite(_sprite,_subimage,_x,_y) : modui_element_parent() c
 	bbox_top=y
 	bbox_right=x+sprite_get_width(sprite_index)*image_xscale
 	bbox_bottom=y+sprite_get_height(sprite_index)*image_yscale
-	
-	//other vars
-	//don't touch these
-	selected=false
-	pressed=false
-	canvasRef=-1
-	
-	//function lists
-	//don't touch these
-	//use the add_method function instead
-	init_list=ds_list_create()
-	destroy_list=ds_list_create()
-	update_list=ds_list_create()
-	selected_list=ds_list_create()
-	pressed_list=ds_list_create()
-	predraw_list=ds_list_create()
-	postdraw_list=ds_list_create()
-	
-	//MODIFYING METHODS
-	static clear_methods=function()
-	{
-		init_list=ds_list_create()
-		destroy_list=ds_list_create()
-		update_list=ds_list_create()
-		selected_list=ds_list_create()
-		pressed_list=ds_list_create()
-		predraw_list=ds_list_create()
-		postdraw_list=ds_list_create()
-	}
 	
 	static change_bbox=function(_left,_top,_right,_bottom)
 	{

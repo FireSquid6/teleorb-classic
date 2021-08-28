@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen.yy",
   },
   "resourceVersion": "1.0",
-  "name": "mute_audio",
+  "name": "functions",
   "tags": [],
   "resourceType": "GMScript",
 }

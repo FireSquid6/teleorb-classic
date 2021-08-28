@@ -4,7 +4,8 @@ if DEVELOPER_MODE
 	//delete save file
 	if keyboard_check_pressed(vk_backspace)
 	{
-		file_delete("file.savedgame")
+		if file_exists("file.savedgame") file_delete("file.savedgame")
+		if file_exists("besttime.savedgame") file_delete("besttime.savedgame")
 		show_debug_message("*****************")
 		show_debug_message("GAME SAVE DELETED")
 		show_debug_message("*****************")
@@ -56,4 +57,21 @@ if keyboard_check_pressed(vk_escape)
 if paused
 {
 	canvas.update(display_mouse_get_x(),display_mouse_get_y(),mouse_check_button_pressed(mb_left))
+}
+
+//timer
+if !paused
+{
+	frames++
+	if frames==60
+	{
+		frames=0
+		seconds++
+		if seconds==60
+		{
+			seconds=0
+			minutes++
+			minutes=clamp(minutes,0,99)
+		}
+	}
 }
