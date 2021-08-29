@@ -3,9 +3,7 @@ FOR v0.3.0
 - Fun bouncepad
 - Room transitions
 - UI SFX
-- Better orbwall cosmetics
-	- Different sprite
-	- "Slime" sounds
+- Orbwall sfx
 
 DONE:
 - Fixed the orb "fr this time"

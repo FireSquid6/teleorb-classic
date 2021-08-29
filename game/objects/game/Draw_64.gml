@@ -6,10 +6,6 @@ draw_set_color(c_black)
 draw_rectangle(0,0,120,50,false)
 
 draw_set_color(c_white)
-if keyboard_check_pressed(ord("U"))
-{
-	imposter="sus"
-}
 var currentTime=string_format(minutes,2,0)+":"+string_format(seconds,2,0)+"."+string_format(frames,2,0)
 currentTime=string_replace_all(currentTime," ","0")
 draw_text(5,5,currentTime)

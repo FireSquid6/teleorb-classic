@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Teleorb/Data/Player.yy",
+    "path": "folders/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_playerSpawn",
