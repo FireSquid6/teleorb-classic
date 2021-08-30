@@ -17,9 +17,62 @@ if hcol || vcol
 	y=round(y)
 	
 	//check if in a wall
-	if place_meeting(x,y,obj_wall)
+	if place_meeting(x,y,obj_orbwall)
 	{
-		//move out of wall
+		//figure out which corner is in the wall
+		var _top_left=(collision_point(bbox_left,bbox_top,obj_orbwall,false,true)!=noone)
+		var _top_right=(collision_point(bbox_right,bbox_top,obj_orbwall,false,true)!=noone)
+		var _bottom_left=(collision_point(bbox_left,bbox_bottom,obj_orbwall,false,true)!=noone)
+		var _bottom_right=(collision_point(bbox_right,bbox_bottom,obj_orbwall,false,true)!=noone)
+		
+		//if three corners are in a wall, choose the correct one
+		if _top_left + _top_right + _bottom_left + _bottom_right == 3
+		{
+			_top_left=!_top_left
+			_top_right=!_top_right
+			_bottom_left=!_bottom_left
+			_bottom_right=!_bottom_right
+		}
+		
+		//if only one corner is in a wall
+		if _top_left + _top_right + _bottom_left + _bottom_right < 2
+		{
+			var dirx,diry
+			
+			//stupid dumb else if statement because im lazy
+			if _top_left
+			{
+				dirx=1
+				diry=1
+			}
+			else if _top_right
+			{
+				dirx=-1
+				diry=1
+			}
+			else if _bottom_left
+			{
+				dirx=1
+				diry=-1
+			}
+			else
+			{
+				dirx=-1
+				diry=-1
+			}
+			
+			//move out
+			while place_meeting(x,y,obj_orbwall)
+			{
+				x+=dirx
+				y+=diry
+			}
+		}
+		//if a side is in the wall
+		else if _top_left + _top_right + _bottom_left + _bottom_right == 2
+		{
+			
+		}
 	}
 	
 	//horizontal collision
