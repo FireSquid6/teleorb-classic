@@ -5,11 +5,11 @@ FOR v0.3.0
 - UI SFX
 - Orbwall sfx
 
-- Fix wallgrabbing
 - Save audio settings
 
 DONE:
-
+- Wallgrabbing fix
+- Orb debugged
 
 ON THE HORIZON:
 - Options Menu
