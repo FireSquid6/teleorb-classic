@@ -21,6 +21,11 @@ if hcol || vcol
 	x += (x mod 2)
 	y += (y mod 2)
 	
+	if place_meeting(x,y,obj_orbwall)
+	{
+		show_debug_message("something went wrong...")
+	}
+	
 	//horizontal collision
 	var hcol_loops=0
 	if hcol
