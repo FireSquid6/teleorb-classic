@@ -13,17 +13,13 @@ angle+=4*sign(hspd)
 if hcol || vcol
 {	
 	//remove the decimal from x
-	x=floor(x)
-	y=floor(y)
+	x=round(x)
+	y=round(y)
 	
-	//make the variables an even number
-	//this is the smartest thing I have ever done
-	x += (x mod 2)
-	y += (y mod 2)
-	
-	if place_meeting(x,y,obj_orbwall)
+	//check if in a wall
+	if place_meeting(x,y,obj_wall)
 	{
-		show_debug_message("something went wrong...")
+		//move out of wall
 	}
 	
 	//horizontal collision
@@ -177,11 +173,11 @@ if hcol || vcol
 		//if the player is still in a wall, cry about it
 		if place_meeting(x,y,obj_wall)
 		{
-			show_debug_message("******************************** KILL ME NOW ******************************")
+			show_debug_message("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ORB MOVE RESULTS - PLAYER WAS FOUND IN WALL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		}	
 		else
 		{
-			show_debug_message("******************************** IT WORKED!! ******************************")
+			show_debug_message("****************************** ORB MOVE RESULTS - PLAYER NOT FOUND IN WALL ******************************")
 		}
 		
 		//cry about it harder

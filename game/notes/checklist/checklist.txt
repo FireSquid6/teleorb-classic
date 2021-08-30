@@ -1,28 +1,23 @@
-FOR v0.2.3
-
 FOR v0.3.0
 - Finish Level 1
-- Fun bouncepad
+
 - Room transitions
 - UI SFX
 - Orbwall sfx
 
+- Fix wallgrabbing
+- Debug Orb hitting corners
+- Debug orb when it's thrown inside an orbwall
+- Save audio settings
+
 DONE:
-- Fixed the orb "fr this time"
-- Fixed bug where orb was still displaying as can be thrown when it couldn't be
-- Hold shift to grab onto a wall
-- Sped up death animation
-- Lowered air friction and air acceleration
-- Game reset option
-- Added 3 new levels
-- Added a timer
+
 
 ON THE HORIZON:
 - Options Menu
 	- Faster teleport animation
 	- Show speed
-- Save audio settings
 - Speedrun mode
-- Debug Player clipping into wall after throwing Orb
 - Sound effects for gravity switch and orb giver
-- Mac and Linux builds (html5 isn't possible due to the shaders the game uses. I could make it but it would be too much work rn.)
+- Mac and Linux builds
+- Fun bouncepad
