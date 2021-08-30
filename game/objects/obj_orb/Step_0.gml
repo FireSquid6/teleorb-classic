@@ -17,8 +17,11 @@ if hcol || vcol
 	y=round(y)
 	
 	//check if in a wall
+	var skip_collisions=false
 	if place_meeting(x,y,obj_orbwall)
 	{
+		skip_collisions=true
+		
 		//figure out which corner is in the wall
 		var _top_left=(collision_point(bbox_left,bbox_top,obj_orbwall,false,true)!=noone)
 		var _top_right=(collision_point(bbox_right,bbox_top,obj_orbwall,false,true)!=noone)
@@ -38,6 +41,8 @@ if hcol || vcol
 		if _top_left + _top_right + _bottom_left + _bottom_right < 2
 		{
 			var dirx,diry
+			hcol_moved=true
+			vcol_moved=true
 			
 			//stupid dumb else if statement because im lazy
 			if _top_left
@@ -71,7 +76,22 @@ if hcol || vcol
 		//if a side is in the wall
 		else if _top_left + _top_right + _bottom_left + _bottom_right == 2
 		{
+			//get dir
+			diry=0
+			dirx=0
+			if _top_left && _top_right diry=-1 else if _bottom_right && _bottom_left diry=1
+			if _top_left && _bottom_left dirx=1 else if _top_right && _bottom_right diry=-1
 			
+			//set moved
+			hcol_moved=clamp(dirx,0,1)
+			vcol_moved=clamp(diry,0,1)
+
+			//move out
+			while place_meeting(x,y,obj_orbwall)
+			{
+				x+=dirx
+				y+=diry
+			}
 		}
 	}
 	
@@ -80,10 +100,13 @@ if hcol || vcol
 	if hcol
 	{
 		movex=sign(hspd)
-		while !place_meeting(x+movex,y,obj_orbwall) 
+		if !skip_collisions
 		{
-			x+=movex
-			hcol_loops++
+			while !place_meeting(x+movex,y,obj_orbwall) 
+			{
+				x+=movex
+				hcol_loops++
+			}
 		}
 		hcol_moved=true
 		hcol_move_type=1
@@ -96,10 +119,13 @@ if hcol || vcol
 		{
 			
 			if line_right movex=1 else movex=-1
-			while !place_meeting(x+movex,y,obj_orbwall) 
+			if !skip_collisions
 			{
-				x+=movex
-				hcol_loops++
+				while !place_meeting(x+movex,y,obj_orbwall) 
+				{
+					x+=movex
+					hcol_loops++
+				}
 			}
 			hcol_moved=true
 			hcol_move_type=2
@@ -116,10 +142,13 @@ if hcol || vcol
 	if vcol
 	{
 		movey=sign(vspd)
-		while !place_meeting(x,y+movey,obj_orbwall) 
+		if !skip_collisions
 		{
-			y+=movey
-			vcol_loops++
+			while !place_meeting(x,y+movey,obj_orbwall) 
+			{
+				y+=movey
+				vcol_loops++
+			}
 		}
 		vcol_moved=true
 		vcol_move_type=1
@@ -132,10 +161,13 @@ if hcol || vcol
 		if line_top xor line_bottom
 		{
 			if line_bottom movey=1 else movey=-1
-			while !place_meeting(x,y+movey,obj_orbwall) 
+			if !skip_collisions
 			{
-				y+=movey
-				vcol_loops++
+				while !place_meeting(x,y+movey,obj_orbwall) 
+				{
+					y+=movey
+					vcol_loops++
+				}
 			}
 			vcol_moved=true
 			vcol_move_type=2
