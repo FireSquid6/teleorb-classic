@@ -1,4 +1,6 @@
 #macro TILE_SIZE 16
+seq=layer_sequence_create(layer,0,0,seq_transition_in)
+layer_sequence_play(seq)
 
 #region INDEX LEVEL
 var room_name=room_get_name(room)

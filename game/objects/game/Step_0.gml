@@ -32,6 +32,12 @@ if DEVELOPER_MODE
 	}
 }
 
+//sequences
+if layer_sequence_is_finished(seq)
+{
+	layer_sequence_destroy(seq)
+}
+
 //make sure music is playing
 if !audio_is_playing(music_index) audio_play_sound(music_index,25,true)
 

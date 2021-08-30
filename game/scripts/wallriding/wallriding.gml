@@ -4,6 +4,7 @@ function state_wallride()
 	vspd+=wallrideGrv
 	air_friction()
 	if wallgrab vspd=0
+	if wallgrab_released vspd=1
 	
 	//FALL
 	if !check_wallride() 

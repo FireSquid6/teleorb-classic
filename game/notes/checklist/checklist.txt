@@ -6,8 +6,6 @@ FOR v0.3.0
 - Orbwall sfx
 
 - Fix wallgrabbing
-- Debug Orb hitting corners
-- Debug orb when it's thrown inside an orbwall
 - Save audio settings
 
 DONE:

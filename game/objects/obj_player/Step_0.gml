@@ -4,6 +4,7 @@ jump = keyboard_check(vk_space)
 jump_pressed = keyboard_check_pressed(vk_space)
 onFloor = place_meeting(x,y+global.gravityDir,obj_wall)
 wallgrab = keyboard_check(vk_lshift)
+wallgrab_released=keyboard_check_released(vk_shift)
 
 
 if global.orbUnlocked orb = mouse_check_button_pressed(mb_left)
