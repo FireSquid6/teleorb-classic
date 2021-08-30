@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Player/Scripts.yy",
+    "path": "folders/Teleorb/Data/Player/Scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "movement_variables",

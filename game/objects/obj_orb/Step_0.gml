@@ -13,17 +13,86 @@ angle+=4*sign(hspd)
 if hcol || vcol
 {	
 	//remove the decimal from x
-	x=floor(x)
-	y=floor(y)
+	x=round(x)
+	y=round(y)
 	
-	//make the variables an even number
-	//this is the smartest thing I have ever done
-	x += (x mod 2)
-	y += (y mod 2)
-	
+	//check if in a wall
+	var skip_collisions=false
 	if place_meeting(x,y,obj_orbwall)
 	{
-		show_debug_message("something went wrong...")
+		skip_collisions=true
+		
+		//figure out which corner is in the wall
+		var _top_left=(collision_point(bbox_left,bbox_top,obj_orbwall,false,true)!=noone)
+		var _top_right=(collision_point(bbox_right,bbox_top,obj_orbwall,false,true)!=noone)
+		var _bottom_left=(collision_point(bbox_left,bbox_bottom,obj_orbwall,false,true)!=noone)
+		var _bottom_right=(collision_point(bbox_right,bbox_bottom,obj_orbwall,false,true)!=noone)
+		
+		//if three corners are in a wall, choose the correct one
+		if _top_left + _top_right + _bottom_left + _bottom_right == 3
+		{
+			_top_left=!_top_left
+			_top_right=!_top_right
+			_bottom_left=!_bottom_left
+			_bottom_right=!_bottom_right
+		}
+		
+		//if only one corner is in a wall
+		if _top_left + _top_right + _bottom_left + _bottom_right < 2
+		{
+			var dirx,diry
+			hcol_moved=true
+			vcol_moved=true
+			
+			//stupid dumb else if statement because im lazy
+			if _top_left
+			{
+				dirx=1
+				diry=1
+			}
+			else if _top_right
+			{
+				dirx=-1
+				diry=1
+			}
+			else if _bottom_left
+			{
+				dirx=1
+				diry=-1
+			}
+			else
+			{
+				dirx=-1
+				diry=-1
+			}
+			
+			//move out
+			while place_meeting(x,y,obj_orbwall)
+			{
+				x+=dirx
+				y+=diry
+			}
+		}
+		//if a side is in the wall
+		else if _top_left + _top_right + _bottom_left + _bottom_right == 2
+		{
+			//get dir
+			diry=0
+			dirx=0
+			if _top_left && _top_right diry=-1 else if _bottom_right && _bottom_left diry=1
+			if _top_left && _bottom_left dirx=1 else if _top_right && _bottom_right diry=-1
+			
+			//set moved
+			hcol_moved=clamp(dirx,0,1)
+			vcol_moved=clamp(diry,0,1)
+
+			//move out
+			while place_meeting(x,y,obj_orbwall)
+			{
+				x+=dirx
+				y+=diry
+			}
+		}
 	}
 	
 	//horizontal collision
@@ -31,10 +100,13 @@ if hcol || vcol
 	if hcol
 	{
 		movex=sign(hspd)
-		while !place_meeting(x+movex,y,obj_orbwall) 
+		if !skip_collisions
 		{
-			x+=movex
-			hcol_loops++
+			while !place_meeting(x+movex,y,obj_orbwall) 
+			{
+				x+=movex
+				hcol_loops++
+			}
 		}
 		hcol_moved=true
 		hcol_move_type=1
@@ -47,10 +119,13 @@ if hcol || vcol
 		{
 			
 			if line_right movex=1 else movex=-1
-			while !place_meeting(x+movex,y,obj_orbwall) 
+			if !skip_collisions
 			{
-				x+=movex
-				hcol_loops++
+				while !place_meeting(x+movex,y,obj_orbwall) 
+				{
+					x+=movex
+					hcol_loops++
+				}
 			}
 			hcol_moved=true
 			hcol_move_type=2
@@ -67,10 +142,13 @@ if hcol || vcol
 	if vcol
 	{
 		movey=sign(vspd)
-		while !place_meeting(x,y+movey,obj_orbwall) 
+		if !skip_collisions
 		{
-			y+=movey
-			vcol_loops++
+			while !place_meeting(x,y+movey,obj_orbwall) 
+			{
+				y+=movey
+				vcol_loops++
+			}
 		}
 		vcol_moved=true
 		vcol_move_type=1
@@ -83,10 +161,13 @@ if hcol || vcol
 		if line_top xor line_bottom
 		{
 			if line_bottom movey=1 else movey=-1
-			while !place_meeting(x,y+movey,obj_orbwall) 
+			if !skip_collisions
 			{
-				y+=movey
-				vcol_loops++
+				while !place_meeting(x,y+movey,obj_orbwall) 
+				{
+					y+=movey
+					vcol_loops++
+				}
 			}
 			vcol_moved=true
 			vcol_move_type=2
@@ -177,11 +258,11 @@ if hcol || vcol
 		//if the player is still in a wall, cry about it
 		if place_meeting(x,y,obj_wall)
 		{
-			show_debug_message("******************************** KILL ME NOW ******************************")
+			show_debug_message("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ORB MOVE RESULTS - PLAYER WAS FOUND IN WALL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		}	
 		else
 		{
-			show_debug_message("******************************** IT WORKED!! ******************************")
+			show_debug_message("****************************** ORB MOVE RESULTS - PLAYER NOT FOUND IN WALL ******************************")
 		}
 		
 		//cry about it harder
