@@ -49,5 +49,15 @@ switch state
 //move self
 move_self()
 
+//orbwall
+var inOrbwall=false
+
+if !place_meeting(x,y,obj_wall)
+{
+	inOrbwall=place_meeting(x,y,obj_orbwall) 
+	if inOrbwall!=lastInOrbwall audio_play_sound(sfx_slime,25,false)
+}
+
 //lastmove
 lastMove=move
+lastInOrbwall=inOrbwall

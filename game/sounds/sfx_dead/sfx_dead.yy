@@ -13,8 +13,8 @@
   "soundFile": "sfx_dead.mp3",
   "duration": 0.24,
   "parent": {
-    "name": "SFX",
-    "path": "folders/Teleorb/Assets/Sound/SFX.yy",
+    "name": "Action",
+    "path": "folders/Teleorb/Assets/Sound/SFX/Action.yy",
   },
   "resourceVersion": "1.0",
   "name": "sfx_dead",

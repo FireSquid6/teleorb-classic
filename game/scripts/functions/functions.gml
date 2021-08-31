@@ -3,6 +3,11 @@
 //scrib_x - draw x position
 //scrib_y - draw y position
 
+function play_click()
+{
+	audio_play_sound(sfx_click,50,false)
+}
+
 function draw_scribble_end_draw()
 {
 	if wasselected 
@@ -42,13 +47,13 @@ function sound_settings_on_init()
 {
 	if sprite_index=spr_music
 	{
-		enabled=global.music_modifier
+		sound_off=global.music_modifier
 	}
 	else
 	{
-		enabled=global.game_modifier
+		sound_off=global.game_modifier
 	}
-	if enabled current_image=2 else current_image=0
+	if sound_off current_image=2 else current_image=0
 }
 
 function sound_settings_on_update()
@@ -58,7 +63,7 @@ function sound_settings_on_update()
 	
 	if selected && pressed
 	{
-		enabled=!enabled 
+		sound_off=!sound_off 
 		if sprite_index==spr_music
 		{
 			global.music_modifier=!global.music_modifier
@@ -68,9 +73,9 @@ function sound_settings_on_update()
 			global.game_modifier=!global.game_modifier
 		}
 		
-		if enabled
+		if sound_off
 		{
-			current_image=2		
+			current_image=2
 		}
 		else
 		{

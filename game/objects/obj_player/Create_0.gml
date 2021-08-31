@@ -22,6 +22,7 @@ vspd_frac=0
 lastMove=0
 state=playerStates.moving
 lastState=state
+lastInOrbwall=false
 image_speed=0
 
 //movement stuff

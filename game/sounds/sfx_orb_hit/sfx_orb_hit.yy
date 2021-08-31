@@ -13,8 +13,8 @@
   "soundFile": "sfx_orb_hit.mp3",
   "duration": 0.96,
   "parent": {
-    "name": "SFX",
-    "path": "folders/Teleorb/Assets/Sound/SFX.yy",
+    "name": "Orb",
+    "path": "folders/Teleorb/Assets/Sound/SFX/Orb.yy",
   },
   "resourceVersion": "1.0",
   "name": "sfx_orb_hit",

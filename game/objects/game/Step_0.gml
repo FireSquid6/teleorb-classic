@@ -49,6 +49,7 @@ if !audio_is_playing(music_index) audio_play_sound(music_index,25,true)
 //pause switch
 if keyboard_check_pressed(vk_escape)
 {
+	audio_play_sound(sfx_pause,50,false)
 	paused=!paused
 	if paused
 	{
