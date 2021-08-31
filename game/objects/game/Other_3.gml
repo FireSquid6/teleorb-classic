@@ -9,7 +9,9 @@ if !DEVELOPER_MODE
 		slideUnlocked : global.slideUnlocked,
 		currentLevel : global.currentLevel,
 		currentBranch : global.currentBranch,
-		currentRoom : global.currentRoom
+		currentRoom : global.currentRoom,
+		game_modifier : global.game_modifier,
+		music_modifier : global.music_modifier
 	}
 
 	//translate the array to json

@@ -5,14 +5,10 @@ lastLevel=0
 lastRoom=0
 lastBranch=0
 paused=false
-muted=!DEVELOPER_MODE
 
 minutes=0
 seconds=0
 frames=0
-
-global.master_volume=muted
-set_audio_volumes()
 
 display_set_gui_size(display_get_width(),display_get_height())
 
@@ -197,6 +193,8 @@ if file_exists("file.savedgame") && !DEVELOPER_MODE
 	global.currentBranch=struct.currentBranch
 	global.currentLevel=struct.currentLevel
 	global.currentRoom=struct.currentRoom
+	global.game_modifier=struct.game_modifier
+	global.music_modifier=struct.music_modifier
 }
 //if no file exists, start a fesh file
 else
@@ -209,6 +207,8 @@ else
 	global.currentBranch=1
 	global.currentLevel=1
 	global.currentRoom=1
+	global.game_modifier=0
+	global.music_modifier=0
 }
 #endregion
 

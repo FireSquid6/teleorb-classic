@@ -1,7 +1,6 @@
 FOR v0.3.0
 - Finish Level 1
 
-- Room transitions
 - UI SFX
 - Orbwall sfx
 

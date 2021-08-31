@@ -6,7 +6,6 @@ onFloor = place_meeting(x,y+global.gravityDir,obj_wall)
 wallgrab = keyboard_check(vk_lshift)
 wallgrab_released=keyboard_check_released(vk_shift)
 
-
 if global.orbUnlocked orb = mouse_check_button_pressed(mb_left)
 if global.dashUnlocked dash = mouse_check_button_pressed(mb_right)
 if global.slideUnlocked slide = keyboard_check(vk_lcontrol)
