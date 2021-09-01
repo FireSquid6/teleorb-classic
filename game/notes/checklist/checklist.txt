@@ -1,16 +1,11 @@
 FOR v0.3.0
 - Finish Level 1
 - Windows Icon
-- Splash screen
 - Title screen
 - Fix 
 
 DONE:
-- Wallgrabbing fix
-- Orb debugged
-- Save audio settings
-- UI SFX
-- Orbwall sfx
+- Windows icon
 
 ON THE HORIZON:
 - Options Menu

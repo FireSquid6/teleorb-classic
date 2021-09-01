@@ -18,7 +18,7 @@ display_set_gui_size(display_get_width(),display_get_height())
 //if a file exists, load the data
 if file_exists("file.savedgame") && !DEVELOPER_MODE
 {
-	//get struct
+	//get structe
 	var buff=buffer_load("file.savedgame")
 	var str=buffer_read(buff,buffer_string)
 	var struct=json_parse(str)
