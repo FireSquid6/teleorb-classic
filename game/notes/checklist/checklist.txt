@@ -1,8 +1,8 @@
 FOR v0.3.0
 - Finish Level 1
-- Windows Icon
 - Title screen
-- Fix 
+- Screenshake
+- Orb giver sfx
 
 DONE:
 - Windows icon
