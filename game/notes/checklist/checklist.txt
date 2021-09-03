@@ -3,6 +3,7 @@ FOR v0.3.0
 - Title screen
 - Screenshake
 - Orb giver sfx
+- Fix the thing where you can jump up walls
 
 DONE:
 - Windows icon
@@ -12,7 +13,6 @@ ON THE HORIZON:
 	- Faster teleport animation
 	- Show speed
 - Speedrun mode
-- Sound effects for gravity switch and orb giver
 - Mac and Linux builds
 - Fun bouncepad
 - Credits
