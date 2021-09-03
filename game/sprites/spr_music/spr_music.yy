@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Libraries/Modui/Effects/Teleorb Pause Screen/Sprites.yy",
+    "path": "folders/Libraries/Modui/Methods/Teleorb Pause Screen/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_music",

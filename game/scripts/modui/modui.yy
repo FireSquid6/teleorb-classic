@@ -6,7 +6,7 @@
     "path": "folders/Libraries/Modui/System.yy",
   },
   "resourceVersion": "1.0",
-  "name": "modui_elements",
+  "name": "modui",
   "tags": [],
   "resourceType": "GMScript",
 }

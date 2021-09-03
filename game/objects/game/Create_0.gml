@@ -70,7 +70,7 @@ else hasBestTime=false
 
 #endregion
 
-#region UI SETUP
+#region PAUSE SCREEN SETUP
 //canvas
 canvas=new modui_canvas()
 #macro guiscale 4 //scale of the GUI

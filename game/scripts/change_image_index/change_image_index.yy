@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Libraries/Modui/Effects.yy",
+    "name": "Methods",
+    "path": "folders/Libraries/Modui/Methods.yy",
   },
   "resourceVersion": "1.0",
   "name": "change_image_index",
