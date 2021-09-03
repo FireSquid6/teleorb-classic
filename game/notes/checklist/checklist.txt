@@ -4,6 +4,7 @@ FOR v0.3.0
 - Screenshake
 - Orb giver sfx
 - Fix the thing where you can jump up walls
+- Add a collectable
 
 DONE:
 - Windows icon
