@@ -14,6 +14,11 @@ if instance_exists(target)
 	cameraX=lerp(target.x,mouse_x,lp)-(cameraWidth*0.5);
 	cameraY=lerp(target.y,mouse_y,lp)-(cameraHeight*0.5);
 	
+	//move with shake
+	cameraX += lengthdir_x(shake_amount, shake_dir)
+	cameraY += lengthdir_y(shake_amount, shake_dir)
+	shake_amount -= shake_falloff
+	
 	//stop the camera from showing stuff outside of the room
 	cameraX=clamp(cameraX,0,room_width-cameraWidth);
 	cameraY=clamp(cameraY,0,room_height-cameraHeight);

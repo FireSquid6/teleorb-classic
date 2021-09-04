@@ -47,23 +47,26 @@ if !audio_is_playing(music_index) audio_play_sound(music_index,25,true)
 //}
 
 //pause switch
-if keyboard_check_pressed(vk_escape)
+if global.inLevel
 {
-	audio_play_sound(sfx_pause,50,false)
-	paused=!paused
+	if keyboard_check_pressed(vk_escape)
+	{
+		audio_play_sound(sfx_pause,50,false)
+		paused=!paused
+		if paused
+		{
+			instance_deactivate_all(true)
+		}
+		else
+		{
+			instance_activate_all()
+		}
+	}
+
 	if paused
 	{
-		instance_deactivate_all(true)
+		canvas.update(display_mouse_get_x(),display_mouse_get_y(),mouse_check_button_pressed(mb_left))
 	}
-	else
-	{
-		instance_activate_all()
-	}
-}
-
-if paused
-{
-	canvas.update(display_mouse_get_x(),display_mouse_get_y(),mouse_check_button_pressed(mb_left))
 }
 
 //timer

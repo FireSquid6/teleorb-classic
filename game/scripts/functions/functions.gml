@@ -1,7 +1,28 @@
-//requires you to set the following variables with the modui element
-//scribble_element - the scribble data stuff
-//scrib_x - draw x position
-//scrib_y - draw y position
+function start_new_game()
+{
+	room=room_next(room_first)
+	
+	//set default vars
+	global.spawnpoint=0
+	global.slideUnlocked=false
+	global.dashUnlocked=false
+	global.orbUnlocked=true
+	global.currentBranch=1
+	global.currentLevel=1
+	global.currentRoom=1
+	global.game_modifier=0
+	global.music_modifier=0
+	
+	if DEVELOPER_MODE
+	{
+		global.music_modifier=1
+	}
+}
+
+function continue_game()
+{
+	room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)
+}
 
 function play_click()
 {

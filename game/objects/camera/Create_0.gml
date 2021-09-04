@@ -1,0 +1,1 @@
+shake_falloff = 0.2

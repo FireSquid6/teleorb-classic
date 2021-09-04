@@ -1,6 +1,8 @@
 //declare variables
 cameraX=0;
 cameraY=0;
+shake_amount = 0
+shake_dir = 0
 target=obj_player;
 
 setup_camera();

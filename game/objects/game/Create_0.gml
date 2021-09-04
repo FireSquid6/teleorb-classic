@@ -16,8 +16,10 @@ display_set_gui_size(display_get_width(),display_get_height())
 
 #region LOAD SAVE
 //if a file exists, load the data
-if file_exists("file.savedgame") && !DEVELOPER_MODE
+if file_exists("file.savedgame")
 {
+	global.canContinue=true
+	
 	//get structe
 	var buff=buffer_load("file.savedgame")
 	var str=buffer_read(buff,buffer_string)
@@ -37,6 +39,8 @@ if file_exists("file.savedgame") && !DEVELOPER_MODE
 //if no file exists, start a fesh file
 else
 {
+	global.canContinute=false
+	
 	//set default vars
 	global.spawnpoint=0
 	global.slideUnlocked=false
@@ -126,30 +130,6 @@ with element
 canvas.add_element(element)
 
 //BOXES
-function format_box_scribble(_element)
-{
-	_element.starting_format("fnt_lcd",c_black)
-	_element.align(fa_center,fa_middle)
-	_element.transform(1.75,1.75,0)
-	return _element
-}
-
-function format_box(_element)
-{
-	with _element
-	{
-		image_xscale=box_scale
-		image_yscale=box_scale
-		scrib_x=x+(sprite_get_width(sprite_index)*0.5)*image_xscale
-		scrib_y=y+(sprite_get_height(sprite_index)*0.5)*image_yscale
-		snap_bbox_to_scale()
-		add_method(draw_scribble_end_draw,MODUI_EVENTS.POSTDRAW)
-		add_method(store_selected,MODUI_EVENTS.UPDATE)
-		add_method(play_click,MODUI_EVENTS.PRESSED)
-	}
-	return _element
-}
-
 //back to game
 element=new modui_button_sprite(spr_gui_box,0,padding,box_pos)
 with element
@@ -228,6 +208,4 @@ while room_exists(i)
 //set volumes
 set_audio_volumes()
 
-//move to next room
-room=room_get_index(global.currentLevel,global.currentBranch,global.currentRoom)
-if DEVELOPER_MODE room=room_next(room_first)
+room=rm_title_screen

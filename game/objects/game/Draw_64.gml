@@ -18,15 +18,6 @@ if hasBestTime
 	draw_text(5,20,bestTime)
 }
 
-
-if global.debug_mode
-{
-	draw_reset()
-	draw_text(padding,padding,"MUSIC: "+ string(global.music_modifier) + "     IS PLAYING: "+string(audio_is_playing(mus_spacetrivia)))
-	draw_text(padding,padding*2,"SOUND: "+ string(global.game_modifier))
-	draw_text(padding,padding*3,"AMBIENT: "+ string(global.ambient_modifier))
-}
-
 if paused
 {
 	draw_reset()
