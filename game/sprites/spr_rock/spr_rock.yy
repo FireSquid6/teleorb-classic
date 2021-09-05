@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 4,
+  "origin": 0,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"504e4ccd-2331-404c-a4aa-c9a8951c9f9b","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"504e4ccd-2331-404c-a4aa-c9a8951c9f9b","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},"LayerId":{"name":"8d9b7f9c-97cf-4df9-ae0a-71937d2a453a","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_orb_giver","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},"resourceVersion":"1.0","name":"504e4ccd-2331-404c-a4aa-c9a8951c9f9b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7842ca3a-4533-4d8c-8b6b-4c98f6c63243","path":"sprites/spr_rock/spr_rock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7842ca3a-4533-4d8c-8b6b-4c98f6c63243","path":"sprites/spr_rock/spr_rock.yy",},"LayerId":{"name":"95d2e7c1-f562-4af3-bafa-38c0b60f3543","path":"sprites/spr_rock/spr_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},"resourceVersion":"1.0","name":"7842ca3a-4533-4d8c-8b6b-4c98f6c63243","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_orb_giver","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},
+    "spriteId": {"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"bb789b76-163e-4ec8-98f8-c118d50a1cdd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"504e4ccd-2331-404c-a4aa-c9a8951c9f9b","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d3c95476-bbb0-43b5-9368-aa2930a36a5f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7842ca3a-4533-4d8c-8b6b-4c98f6c63243","path":"sprites/spr_rock/spr_rock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 8,
-    "yorigin": 8,
+    "xorigin": 0,
+    "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_orb_giver","path":"sprites/spr_orb_giver/spr_orb_giver.yy",},
+    "parent": {"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_orb_giver",
+    "name": "spr_rock",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8d9b7f9c-97cf-4df9-ae0a-71937d2a453a","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"95d2e7c1-f562-4af3-bafa-38c0b60f3543","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Teleorb/Assets/Sprites/Gizmos.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_orb_giver",
+  "name": "spr_rock",
   "tags": [],
   "resourceType": "GMSprite",
 }
