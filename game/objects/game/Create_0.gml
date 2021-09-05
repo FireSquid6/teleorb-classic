@@ -39,7 +39,7 @@ if file_exists("file.savedgame")
 //if no file exists, start a fesh file
 else
 {
-	global.canContinute=false
+	global.canContinue=false
 	
 	//set default vars
 	global.spawnpoint=0

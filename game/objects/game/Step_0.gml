@@ -30,6 +30,8 @@ if DEVELOPER_MODE
 	{
 		reset_game()
 	}
+	
+	if keyboard_check_pressed(vk_f1) apply_screenshake(5,random_range(360,0))
 }
 
 //make sure music is playing

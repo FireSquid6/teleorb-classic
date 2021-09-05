@@ -4,7 +4,8 @@
 var room_name=room_get_name(room)
 music_index=mus_spacetrivia
 
-global.inLevel=(string_digits(room_name)==3)
+var digits=string_digits(room_name)
+global.inLevel=(string_length(digits)==3)
 
 if global.inLevel
 {

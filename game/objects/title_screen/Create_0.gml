@@ -12,10 +12,12 @@ var audio_y=(gui_height - (sprite_get_height(spr_music)*guiscale)) - padding
 //TITLE CANVAS
 //new game
 element = new teleorb_ui_button_template(spr_gui_box, 0, padding, box_pos + box_spacing, "NEW GAME")
+element.add_method(start_new_game,MODUI_EVENTS.PRESSED)
 title_canvas.add_element(element)
 
 //continue
 element = new teleorb_ui_button_template(spr_gui_box, 0, padding, (box_pos * 2) + (box_spacing * 2), "CONTINUE GAME")
+element.add_method(continue_game,MODUI_EVENTS.PRESSED)
 title_canvas.add_element(element)
 
 //speedrun 
