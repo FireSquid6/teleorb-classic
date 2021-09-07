@@ -98,7 +98,7 @@
   },
   "parent": {
     "name": "Sprites",
-    "path": "folders/Libraries/Modui/Methods/Teleorb Pause Screen/Sprites.yy",
+    "path": "folders/Libraries/ModUI/Methods/Teleorb Pause Screen/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_gui_box",

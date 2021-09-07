@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Methods",
-    "path": "folders/Libraries/Modui/Methods.yy",
+    "path": "folders/Libraries/ModUI/Methods.yy",
   },
   "resourceVersion": "1.0",
   "name": "change_image_index",

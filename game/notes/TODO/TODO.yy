@@ -1,7 +1,7 @@
 {
   "parent": {
-    "name": "Modui",
-    "path": "folders/Libraries/Modui.yy",
+    "name": "ModUI",
+    "path": "folders/Libraries/ModUI.yy",
   },
   "resourceVersion": "1.1",
   "name": "TODO",

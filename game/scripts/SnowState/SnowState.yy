@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Methods",
-    "path": "folders/Libraries/ModUI/Methods.yy",
+    "name": "SnowState",
+    "path": "folders/Libraries/SnowState.yy",
   },
   "resourceVersion": "1.0",
-  "name": "change_color",
+  "name": "SnowState",
   "tags": [],
   "resourceType": "GMScript",
 }

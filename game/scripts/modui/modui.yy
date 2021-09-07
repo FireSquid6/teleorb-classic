@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "System",
-    "path": "folders/Libraries/Modui/System.yy",
+    "path": "folders/Libraries/ModUI/System.yy",
   },
   "resourceVersion": "1.0",
   "name": "modui",
