@@ -12,12 +12,8 @@ if active
 		{
 			with _id
 			{
-				active = true
+				states.change("active")
 			}
-		}
-		else
-		{
-			imposter="sus"
 		}
 		
 		i++
@@ -28,5 +24,5 @@ if active
 }
 else
 {
-	if place_meeting(x, y, obj_player) states.change("active")
+	if place_meeting(x, y, obj_player) active = true
 }

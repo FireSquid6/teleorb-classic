@@ -6,8 +6,8 @@ states.add("active", {
 	enter : function()
 	{
 		outOfWall = false
-	}
-	step : function()
+	},
+	step : function() 
 	{
 		y += ROCK_SPD
 		
@@ -19,14 +19,6 @@ states.add("active", {
 		{
 			if !place_meeting(x, y, obj_wall) outOfWall = true
 		}
-		
-		if place_meeting(x,y,obj_player)
-		{
-			with obj_player
-			{
-				moveto_die()
-			}
-		}
 	}
 })
 states.add("hit", {
@@ -35,5 +27,14 @@ states.add("hit", {
 		y --
 		
 		//create particles and stuff
+		repeat 50
+		{
+			var p = global.pt_rockHit
+			part_type_direction(p,30,150,0,0.2)
+			part_particles_create(p, x, y, p, 12)
+		}
+		
+		//play sound
+		audio_play_sound(sfx_rock_hit,50,false)
 	}
 })

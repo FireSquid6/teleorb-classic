@@ -38,11 +38,23 @@ if global.inLevel
 				music_index=mus_synth
 				break
 		}
+		
+		ambient_index=amb_cave
+		
+		//for special levels
+		branch_3_start()
+		
+		//play music
 		if !audio_is_playing(music_index)
 		{
 			audio_stop_all()
-			audio_play_sound(amb_cave,25,true)
 			audio_play_sound(music_index,25,true)
+		}
+		
+		//play ambient
+		if !audio_is_playing(ambient_index)
+		{
+			audio_play_sound(ambient_index, 13, true)
 		}
 	
 		//get colmap

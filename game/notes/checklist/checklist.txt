@@ -1,10 +1,11 @@
-FOR v0.3.0
+FOR v1.0.0
 - Finish Level 1
 - Title screen
-- Screenshake
+- Avalanche
 - Orb giver sfx
 - Fix the thing where you can jump up walls
 - Add a collectable
+- Itch.io page
 
 DONE:
 - Windows icon

@@ -1,3 +1,20 @@
+#region FONTS
+scribble_font_add("fnt_lcd")
+
+#endregion
+
+#region PARTICLES
+//rock hit trail
+var p=part_type_create()
+part_type_shape(p,pt_shape_pixel)
+part_type_size(p,5,5,-0.2,0)
+part_type_life(p,50,60)
+part_type_speed(p,2,3,0,0)
+part_type_color2(p,make_color_rgb(150,150,150),make_color_rgb(200,200,200))
+global.pt_rockHit=p
+
+#endregion
+
 #region GLOBAL VARS
 global.debug_mode = false
 global.modui_debug = false
