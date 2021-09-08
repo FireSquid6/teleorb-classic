@@ -26,14 +26,6 @@ states.add("hit", {
 	{
 		y --
 		
-		//create particles and stuff
-		repeat 50
-		{
-			var p = global.pt_rockHit
-			part_type_direction(p,30,150,0,0.2)
-			part_particles_create(p, x, y, p, 12)
-		}
-		
 		//play sound
 		audio_play_sound(sfx_rock_hit,50,false)
 	}
