@@ -1,7 +1,4 @@
-#region FONTS
-scribble_font_add("fnt_lcd")
-
-#endregion
+if !(ds_map_exists(global.__scribble_font_data, "fnt_lcd")) scribble_font_add("fnt_lcd")
 
 #region PARTICLES
 //rock hit trail

@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "States",
-    "path": "folders/Teleorb/Data/Player/States.yy",
+    "path": "folders/Teleorb/Data/Player/Scripts/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "dying",

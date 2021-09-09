@@ -20,7 +20,7 @@ if active
 	}
 	
 	//move
-	x+=AVALANCHE_MANAGER_SPD
+	x+=spd
 }
 else
 {

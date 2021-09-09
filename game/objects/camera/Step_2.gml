@@ -10,10 +10,6 @@ if instance_exists(target)
 	cameraX=target.x-(cameraWidth*0.5);
 	cameraY=target.y-(cameraHeight*0.5);
 	
-	//move to mouse
-	cameraX=lerp(target.x,mouse_x,lp)-(cameraWidth*0.5);
-	cameraY=lerp(target.y,mouse_y,lp)-(cameraHeight*0.5);
-	
 	//move with shake
 	cameraX += lengthdir_x(shake_amount, shake_dir)
 	cameraY += lengthdir_y(shake_amount, shake_dir)
