@@ -28,5 +28,5 @@ if active
 }
 else
 {
-	if place_meeting(x, y, obj_player) active = true
+	if place_meeting(x, y, obj_player) || place_meeting(x,y,obj_orb) active = true
 }

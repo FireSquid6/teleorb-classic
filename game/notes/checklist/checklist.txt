@@ -1,6 +1,5 @@
 FOR v1.0.0
 - Finish Level 1
-- Title screen
 - Orb giver sfx
 - Fix the thing where you can jump up walls
 - Itch.io page
@@ -14,3 +13,4 @@ ON THE HORIZON:
 - Mac and Linux builds
 - Credits
 - Add a collectable
+- Title screen
