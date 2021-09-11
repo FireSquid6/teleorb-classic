@@ -19,6 +19,10 @@ if active
 		i++
 	}
 	
+	var spd = AVALANCHE_MANAGER_MIN_SPD
+	
+	if point_distance(x,y,obj_player.x,obj_player.y) > 128 spd=AVALANCHE_MANAGER_MAX_SPD
+	
 	//move
 	x+=spd
 }

@@ -1,20 +1,16 @@
 FOR v1.0.0
 - Finish Level 1
 - Title screen
-- Avalanche
 - Orb giver sfx
 - Fix the thing where you can jump up walls
-- Add a collectable
 - Itch.io page
 
 DONE:
 - Windows icon
+- Avalanche
 
 ON THE HORIZON:
-- Options Menu
-	- Faster teleport animation
-	- Show speed
 - Speedrun mode
 - Mac and Linux builds
-- Fun bouncepad
 - Credits
+- Add a collectable
