@@ -222,4 +222,4 @@ while room_exists(i)
 //set volumes
 set_audio_volumes()
 
-room=rm_title_screen
+if DEVELOPER_MODE start_new_game() else continue_game()
