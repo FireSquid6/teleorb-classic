@@ -57,7 +57,6 @@
     {"id":{"name":"spr_player_walking","path":"sprites/spr_player_walking/spr_player_walking.yy",},"order":4,},
     {"id":{"name":"movement_variables","path":"scripts/movement_variables/movement_variables.yy",},"order":3,},
     {"id":{"name":"__scribble_generate_model","path":"scripts/__scribble_generate_model/__scribble_generate_model.yy",},"order":9,},
-    {"id":{"name":"rm_level_1_3_2","path":"rooms/rm_level_1_3_2/rm_level_1_3_2.yy",},"order":2,},
     {"id":{"name":"par_light","path":"objects/par_light/par_light.yy",},"order":0,},
     {"id":{"name":"scribble_typewriter_add_character_delay","path":"scripts/scribble_typewriter_add_character_delay/scribble_typewriter_add_character_delay.yy",},"order":2,},
     {"id":{"name":"rm_level_1_1_1","path":"rooms/rm_level_1_1_1/rm_level_1_1_1.yy",},"order":0,},
@@ -195,7 +194,6 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
-    {"roomId":{"name":"rm_level_1_3_2","path":"rooms/rm_level_1_3_2/rm_level_1_3_2.yy",},},
     {"roomId":{"name":"rm_level_1_1_1","path":"rooms/rm_level_1_1_1/rm_level_1_1_1.yy",},},
     {"roomId":{"name":"rm_level_1_3_1","path":"rooms/rm_level_1_3_1/rm_level_1_3_1.yy",},},
     {"roomId":{"name":"rm_level_1_2_5","path":"rooms/rm_level_1_2_5/rm_level_1_2_5.yy",},},
@@ -287,7 +285,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/fonts","resourceVersion":"1.0","name":"fnt_lcd.yy","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.4.580",
+    "IDEVersion": "2.3.4.577",
   },
   "resourceVersion": "1.4",
   "name": "game",
