@@ -20,6 +20,7 @@
     {"id":{"name":"tilemap_to_mp_grid","path":"scripts/tilemap_to_mp_grid/tilemap_to_mp_grid.yy",},"order":3,},
     {"id":{"name":"obj_orb_giver","path":"objects/obj_orb_giver/obj_orb_giver.yy",},"order":1,},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},"order":3,},
+    {"id":{"name":"rm_level_1_3_3","path":"rooms/rm_level_1_3_3/rm_level_1_3_3.yy",},"order":3,},
     {"id":{"name":"wallriding","path":"scripts/wallriding/wallriding.yy",},"order":3,},
     {"id":{"name":"ts_foreground","path":"tilesets/ts_foreground/ts_foreground.yy",},"order":1,},
     {"id":{"name":"fnt_monospace","path":"fonts/fnt_monospace/fnt_monospace.yy",},"order":1,},
@@ -193,6 +194,7 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"roomId":{"name":"rm_level_1_3_3","path":"rooms/rm_level_1_3_3/rm_level_1_3_3.yy",},},
     {"roomId":{"name":"rm_level_1_3_2","path":"rooms/rm_level_1_3_2/rm_level_1_3_2.yy",},},
     {"roomId":{"name":"rm_level_1_1_1","path":"rooms/rm_level_1_1_1/rm_level_1_1_1.yy",},},
     {"roomId":{"name":"rm_level_1_2_5","path":"rooms/rm_level_1_2_5/rm_level_1_2_5.yy",},},
