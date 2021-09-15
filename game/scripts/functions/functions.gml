@@ -59,6 +59,7 @@ function reset_game()
 {
 	unpause()
 	file_delete("file.savedgame")
+	global.runValid = true
 	audio_stop_all()
 	room=rm_init
 	instance_destroy(game)

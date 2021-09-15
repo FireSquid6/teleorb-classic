@@ -1,16 +1,13 @@
 FOR v1.0.0
-- Finish Level 1
-- Orb giver sfx
-- Fix the thing where you can jump up walls
 - Itch.io page
-- Make wallside speed consistent
-- Raise ceiling on hard part on level_1_1_3
-- Make 1_2_5 easier
-- Introduce wallgrabbing better
+- Run validity system
+- Screenshots
 
 DONE:
 - Windows icon
 - Avalanche
+- Finish Level 1
+- Orb giver sfx
 
 ON THE HORIZON:
 - Speedrun mode

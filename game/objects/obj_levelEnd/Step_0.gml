@@ -1,5 +1,6 @@
 if place_meeting(x,y,obj_player)
 {
+	//save time and stuff
 	var save_time=false
 	with game
 	{
@@ -46,5 +47,7 @@ if place_meeting(x,y,obj_player)
 			buffer_save(buff,"besttime.savedgame")
 		}
 	}
-	reset_game()
+	
+	//move to room
+	room = rm_game_end
 }

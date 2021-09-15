@@ -5,6 +5,7 @@ switch state
 		{
 			onCollision()
 			state=GIZMO_STATES.DEAD
+			audio_play_sound(sfx_powerup,50,false)
 		}
 		break
 	case GIZMO_STATES.DEAD:

@@ -33,6 +33,7 @@ display_set_gui_size(display_get_width(),display_get_height())
 if file_exists("file.savedgame")
 {
 	global.canContinue=true
+	global.runValid = false
 	
 	//get structe
 	var buff=buffer_load("file.savedgame")
@@ -54,6 +55,7 @@ if file_exists("file.savedgame")
 else
 {
 	global.canContinue=false
+	global.runValid = true
 	
 	//set default vars
 	global.spawnpoint=0

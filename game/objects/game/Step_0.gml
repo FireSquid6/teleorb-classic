@@ -35,7 +35,7 @@ if DEVELOPER_MODE
 }
 
 //make sure music is playing
-if !audio_is_playing(music_index) audio_play_sound(music_index,25,true)
+if !audio_is_playing(music_index) && music_index!=-1 audio_play_sound(music_index,25,true)
 
 //mute switch
 //if DEVELOPER_MODE
@@ -72,7 +72,7 @@ if global.inLevel
 }
 
 //timer
-if !paused
+if !paused && global.inLevel
 {
 	frames++
 	if frames==60

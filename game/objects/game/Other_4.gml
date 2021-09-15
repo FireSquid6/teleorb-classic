@@ -139,4 +139,9 @@ if global.inLevel
 		}
 	}
 }
+else
+{
+	music_index  = -1
+	ambient_index = -1
+}
 #endregion
