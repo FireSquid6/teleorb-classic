@@ -16,6 +16,13 @@ if move!=0 image_xscale=move
 //set image yscale
 image_yscale=global.gravityDir
 
+//visible toggle
+if DEVELOPER_MODE
+{
+	var keycheck = keyboard_check_pressed(ord("V"))
+	if keycheck drawself = !drawself
+}
+
 //orb
 throw_orb()
 

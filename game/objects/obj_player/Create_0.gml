@@ -13,6 +13,7 @@ enum playerStates
 orb=false
 dash=false
 slide=false
+drawself = true
 
 //default vars
 hspd=0

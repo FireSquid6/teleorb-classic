@@ -21,21 +21,24 @@ if global.debug_mode
 }
 
 //draw where the orb will end up
-var xx=x
-var yy=y
-var dir=point_direction(xx,yy,mouse_x,mouse_y)
-mask_index=spr_orb
-while (!place_meeting(xx,yy,obj_orbwall)) 
+if drawself
 {
-	xx+=lengthdir_x(1,dir)
-	yy+=lengthdir_y(1,dir)
-	if !point_in_rectangle(xx,yy,0,0,room_width,room_height)
+	var xx=x
+	var yy=y
+	var dir=point_direction(xx,yy,mouse_x,mouse_y)
+	mask_index=spr_orb
+	while (!place_meeting(xx,yy,obj_orbwall)) 
 	{
-		break
+		xx+=lengthdir_x(1,dir)
+		yy+=lengthdir_y(1,dir)
+		if !point_in_rectangle(xx,yy,0,0,room_width,room_height)
+		{
+			break
+		}
 	}
-}
 
-var color
-if canOrb && !thrown_orb color=c_white else color=c_red
-draw_sprite_ext(spr_orb,0,xx,yy,1,1,0,color,0.4)
-mask_index=spr_player_idle
+	var color
+	if canOrb && !thrown_orb color=c_white else color=c_red
+	draw_sprite_ext(spr_orb,0,xx,yy,1,1,0,color,0.4)
+	mask_index=spr_player_idle
+}
