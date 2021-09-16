@@ -255,43 +255,84 @@ if hcol || vcol
 			}
 		}
 		
-		//if the player is still in a wall, cry about it
-		if place_meeting(x,y,obj_wall)
-		{
-			show_debug_message("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ORB MOVE RESULTS - PLAYER WAS FOUND IN WALL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-		}	
-		else
-		{
-			show_debug_message("****************************** ORB MOVE RESULTS - PLAYER NOT FOUND IN WALL ******************************")
-		}
+		////if the player is still in a wall, cry about it
+		//var string_list =
+		//[
+		//	"bbox_left: "+string(bbox_left),
+		//	"bbox_left: "+string(bbox_left),
+		//	"bbox_top: "+string(bbox_top),
+		//	"bbox_bottom: "+string(bbox_bottom),
+		//	"bbox_x_name: "+string(bbox_x_name),
+		//	"bbox_y_name: "+string(bbox_y_name),
+		//	"movex: "+string(movex),
+		//	"movey: "+string(movey),
+		//	"bbox_x: "+string(bbox_x),
+		//	"bbox_y: "+string(bbox_y),
+		//]
 		
-		//cry about it harder
-		show_debug_message("bbox_left: "+string(bbox_left))
-		show_debug_message("bbox_right: "+string(bbox_right))
-		show_debug_message("bbox_top: "+string(bbox_top))
-		show_debug_message("bbox_bottom: "+string(bbox_bottom))
-		show_debug_message("bbox_x_name: "+string(bbox_x_name))
-		show_debug_message("bbox_y_name: "+string(bbox_y_name))
-		show_debug_message("movex: "+string(movex))
-		show_debug_message("movey: "+string(movey))
-		show_debug_message("bbox_x: "+string(bbox_x))
-		show_debug_message("bbox_y: "+string(bbox_y))
-		show_debug_message("hcol: "+string(hcol))
-		show_debug_message("vcol: "+string(vcol))
-		show_debug_message("xreps: "+string(xreps))
-		show_debug_message("yreps: "+string(yreps))
-		show_debug_message("hspd: "+string(other.hspd))
-		show_debug_message("vspd: "+string(other.vspd))
-		show_debug_message("hcol_moved: "+string(hcol_moved))
-		show_debug_message("vcol_moved: "+string(vcol_moved))
-		show_debug_message("hcol_moved_type: "+string(hcol_move_type))
-		show_debug_message("vcol_moved_type: "+string(vcol_move_type))
-		show_debug_message("line_left: "+string(line_left))
-		show_debug_message("line_top: "+string(line_top))
-		show_debug_message("line_bottom: "+string(line_bottom))
-		show_debug_message("line_right: "+string(line_right))
-		show_debug_message("hcol_loops: "+string(hcol_loops))
-		show_debug_message("vcol_loops: "+string(vcol_loops))
+		//if place_meeting(x,y,obj_wall)
+		//{
+		//	show_debug_message("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ORB MOVE RESULTS - PLAYER WAS FOUND IN WALL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+		//	var doOutput = true
+			
+		//	//cry about it harder
+		//	file_text_write_string("bbox_left: "+string(bbox_left))
+		//	show_debug_message("bbox_left: "+string(bbox_left))
+		//	show_debug_message("bbox_top: "+string(bbox_top))
+		//	show_debug_message("bbox_bottom: "+string(bbox_bottom))
+		//	show_debug_message("bbox_x_name: "+string(bbox_x_name))
+		//	show_debug_message("bbox_y_name: "+string(bbox_y_name))
+		//	show_debug_message("movex: "+string(movex))
+		//	show_debug_message("movey: "+string(movey))
+		//	show_debug_message("bbox_x: "+string(bbox_x))
+		//	show_debug_message("bbox_y: "+string(bbox_y))
+		//	show_debug_message("hcol: "+string(hcol))
+		//	show_debug_message("vcol: "+string(vcol))
+		//	show_debug_message("xreps: "+string(xreps))
+		//	show_debug_message("yreps: "+string(yreps))
+		//	show_debug_message("hspd: "+string(other.hspd))
+		//	show_debug_message("vspd: "+string(other.vspd))
+		//	show_debug_message("hcol_moved: "+string(hcol_moved))
+		//	show_debug_message("vcol_moved: "+string(vcol_moved))
+		//	show_debug_message("hcol_moved_type: "+string(hcol_move_type))
+		//	show_debug_message("vcol_moved_type: "+string(vcol_move_type))
+		//	show_debug_message("line_left: "+string(line_left))
+		//	show_debug_message("line_top: "+string(line_top))
+		//	show_debug_message("line_bottom: "+string(line_bottom))
+		//	show_debug_message("line_right: "+string(line_right))
+		//	show_debug_message("hcol_loops: "+string(hcol_loops))
+		//	show_debug_message("vcol_loops: "+string(vcol_loops))
+		//}	
+		//else
+		//{
+		//	show_debug_message("****************************** ORB MOVE RESULTS - PLAYER NOT FOUND IN WALL ******************************")
+		//	show_debug_message("bbox_left: "+string(bbox_left))
+		//	show_debug_message("bbox_right: "+string(bbox_right))
+		//	show_debug_message("bbox_top: "+string(bbox_top))
+		//	show_debug_message("bbox_bottom: "+string(bbox_bottom))
+		//	show_debug_message("bbox_x_name: "+string(bbox_x_name))
+		//	show_debug_message("bbox_y_name: "+string(bbox_y_name))
+		//	show_debug_message("movex: "+string(movex))
+		//	show_debug_message("movey: "+string(movey))
+		//	show_debug_message("bbox_x: "+string(bbox_x))
+		//	show_debug_message("bbox_y: "+string(bbox_y))
+		//	show_debug_message("hcol: "+string(hcol))
+		//	show_debug_message("vcol: "+string(vcol))
+		//	show_debug_message("xreps: "+string(xreps))
+		//	show_debug_message("yreps: "+string(yreps))
+		//	show_debug_message("hspd: "+string(other.hspd))
+		//	show_debug_message("vspd: "+string(other.vspd))
+		//	show_debug_message("hcol_moved: "+string(hcol_moved))
+		//	show_debug_message("vcol_moved: "+string(vcol_moved))
+		//	show_debug_message("hcol_moved_type: "+string(hcol_move_type))
+		//	show_debug_message("vcol_moved_type: "+string(vcol_move_type))
+		//	show_debug_message("line_left: "+string(line_left))
+		//	show_debug_message("line_top: "+string(line_top))
+		//	show_debug_message("line_bottom: "+string(line_bottom))
+		//	show_debug_message("line_right: "+string(line_right))
+		//	show_debug_message("hcol_loops: "+string(hcol_loops))
+		//	show_debug_message("vcol_loops: "+string(vcol_loops))
+		//}
 	}
 	
 	//kill self
