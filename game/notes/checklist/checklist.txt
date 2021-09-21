@@ -1,17 +1,6 @@
 FOR v1.0.0
-- Itch.io page
-- Run validity system
-- Screenshots
+- Mac and Linux builds
+- Fix the uncollidable spikes
 
 DONE:
-- Windows icon
-- Avalanche
-- Finish Level 1
-- Orb giver sfx
 
-ON THE HORIZON:
-- Speedrun mode
-- Mac and Linux builds
-- Credits
-- Add a collectable
-- Title screen
