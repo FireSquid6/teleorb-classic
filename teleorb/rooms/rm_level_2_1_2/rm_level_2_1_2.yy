@@ -191,8 +191,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Meta",
-    "path": "folders/Teleorb/Levels/Meta.yy",
+    "name": "Level 2",
+    "path": "folders/Teleorb/Levels/Level 2.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_level_2_1_2",

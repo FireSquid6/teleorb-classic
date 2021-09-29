@@ -36,7 +36,7 @@
     {"id":{"name":"scribble_glyph_get","path":"scripts/scribble_glyph_get/scribble_glyph_get.yy",},"order":6,},
     {"id":{"name":"sfx_dead","path":"sounds/sfx_dead/sfx_dead.yy",},"order":2,},
     {"id":{"name":"rm_level_1_4_1","path":"rooms/rm_level_1_4_1/rm_level_1_4_1.yy",},"order":0,},
-    {"id":{"name":"rm_level_2_1_2","path":"rooms/rm_level_2_1_2/rm_level_2_1_2.yy",},"order":4,},
+    {"id":{"name":"rm_level_2_1_2","path":"rooms/rm_level_2_1_2/rm_level_2_1_2.yy",},"order":1,},
     {"id":{"name":"rm_level_9_1_1","path":"rooms/rm_level_9_1_1/rm_level_9_1_1.yy",},"order":0,},
     {"id":{"name":"dying","path":"scripts/dying/dying.yy",},"order":6,},
     {"id":{"name":"spr_trashCan","path":"sprites/spr_trashCan/spr_trashCan.yy",},"order":3,},
@@ -201,6 +201,7 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"roomId":{"name":"rm_level_2_1_2","path":"rooms/rm_level_2_1_2/rm_level_2_1_2.yy",},},
     {"roomId":{"name":"rm_level_2_1_1","path":"rooms/rm_level_2_1_1/rm_level_2_1_1.yy",},},
     {"roomId":{"name":"rm_level_1_1_5","path":"rooms/rm_level_1_1_5/rm_level_1_1_5.yy",},},
     {"roomId":{"name":"rm_level_1_1_1","path":"rooms/rm_level_1_1_1/rm_level_1_1_1.yy",},},
@@ -221,7 +222,6 @@
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"roomId":{"name":"rm_parentLevel1","path":"rooms/rm_parentLevel1/rm_parentLevel1.yy",},},
     {"roomId":{"name":"rm_parentLevel2","path":"rooms/rm_parentLevel2/rm_parentLevel2.yy",},},
-    {"roomId":{"name":"rm_level_2_1_2","path":"rooms/rm_level_2_1_2/rm_level_2_1_2.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Teleorb/Data.yy","order":2,"resourceVersion":"1.0","name":"Data","tags":[],"resourceType":"GMFolder",},
