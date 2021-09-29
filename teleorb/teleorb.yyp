@@ -5,6 +5,7 @@
     {"id":{"name":"__scribble_class_null_model","path":"scripts/__scribble_class_null_model/__scribble_class_null_model.yy",},"order":5,},
     {"id":{"name":"__scribble_config_macros","path":"scripts/__scribble_config_macros/__scribble_config_macros.yy",},"order":2,},
     {"id":{"name":"obj_gravity_switcher","path":"objects/obj_gravity_switcher/obj_gravity_switcher.yy",},"order":2,},
+    {"id":{"name":"spr_crystal","path":"sprites/spr_crystal/spr_crystal.yy",},"order":4,},
     {"id":{"name":"spr_lowLight","path":"sprites/spr_lowLight/spr_lowLight.yy",},"order":2,},
     {"id":{"name":"fnt_lcd","path":"fonts/fnt_lcd/fnt_lcd.yy",},"order":2,},
     {"id":{"name":"fnt_arial","path":"fonts/fnt_arial/fnt_arial.yy",},"order":0,},
