@@ -131,6 +131,7 @@ if global.inLevel
 				{
 					xx=x
 					yy=y
+					global.gravityDir = image_yscale
 				}
 				instance_destroy()
 			}
