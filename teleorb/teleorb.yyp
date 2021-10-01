@@ -309,7 +309,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/fonts","resourceVersion":"1.0","name":"fnt_lcd.yy","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.5.589",
+    "IDEVersion": "2.3.4.583",
   },
   "resourceVersion": "1.4",
   "name": "teleorb",
