@@ -138,6 +138,12 @@ if global.inLevel
 		
 			instance_create_layer(xx,yy,"lay_player",obj_player)
 		}
+		
+		//make gravity correct
+		with obj_gravity_switcher
+		{
+			image_angle+=180
+		}
 	}
 }
 else

@@ -29,7 +29,6 @@ image_speed=0
 //movement stuff
 jumpFrames=0
 airFrictionCancelFrames=0
-global.gravityDir=1
 cyoteFrames=0
 wallrideDir=1
 walljumpBufferFrames=0
