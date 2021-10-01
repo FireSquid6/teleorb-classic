@@ -1,0 +1,1 @@
+mytext.draw(x,y)

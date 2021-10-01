@@ -1,0 +1,5 @@
+mytext = scribble(text)
+mytext.starting_format(font, blend)
+mytext.align(halign,valign)
+mytext.blend(blend, alpha)
+mytext.transform(scale,scale,angle)
