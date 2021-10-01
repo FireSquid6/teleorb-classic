@@ -1,7 +1,7 @@
 function state_wallride()
 {	
 	//wallriding
-	vspd+=wallrideGrv
+	vspd+=wallrideGrv * global.gravityDir
 	air_friction()
 	if wallgrab vspd=0
 	if wallgrab_released vspd=1
