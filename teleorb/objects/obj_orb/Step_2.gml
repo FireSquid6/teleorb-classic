@@ -1,3 +1,5 @@
+#region BAD OLD CODE
+/* 
 var bbox_x=-5,bbox_y=-5,bbox_x_name=-5,bbox_y_name=-5,movex=-5,movey=-5,hcol_moved=-5,vcol_moved=-5,hcol_move_type=0,vcol_move_type=0
 
 var hcol=place_meeting(x+hspd,y,obj_orbwall)
@@ -268,6 +270,13 @@ if hcol || vcol
 	//kill self
 	instance_destroy()
 }
+*/
+#endregion
+
+#region NEW SICK CODE THAT USES A SICK 4 POINT COLLISION SYSTEM
+
+
+#endregion
 
 //move self
 x+=hspd

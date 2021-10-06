@@ -1,7 +1,7 @@
 //setup vars
 move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
-jump = keyboard_check(vk_space)
-jump_pressed = keyboard_check_pressed(vk_space)
+jump = keyboard_check(vk_space) || keyboard_check(ord("W"));
+jump_pressed = keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W"));
 onFloor = place_meeting(x,y+global.gravityDir,obj_wall)
 wallgrab = keyboard_check(vk_lshift)
 wallgrab_released=keyboard_check_released(vk_shift)
