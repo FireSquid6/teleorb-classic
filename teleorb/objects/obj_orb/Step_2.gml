@@ -276,8 +276,18 @@ if hcol || vcol
 #region NEW SICK CODE THAT USES A SICK 4 POINT COLLISION SYSTEM
 
 
+
 #endregion
 
 //move self
 x+=hspd
 y+=vspd
+
+//set points
+var half_width = (bbox_right - bbox_left) div 2
+var half_height = (bbox_bottom - bbox_top) div 2
+
+point_top = new vec2(bbox_left + half_width, bbox_top)
+point_left = new vec2(bbox_left, bbox_top + half_height)
+point_right = new vec2(bbox_right, bbox_top + half_height)
+point_bottom = new vec2(bbox_left + half_width, bbox_bottom)
