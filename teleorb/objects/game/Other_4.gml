@@ -131,11 +131,18 @@ if global.inLevel
 				{
 					xx=x
 					yy=y
+					global.gravityDir = image_yscale
 				}
 				instance_destroy()
 			}
 		
 			instance_create_layer(xx,yy,"lay_player",obj_player)
+		}
+		
+		//make gravity correct
+		with obj_gravity_switcher
+		{
+			image_angle+=180
 		}
 	}
 }

@@ -1,4 +1,5 @@
 if !(ds_map_exists(global.__scribble_font_data, "fnt_lcd")) scribble_font_add("fnt_lcd")
+global.gravityDir=1
 
 #region PARTICLES
 //rock hit trail
