@@ -275,6 +275,11 @@ if hcol || vcol
 
 #region NEW SICK CODE THAT USES A SICK 4 POINT COLLISION SYSTEM
 
+var collision_top = collision_point(point_top.x, point_top.y, obj_orbwall, false, true)
+var collision_right = collision_point(point_right.x, point_right.y, obj_orbwall, false, true)
+var collision_left = collision_point(point_left.x, point_left.y, obj_orbwall, false, true)
+var collision_bottom = collision_point(point_bottom.x, point_bottom.y, obj_orbwall, false, true)
+
 
 
 #endregion
